@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* ───────────── Design tokens ─────────────
+   Every colour is a semantic token with a light and a dark value, so components never
+   hard-code a hex and never need `dark:` variants.
+   Spacing follows a 4/8 rhythm (Tailwind's default scale). Type: 12/14/16/20/24/30 px. */
+:root {
+  --bg: #f6f7fb;  --surface: #ffffff;  --surface-2: #f1f3f9;
+  --line: #e2e6ef;  --line-strong: #c6cddc;
+  --ink: #0f1629;  --ink-2: #364055;  --muted: #55607a;
+  --brand: #4338ca;  --brand-hover: #3730a3;  --on-brand: #ffffff;
+  --brand-soft: #eceafd;  --brand-line: #c9c5f6;
+  --success: #166534;  --success-bg: #dcf5e3;  --success-solid: #16a34a;
+  --warning: #92400e;  --warning-bg: #fdf0d5;  --warning-solid: #d97706;
+  --danger: #991b1b;   --danger-bg: #fde2e2;   --danger-solid: #dc2626;
+  --purple: #6b21a8;   --purple-bg: #f1e5fb;   --purple-solid: #9333ea;
+  --info: #075985;     --info-bg: #dcf0fb;     --info-solid: #0284c7;
+  --code-bg: #0f172a;  --code-ink: #e2e8f0;    --code-ln: #7a8aa6;
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.05), 0 4px 16px rgb(16 24 40 / 0.04);
+  --shadow-pop: 0 24px 64px rgb(10 15 30 / 0.28);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0a0f1e;  --surface: #121a2e;  --surface-2: #19223a;
+  --line: #27314d;  --line-strong: #3a4666;
+  --ink: #eef1fa;  --ink-2: #c5cde2;  --muted: #9ba7c2;
+  --brand: #8b84ff;  --brand-hover: #a59fff;  --on-brand: #0a0f1e;
+  --brand-soft: #232555;  --brand-line: #3b3e88;
+  --success: #86efac;  --success-bg: #12331f;  --success-solid: #22c55e;
+  --warning: #fcd34d;  --warning-bg: #3a2d10;  --warning-solid: #f59e0b;
+  --danger: #fca5a5;   --danger-bg: #3b1618;   --danger-solid: #ef4444;
+  --purple: #d8b4fe;   --purple-bg: #2c1a45;   --purple-solid: #a855f7;
+  --info: #7dd3fc;     --info-bg: #0f2f45;     --info-solid: #0ea5e9;
+  --code-bg: #0a0f1e;  --code-ink: #dbe3f2;    --code-ln: #6b7a99;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.28);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, monospace;
+  --color-bg: var(--bg);  --color-surface: var(--surface);  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);  --color-ink-2: var(--ink-2);  --color-muted: var(--muted);
+  --color-brand: var(--brand);  --color-brand-hover: var(--brand-hover);  --color-on-brand: var(--on-brand);
+  --color-brand-soft: var(--brand-soft);  --color-brand-line: var(--brand-line);
+  --color-success: var(--success);  --color-success-bg: var(--success-bg);  --color-success-solid: var(--success-solid);
+  --color-warning: var(--warning);  --color-warning-bg: var(--warning-bg);  --color-warning-solid: var(--warning-solid);
+  --color-danger: var(--danger);    --color-danger-bg: var(--danger-bg);    --color-danger-solid: var(--danger-solid);
+  --color-purple: var(--purple);    --color-purple-bg: var(--purple-bg);    --color-purple-solid: var(--purple-solid);
+  --color-info: var(--info);        --color-info-bg: var(--info-bg);        --color-info-solid: var(--info-solid);
+  --color-code-bg: var(--code-bg);  --color-code-ink: var(--code-ink);      --color-code-ln: var(--code-ln);
+  --shadow-card: var(--shadow-card);  --shadow-pop: var(--shadow-pop);
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-bg text-ink font-sans antialiased; font-size: 16px; line-height: 1.5; }
+  h1, h2, h3 { text-wrap: balance; letter-spacing: -0.012em; }
+  :focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 6px; }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes slide-in { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+.animate-rise { animation: rise 0.25s var(--ease-out-soft) backwards; }
+.animate-slide-in { animation: slide-in 0.22s var(--ease-out-soft) both; }
+.skeleton { position: relative; overflow: hidden; background: var(--surface-2); border-radius: 8px; }
+.skeleton::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--ink) 7%, transparent), transparent);
+  animation: shimmer 1.4s infinite; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
