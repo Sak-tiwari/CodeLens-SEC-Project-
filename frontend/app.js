@@ -6,10 +6,17 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const pct = (x) => (x * 100).toFixed(0) + "%";
 const f2 = (x) => Number(x).toFixed(2);
 const STATUS = {
-  PASS: ["Pass", "#16a34a"], WRONG_ANSWER: ["Wrong answer", "#d97706"], COMPILATION_ERROR: ["Compile error", "#dc2626"],
-  RUNTIME_ERROR: ["Runtime error", "#9333ea"], TIMEOUT: ["Timeout", "#0284c7"],
+  PASS: ["Pass", "var(--pass-solid)"], WRONG_ANSWER: ["Wrong answer", "var(--wrong-solid)"], COMPILATION_ERROR: ["Compile error", "var(--cerr-solid)"],
+  RUNTIME_ERROR: ["Runtime error", "var(--rerr-solid)"], TIMEOUT: ["Timeout", "var(--time-solid)"],
 };
-const PALETTE = ["#4338ca", "#0f766e", "#c2410c", "#be185d", "#4d7c0f", "#0369a1", "#7e22ce", "#a16207", "#b91c1c", "#0e7490"];
+const PALETTE = ["#6366f1", "#0d9488", "#ea580c", "#db2777", "#65a30d", "#0284c7", "#9333ea", "#ca8a04", "#dc2626", "#0891b2"]; // mid-tones, readable on light and dark
+const cssv = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const ICONS = {
+  overview: '<path d="M3 12l9-8 9 8M5 10v10h14V10"/>', submissions: '<path d="M8 6h12M8 12h12M8 18h12M3 6h.01M3 12h.01M3 18h.01"/>',
+  submit: '<path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>', similarity: '<circle cx="6" cy="7" r="3"/><circle cx="18" cy="7" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8.5 8.5L10.5 15.5M15.5 8.5L13.5 15.5M9 7h6"/>',
+  lab: '<path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 001.3 2.2h12.4a1.5 1.5 0 001.3-2.2L14 9V3M7.5 15h9"/>',
+};
+const icon = (k) => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[k] || ""}</svg>`;
 const SIM_LABELS = { raw: "Raw text (Levenshtein)", normalized: "Normalized text", cosine: "Token cosine", ngram: "Token n-gram Jaccard", length: "Length ratio", lcs: "LCS (tokens)" };
 
 const state = {
@@ -24,12 +31,12 @@ const VIEWS = {
 
 /* ---------------------------------------------------------------- helpers */
 function badge(status) { const s = STATUS[status]; return `<span class="badge ${esc(status)}">${s ? s[0] : esc(status || "-")}</span>`; }
-function pills(execs) { return `<span class="pills" title="One square per test">${(execs || []).map((e) => `<i class="${esc(e.status)}" title="Test ${e.test_id}: ${esc(e.status)}"></i>`).join("")}</span>`; }
+function pills(execs) { const ok = (execs || []).filter((e) => e.status === "PASS").length; return `<span class="pills" role="img" aria-label="${ok} of ${(execs || []).length} tests passed" title="One square per test">${(execs || []).map((e) => `<i class="${esc(e.status)}" title="Test ${e.test_id}: ${esc(e.status)}"></i>`).join("")}</span>`; }
 function bar(v, cls = "") { return `<div class="bar ${cls}" role="img" aria-label="${pct(v)}"><i style="width:${Math.max(0, Math.min(1, v)) * 100}%"></i></div>`; }
 function code(src) { return `<pre class="code">${String(src).split("\n").map((l, i) => `<span class="ln" data-n="${i + 1}">${esc(l) || " "}</span>`).join("")}</pre>`; }
-function heatColor(v) { // light -> indigo
+function heatColor(v) { // theme-aware ramp: low similarity -> high similarity
   const t = Math.max(0, Math.min(1, v));
-  const a = [244, 246, 251], b = [67, 56, 202];
+  const a = cssv("--heat-lo").split(",").map(Number), b = cssv("--heat-hi").split(",").map(Number);
   return `rgb(${a.map((x, i) => Math.round(x + (b[i] - x) * t)).join(",")})`;
 }
 let toastTimer;
@@ -57,7 +64,7 @@ const label = (id) => (state.analysis?.submissions.find((s) => s.id === id) || {
 /* ---------------------------------------------------------------- shell */
 function renderNav() {
   const items = Object.entries(VIEWS).filter(([, v]) => !v.instructor || state.role === "instructor");
-  $("#nav").innerHTML = items.map(([k, v]) => `<a href="#${k}" class="${state.view === k ? "on" : ""}">${v.title}</a>`).join("");
+  $("#nav").innerHTML = items.map(([k, v]) => `<a href="#${k}" class="${state.view === k ? "on" : ""}" ${state.view === k ? 'aria-current="page"' : ""}>${icon(k)}${v.title}</a>`).join("");
 }
 function route() {
   let v = location.hash.slice(1) || "overview";
@@ -105,7 +112,7 @@ async function overview(el) {
       <li><div><b>Which edits fool which measure?</b><small>Controlled transformation experiment, normalization pipeline and scalability.</small></div><a class="btn" href="#lab" data-lab="transform">Open</a></li>
     </ol></section>` : `<section class="card mt"><h2>Student view</h2><p class="muted">Upload a C file in <b>Submit code</b> to see the compile result and test results. Other students' code and similarity flags are not visible to students.</p></section>`;
   el.innerHTML = `
-    <h1>${esc(a?.title || "Assignment")}</h1><p class="muted" style="margin-top:0">${esc(a?.description || "")} &middot; ${a?.tests || 0} test cases</p>
+    <div class="hero"><div><div class="kicker">${state.role === "student" ? "Student workspace" : "Instructor overview"}</div><h1>${esc(a?.title || "Assignment")}</h1><p class="muted">${esc(a?.description || "")} &middot; ${a?.tests || 0} test cases</p></div></div>
     <div class="grid g4">
       <div class="card stat"><b>${subs.length}</b><span>${state.role === "student" ? "my submissions" : "submissions"}</span></div>
       <div class="card stat"><b>${passed}</b><span>passed all tests</span></div>
@@ -223,7 +230,7 @@ async function runAnalysis(force) {
          ["pairs (N(N-1)/2)", st.total_pairs], ["filtered out", `${st.filtered_pairs} (${pct(st.reduction)})`], ["mean / std dev", `${f2(st.mean)} / ${f2(st.std_dev)}`], ["z &gt; 2 flags", st.unusual]]
         .map(([l, v]) => `<div class="card stat"><b>${v}</b><span>${l}</span></div>`).join("")}</div>
     <div class="grid g2 mt">
-      <section class="card"><h2>Similarity matrix</h2><p class="muted" style="margin-top:0">Darker = more similar. Click a cell to compare the pair.</p><div class="heat"><canvas id="heat"></canvas></div></section>
+      <section class="card"><h2>Similarity matrix</h2><p class="muted" style="margin-top:0">Stronger colour = more similar; amber outline = above the threshold. Click a cell to compare the pair.</p><div class="heat"><canvas id="heat"></canvas></div></section>
       <section class="card graph"><h2>Similarity graph <small class="muted">edge when S &ge; ${f2(a.params.threshold)}</small></h2><div id="graph"></div></section>
     </div>
     <section class="card mt"><h2>Connected components <small class="muted">found with hand-written BFS / DFS</small></h2><div class="grid g2" id="comps"></div></section>
@@ -248,16 +255,16 @@ function drawHeat(a, ids) {
   cv.width = size * dpr; cv.height = size * dpr; cv.style.width = size + "px"; cv.style.height = size + "px"; ctx.scale(dpr, dpr);
   ctx.font = "11px system-ui"; ctx.textBaseline = "middle";
   a.submissions.forEach((s, i) => {
-    ctx.fillStyle = "#475569"; ctx.textAlign = "right"; ctx.fillText(s.label.replace(/ v1$/, ""), lab - 6, lab + i * cell + cell / 2);
+    ctx.fillStyle = cssv("--label"); ctx.textAlign = "right"; ctx.fillText(s.label.replace(/ v1$/, ""), lab - 6, lab + i * cell + cell / 2);
   });
   // column headers (rotated)
-  a.submissions.forEach((s, i) => { ctx.save(); ctx.translate(lab + i * cell + cell / 2, lab - 8); ctx.rotate(-Math.PI / 4); ctx.fillStyle = "#475569"; ctx.textAlign = "left"; ctx.fillText(s.label.replace(/ v1$/, ""), 0, 0); ctx.restore(); });
+  a.submissions.forEach((s, i) => { ctx.save(); ctx.translate(lab + i * cell + cell / 2, lab - 8); ctx.rotate(-Math.PI / 4); ctx.fillStyle = cssv("--label"); ctx.textAlign = "left"; ctx.fillText(s.label.replace(/ v1$/, ""), 0, 0); ctx.restore(); });
   ctx.textAlign = "center";
   for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
     const v = a.matrix[i][j], x = lab + j * cell, y = lab + i * cell;
     ctx.fillStyle = heatColor(v); ctx.fillRect(x + 1, y + 1, cell - 2, cell - 2);
-    if (i !== j && v >= a.params.threshold) { ctx.strokeStyle = "#f59e0b"; ctx.lineWidth = 2; ctx.strokeRect(x + 2, y + 2, cell - 4, cell - 4); }
-    ctx.fillStyle = v > 0.55 ? "#fff" : "#334155"; if (cell >= 30) ctx.fillText(v.toFixed(2).replace(/^0/, ""), x + cell / 2, y + cell / 2);
+    if (i !== j && v >= a.params.threshold) { ctx.strokeStyle = cssv("--wrong-solid"); ctx.lineWidth = 2; ctx.strokeRect(x + 2, y + 2, cell - 4, cell - 4); }
+    ctx.fillStyle = v > 0.55 ? cssv("--heat-ink-hi") : cssv("--heat-ink-lo"); if (cell >= 30) ctx.fillText(v.toFixed(2).replace(/^0/, ""), x + cell / 2, y + cell / 2);
   }
   const hit = (e) => { const r = cv.getBoundingClientRect(), x = e.clientX - r.left - lab, y = e.clientY - r.top - lab; const j = Math.floor(x / cell), i = Math.floor(y / cell); return i >= 0 && j >= 0 && i < n && j < n ? [i, j] : null; };
   cv.onmousemove = (e) => { const h = hit(e); cv.style.cursor = h && h[0] !== h[1] ? "pointer" : "default"; tip(e, h ? `<b>${esc(a.submissions[h[0]].label)}</b> &harr; <b>${esc(a.submissions[h[1]].label)}</b><br>similarity ${a.matrix[h[0]][h[1]].toFixed(3)}` : null); };
@@ -272,9 +279,9 @@ function drawGraph(a) {
   order.forEach((id, i) => { const ang = (2 * Math.PI * i) / n - Math.PI / 2; pos[id] = [cx + R * Math.cos(ang), cy + R * Math.sin(ang)]; });
   const lab = Object.fromEntries(a.submissions.map((s) => [s.id, s]));
   const edges = a.edges.map((e) => `<g class="edge" data-a="${e.a}" data-b="${e.b}"><line x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}" stroke="${PALETTE[compOf[e.a] % PALETTE.length]}" stroke-opacity=".55" stroke-width="${1 + (e.w - a.params.threshold) * 14}"/><line x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}" stroke="transparent" stroke-width="12"><title>${esc(lab[e.a].label)} - ${esc(lab[e.b].label)}: ${e.w.toFixed(2)}</title></line></g>`).join("");
-  const nodes = order.map((id) => { const [x, y] = pos[id], c = PALETTE[compOf[id] % PALETTE.length], st = STATUS[lab[id].status]?.[1] || "#94a3b8";
-    return `<g class="node" data-id="${id}" transform="translate(${x},${y})"><circle r="17" fill="${c}"/><circle r="21" fill="none" stroke="${st}" stroke-width="3"/><text y="38" text-anchor="middle" font-size="11" fill="#334155">${esc(lab[id].label.replace(/ v1$/, ""))}</text><title>${esc(lab[id].label)} - ${esc(STATUS[lab[id].status]?.[0] || "")}</title></g>`; }).join("");
-  $("#graph").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Similarity graph">${edges}${nodes}</svg><div class="legend"><span style="--c:#4338ca">Fill = component</span><span style="--c:#16a34a">Ring = test outcome</span></div>`;
+  const nodes = order.map((id) => { const [x, y] = pos[id], c = PALETTE[compOf[id] % PALETTE.length], st = STATUS[lab[id].status]?.[1] || "var(--muted)";
+    return `<g class="node" data-id="${id}" transform="translate(${x},${y})"><circle r="17" fill="${c}"/><circle r="21" fill="none" stroke="${st}" stroke-width="3"/><text y="38" text-anchor="middle" font-size="11" fill="currentColor" class="nl">${esc(lab[id].label.replace(/ v1$/, ""))}</text><title>${esc(lab[id].label)} - ${esc(STATUS[lab[id].status]?.[0] || "")}</title></g>`; }).join("");
+  $("#graph").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Similarity graph">${edges}${nodes}</svg><div class="legend"><span style="--c:#6366f1">Fill = component</span><span style="--c:var(--pass-solid)">Ring = test outcome</span></div>`;
   $("#graph").querySelectorAll(".node").forEach((g) => (g.onclick = () => showSubmission(+g.dataset.id)));
   $("#graph").querySelectorAll(".edge").forEach((g) => (g.onclick = () => { const p = a.pairs.find((p) => p.a === +g.dataset.a && p.b === +g.dataset.b); showPair(+g.dataset.a, +g.dataset.b, p ? p.z : null); }));
 }
@@ -306,7 +313,7 @@ async function lab(el) {
   await ({ transform: labTransform, plant: labPlant, compare: labCompare, pipeline: labPipeline, scale: labScale }[state.lab])(body, subs);
 }
 const subOptions = (subs, sel) => subs.map((s) => `<option value="${s.submission_id}" ${s.submission_id === sel ? "selected" : ""}>#${s.submission_id} ${esc(s.student)} v${s.version} (${esc(STATUS[s.overall_status]?.[0] || "")})</option>`).join("");
-function cellStyle(v) { const c = heatColor(v); return `background:${c};color:${v > 0.55 ? "#fff" : "#1e293b"}`; }
+function cellStyle(v) { const c = heatColor(v); return `background:${c};color:${v > 0.55 ? "var(--heat-ink-hi)" : "var(--ink)"}`; }
 
 async function labTransform(body, subs) {
   const q = (sel) => body.querySelector(sel);
@@ -403,20 +410,34 @@ function lineChart(rows) {
   const pts = rows.map((r) => [X(r.pairs), Y(r.total_ms)]);
   const ticks = [0, 0.25, 0.5, 0.75, 1];
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Runtime versus pair count" style="width:100%;height:auto">
-    ${ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${Y(my * t)}" y2="${Y(my * t)}" stroke="#e2e6ec"/><text x="${L - 8}" y="${Y(my * t) + 4}" text-anchor="end" font-size="11" fill="#5b6676">${(my * t).toFixed(my < 10 ? 1 : 0)}</text>`).join("")}
-    ${ticks.map((t) => `<text x="${X(mx * t)}" y="${H - B + 18}" text-anchor="middle" font-size="11" fill="#5b6676">${Math.round(mx * t)}</text>`).join("")}
-    <text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle" font-size="12" fill="#334155">pairs N(N-1)/2</text><text transform="translate(14 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle" font-size="12" fill="#334155">total time (ms)</text>
-    <polyline fill="none" stroke="#4338ca" stroke-width="2.5" points="${pts.map((p) => p.join(",")).join(" ")}"/>
-    ${rows.map((r, i) => `<circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="4.5" fill="#4338ca"><title>N=${r.n}: ${r.total_ms} ms for ${r.pairs} pairs</title></circle><text x="${pts[i][0]}" y="${pts[i][1] - 10}" text-anchor="middle" font-size="11" fill="#334155">N=${r.n}</text>`).join("")}</svg>`;
+    ${ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${Y(my * t)}" y2="${Y(my * t)}" stroke="var(--grid)"/><text x="${L - 8}" y="${Y(my * t) + 4}" text-anchor="end" font-size="11" fill="var(--axis)">${(my * t).toFixed(my < 10 ? 1 : 0)}</text>`).join("")}
+    ${ticks.map((t) => `<text x="${X(mx * t)}" y="${H - B + 18}" text-anchor="middle" font-size="11" fill="var(--axis)">${Math.round(mx * t)}</text>`).join("")}
+    <text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle" font-size="12" fill="var(--label)">pairs N(N-1)/2</text><text transform="translate(14 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle" font-size="12" fill="var(--label)">total time (ms)</text>
+    <polyline fill="none" stroke="var(--brand)" stroke-width="2.5" points="${pts.map((p) => p.join(",")).join(" ")}"/>
+    ${rows.map((r, i) => `<circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="4.5" fill="var(--brand)"><title>N=${r.n}: ${r.total_ms} ms for ${r.pairs} pairs</title></circle><text x="${pts[i][0]}" y="${pts[i][1] - 10}" text-anchor="middle" font-size="11" fill="var(--label)">N=${r.n}</text>`).join("")}</svg>`;
 }
 
 /* ---------------------------------------------------------------- boot */
 function setRole(role) {
   state.role = role; state.analysis = null;
-  document.querySelectorAll(".seg button").forEach((b) => b.classList.toggle("on", b.dataset.role === role));
+  document.querySelectorAll(".seg button").forEach((b) => { const on = b.dataset.role === role; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
   $("#userWrap").hidden = role !== "student"; route();
 }
+const MOON = '<path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z"/>', SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+function paintThemeButton() {
+  const dark = document.documentElement.dataset.theme === "dark", b = $("#theme");
+  b.innerHTML = `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${dark ? SUN : MOON}</svg>`;
+  b.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+}
+function toggleTheme() {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem("codelens-theme", next); } catch (e) { /* storage blocked: theme still applies for this visit */ }
+  paintThemeButton();
+  if (["similarity", "lab"].includes(state.view)) render(); // canvas and svg read theme colours when drawn
+}
 async function boot() {
+  paintThemeButton(); $("#theme").onclick = toggleTheme;
   document.querySelectorAll(".seg button").forEach((b) => (b.onclick = () => setRole(b.dataset.role)));
   $("#assignment").onchange = (e) => { state.aid = +e.target.value; state.analysis = null; render(); };
   $("#user").onchange = (e) => { state.userId = +e.target.value; render(); };

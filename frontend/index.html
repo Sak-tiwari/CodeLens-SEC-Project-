@@ -2,27 +2,39 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
 <title>CodeLens Dashboard</title>
+<script>
+/* Set the theme before first paint so there is no flash. Storage may be blocked, so guard it. */
+(function(){var t=null;try{t=localStorage.getItem("codelens-theme")}catch(e){}
+if(t!=="light"&&t!=="dark")t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";
+document.documentElement.setAttribute("data-theme",t)})();
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#view">Skip to main content</a>
 <header class="top">
-  <div class="brand"><span class="logo">&lt;/&gt;</span><div><b>CodeLens</b><small>C assessment &amp; structural similarity</small></div></div>
+  <div class="brand">
+    <span class="logo" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+    <div><b>CodeLens</b><small>C assessment &amp; structural similarity</small></div>
+  </div>
   <nav id="nav" aria-label="Sections"></nav>
   <div class="ctl">
     <label class="sel">Assignment <select id="assignment"></select></label>
     <div class="seg" role="group" aria-label="Role">
-      <button data-role="instructor" class="on">Instructor</button>
-      <button data-role="student">Student</button>
+      <button data-role="instructor" class="on" aria-pressed="true">Instructor</button>
+      <button data-role="student" aria-pressed="false">Student</button>
     </div>
     <label class="sel" id="userWrap" hidden>As <select id="user"></select></label>
     <span id="health" class="chip" title="Compiler available on the server"></span>
+    <button id="theme" class="icon-btn" type="button" aria-label="Switch to dark theme" title="Switch theme"></button>
   </div>
 </header>
-<main id="view" tabindex="-1"></main>
-<div id="modal" class="modal" hidden><div class="sheet" role="dialog" aria-modal="true"><button class="x" id="modalClose" aria-label="Close">&times;</button><div id="modalBody"></div></div></div>
-<div id="toast" class="toast" hidden></div>
+<main id="view" tabindex="-1" aria-live="polite"></main>
+<div id="modal" class="modal" hidden><div class="sheet" role="dialog" aria-modal="true" aria-label="Details"><button class="x" id="modalClose" aria-label="Close">&times;</button><div id="modalBody"></div></div></div>
+<div id="toast" class="toast" role="status" hidden></div>
 <div id="tip" class="tip" hidden></div>
 <script src="app.js"></script>
 </body>
