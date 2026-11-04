@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CodeLens Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">&lt;/&gt;</span><div><b>CodeLens</b><small>C assessment &amp; structural similarity</small></div></div>
+  <nav id="nav" aria-label="Sections"></nav>
+  <div class="ctl">
+    <label class="sel">Assignment <select id="assignment"></select></label>
+    <div class="seg" role="group" aria-label="Role">
+      <button data-role="instructor" class="on">Instructor</button>
+      <button data-role="student">Student</button>
+    </div>
+    <label class="sel" id="userWrap" hidden>As <select id="user"></select></label>
+    <span id="health" class="chip" title="Compiler available on the server"></span>
+  </div>
+</header>
+<main id="view" tabindex="-1"></main>
+<div id="modal" class="modal" hidden><div class="sheet" role="dialog" aria-modal="true"><button class="x" id="modalClose" aria-label="Close">&times;</button><div id="modalBody"></div></div></div>
+<div id="toast" class="toast" hidden></div>
+<div id="tip" class="tip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

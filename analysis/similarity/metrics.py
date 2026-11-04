@@ -1,3 +1,5 @@
+import math
+
 def calculate_raw_similarity(text_a, text_b):
     len_a, len_b = len(text_a), len(text_b)
 

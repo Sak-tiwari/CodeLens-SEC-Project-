@@ -219,6 +219,29 @@ pip install -r requirements.txt
 
 ---
 
+## 8a. Running the dashboard
+
+```bash
+pip install -r requirements.txt     # Flask (+ pytest)
+python -m backend.app               # first start imports the demo data (about 10 s)
+# open http://127.0.0.1:5000
+```
+
+- Needs **GCC** on the PATH (Windows: MinGW-w64). Without it the dashboard still opens and the header shows "GCC not found".
+- The database `codelens.db` is created in the repository root and is git-ignored. **Demo lab -> Reset demo data** restores the original state.
+- The role switch (Instructor / Student) is a mock role switch: the server rejects similarity and other users' code for the student role.
+- Tests: `python -m pytest tests`.
+
+**Presentation script (about 5 minutes)**
+
+1. **Overview** -> **Submissions**: ten real programs, compiled and tested with GCC (all five outcomes appear).
+2. **Submit code**: choose a ready sample (for example *Infinite loop*), press *Compile & run tests*.
+3. **Similarity**: drag the threshold slider; click a heatmap cell or a graph edge for the side-by-side comparison with the score breakdown and explanation.
+4. **Demo lab -> Plant a disguised copy**: submit a renamed copy of Alice, then open **Similarity** and see it join her component.
+5. **Demo lab -> Controlled transformations**: which edits fool raw text but not token n-grams. Then *Pipeline viewer* and *Scalability*.
+
+---
+
 ## 9. Usage
 
 ### Student
