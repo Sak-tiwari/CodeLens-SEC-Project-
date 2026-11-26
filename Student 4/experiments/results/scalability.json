@@ -1,0 +1,56 @@
+{
+ "rows": [
+  {
+   "n": 50,
+   "pairs": 1225,
+   "theory_pairs": 1225,
+   "tokenize_ms": 15.88,
+   "similarity_ms": 12.59,
+   "graph_ms": 0.15,
+   "total_ms": 28.61,
+   "components": 7
+  },
+  {
+   "n": 100,
+   "pairs": 4950,
+   "theory_pairs": 4950,
+   "tokenize_ms": 33.45,
+   "similarity_ms": 47.98,
+   "graph_ms": 0.31,
+   "total_ms": 81.74,
+   "components": 6
+  },
+  {
+   "n": 200,
+   "pairs": 19900,
+   "theory_pairs": 19900,
+   "tokenize_ms": 70.36,
+   "similarity_ms": 184.15,
+   "graph_ms": 1.06,
+   "total_ms": 255.57,
+   "components": 6
+  },
+  {
+   "n": 400,
+   "pairs": 79800,
+   "theory_pairs": 79800,
+   "tokenize_ms": 123.93,
+   "similarity_ms": 733.0,
+   "graph_ms": 6.09,
+   "total_ms": 863.02,
+   "components": 6
+  },
+  {
+   "n": 600,
+   "pairs": 179700,
+   "theory_pairs": 179700,
+   "tokenize_ms": 207.34,
+   "similarity_ms": 1947.4,
+   "graph_ms": 9.16,
+   "total_ms": 2163.9,
+   "components": 6
+  }
+ ],
+ "similarity_exponent": 2.0091497102119633,
+ "total_exponent": 1.7228756159111842
+}
