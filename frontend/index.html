@@ -3,26 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CodeLens Dashboard</title>
+<meta name="color-scheme" content="dark">
+<title>CodeLens</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2305070b'/%3E%3Ccircle cx='14' cy='14' r='8.5' fill='none' stroke='%233d86ff' stroke-width='2.6'/%3E%3Cpath d='M20.5 20.5L27 27' stroke='%233d86ff' stroke-width='3.4' stroke-linecap='round'/%3E%3Cpath d='M11.5 10.8L8.8 14l2.7 3.2M16.5 10.8l2.7 3.2-2.7 3.2' fill='none' stroke='%23e8edf6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand"><span class="logo">&lt;/&gt;</span><div><b>CodeLens</b><small>C assessment &amp; structural similarity</small></div></div>
+<a class="skip" href="#view">Skip to content</a>
+<aside class="rail">
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 32 32" width="38" height="38" role="img" aria-label="CodeLens logo: a magnifying glass over code brackets">
+      <circle cx="14" cy="14" r="8.5" fill="#070b12" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M20.6 20.6L27.5 27.5" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M11.4 10.6L8.6 14l2.8 3.4M16.6 10.6l2.8 3.4-2.8 3.4" fill="none" stroke="#e8edf6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14.9 9.6l-1.8 8.8" stroke="#e8edf6" stroke-width="1.5" stroke-linecap="round" opacity=".55"/>
+    </svg>
+    <div class="word"><b>Code<span>Lens</span></b><small>C assessment &amp; structural similarity</small></div>
+  </div>
   <nav id="nav" aria-label="Sections"></nav>
-  <div class="ctl">
+  <div class="rail-foot">
+    <span id="health" class="chip" title="Compiler available on the server"></span>
+    <p>Flags structural similarity for review. A person decides, never the tool.</p>
+  </div>
+</aside>
+<div class="shell">
+  <header class="topbar">
     <label class="sel">Assignment <select id="assignment"></select></label>
+    <div class="spacer"></div>
+    <label class="sel" id="userWrap" hidden>Acting as <select id="user"></select></label>
     <div class="seg" role="group" aria-label="Role">
       <button data-role="instructor" class="on">Instructor</button>
       <button data-role="student">Student</button>
     </div>
-    <label class="sel" id="userWrap" hidden>As <select id="user"></select></label>
-    <span id="health" class="chip" title="Compiler available on the server"></span>
-  </div>
-</header>
-<main id="view" tabindex="-1"></main>
+  </header>
+  <main id="view" tabindex="-1"></main>
+</div>
 <div id="modal" class="modal" hidden><div class="sheet" role="dialog" aria-modal="true"><button class="x" id="modalClose" aria-label="Close">&times;</button><div id="modalBody"></div></div></div>
-<div id="toast" class="toast" hidden></div>
+<div id="toast" class="toast" hidden role="status"></div>
 <div id="tip" class="tip" hidden></div>
 <script src="app.js"></script>
 </body>

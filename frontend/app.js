@@ -6,10 +6,10 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const pct = (x) => (x * 100).toFixed(0) + "%";
 const f2 = (x) => Number(x).toFixed(2);
 const STATUS = {
-  PASS: ["Pass", "#16a34a"], WRONG_ANSWER: ["Wrong answer", "#d97706"], COMPILATION_ERROR: ["Compile error", "#dc2626"],
-  RUNTIME_ERROR: ["Runtime error", "#9333ea"], TIMEOUT: ["Timeout", "#0284c7"],
+  PASS: ["Pass", "#3ddc97"], WRONG_ANSWER: ["Wrong answer", "#f2b84b"], COMPILATION_ERROR: ["Compile error", "#ff6b7a"],
+  RUNTIME_ERROR: ["Runtime error", "#b79cff"], TIMEOUT: ["Timeout", "#4fd1e8"],
 };
-const PALETTE = ["#4338ca", "#0f766e", "#c2410c", "#be185d", "#4d7c0f", "#0369a1", "#7e22ce", "#a16207", "#b91c1c", "#0e7490"];
+const PALETTE = ["#4d8dff", "#4fd1e8", "#f2b84b", "#ff7a90", "#7ee787", "#b79cff", "#ff9e64", "#5eead4", "#c4cee0", "#2f6af0"];
 const SIM_LABELS = { raw: "Raw text (Levenshtein)", normalized: "Normalized text", cosine: "Token cosine", ngram: "Token n-gram Jaccard", length: "Length ratio", lcs: "LCS (tokens)" };
 
 const state = {
@@ -27,9 +27,9 @@ function badge(status) { const s = STATUS[status]; return `<span class="badge ${
 function pills(execs) { return `<span class="pills" title="One square per test">${(execs || []).map((e) => `<i class="${esc(e.status)}" title="Test ${e.test_id}: ${esc(e.status)}"></i>`).join("")}</span>`; }
 function bar(v, cls = "") { return `<div class="bar ${cls}" role="img" aria-label="${pct(v)}"><i style="width:${Math.max(0, Math.min(1, v)) * 100}%"></i></div>`; }
 function code(src) { return `<pre class="code">${String(src).split("\n").map((l, i) => `<span class="ln" data-n="${i + 1}">${esc(l) || " "}</span>`).join("")}</pre>`; }
-function heatColor(v) { // light -> indigo
+function heatColor(v) { // near-black -> electric blue
   const t = Math.max(0, Math.min(1, v));
-  const a = [244, 246, 251], b = [67, 56, 202];
+  const a = [10, 15, 24], b = [61, 134, 255];
   return `rgb(${a.map((x, i) => Math.round(x + (b[i] - x) * t)).join(",")})`;
 }
 let toastTimer;
@@ -246,18 +246,18 @@ function drawHeat(a, ids) {
   const n = ids.length, cv = $("#heat"), ctx = cv.getContext("2d"), lab = 96, cell = Math.max(26, Math.min(56, Math.floor(520 / Math.max(n, 1))));
   const dpr = window.devicePixelRatio || 1, size = lab + n * cell + 4;
   cv.width = size * dpr; cv.height = size * dpr; cv.style.width = size + "px"; cv.style.height = size + "px"; ctx.scale(dpr, dpr);
-  ctx.font = "11px system-ui"; ctx.textBaseline = "middle";
+  ctx.font = "11px ui-monospace, Consolas, monospace"; ctx.textBaseline = "middle";
   a.submissions.forEach((s, i) => {
-    ctx.fillStyle = "#475569"; ctx.textAlign = "right"; ctx.fillText(s.label.replace(/ v1$/, ""), lab - 6, lab + i * cell + cell / 2);
+    ctx.fillStyle = "#8793a8"; ctx.textAlign = "right"; ctx.fillText(s.label.replace(/ v1$/, ""), lab - 6, lab + i * cell + cell / 2);
   });
   // column headers (rotated)
-  a.submissions.forEach((s, i) => { ctx.save(); ctx.translate(lab + i * cell + cell / 2, lab - 8); ctx.rotate(-Math.PI / 4); ctx.fillStyle = "#475569"; ctx.textAlign = "left"; ctx.fillText(s.label.replace(/ v1$/, ""), 0, 0); ctx.restore(); });
+  a.submissions.forEach((s, i) => { ctx.save(); ctx.translate(lab + i * cell + cell / 2, lab - 8); ctx.rotate(-Math.PI / 4); ctx.fillStyle = "#8793a8"; ctx.textAlign = "left"; ctx.fillText(s.label.replace(/ v1$/, ""), 0, 0); ctx.restore(); });
   ctx.textAlign = "center";
   for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
     const v = a.matrix[i][j], x = lab + j * cell, y = lab + i * cell;
     ctx.fillStyle = heatColor(v); ctx.fillRect(x + 1, y + 1, cell - 2, cell - 2);
-    if (i !== j && v >= a.params.threshold) { ctx.strokeStyle = "#f59e0b"; ctx.lineWidth = 2; ctx.strokeRect(x + 2, y + 2, cell - 4, cell - 4); }
-    ctx.fillStyle = v > 0.55 ? "#fff" : "#334155"; if (cell >= 30) ctx.fillText(v.toFixed(2).replace(/^0/, ""), x + cell / 2, y + cell / 2);
+    if (i !== j && v >= a.params.threshold) { ctx.strokeStyle = "#ffffff"; ctx.lineWidth = 2; ctx.strokeRect(x + 2, y + 2, cell - 4, cell - 4); }
+    ctx.fillStyle = v > 0.78 ? "#03060b" : "#d6e0f2"; if (cell >= 30) ctx.fillText(v.toFixed(2).replace(/^0/, ""), x + cell / 2, y + cell / 2);
   }
   const hit = (e) => { const r = cv.getBoundingClientRect(), x = e.clientX - r.left - lab, y = e.clientY - r.top - lab; const j = Math.floor(x / cell), i = Math.floor(y / cell); return i >= 0 && j >= 0 && i < n && j < n ? [i, j] : null; };
   cv.onmousemove = (e) => { const h = hit(e); cv.style.cursor = h && h[0] !== h[1] ? "pointer" : "default"; tip(e, h ? `<b>${esc(a.submissions[h[0]].label)}</b> &harr; <b>${esc(a.submissions[h[1]].label)}</b><br>similarity ${a.matrix[h[0]][h[1]].toFixed(3)}` : null); };
@@ -272,9 +272,9 @@ function drawGraph(a) {
   order.forEach((id, i) => { const ang = (2 * Math.PI * i) / n - Math.PI / 2; pos[id] = [cx + R * Math.cos(ang), cy + R * Math.sin(ang)]; });
   const lab = Object.fromEntries(a.submissions.map((s) => [s.id, s]));
   const edges = a.edges.map((e) => `<g class="edge" data-a="${e.a}" data-b="${e.b}"><line x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}" stroke="${PALETTE[compOf[e.a] % PALETTE.length]}" stroke-opacity=".55" stroke-width="${1 + (e.w - a.params.threshold) * 14}"/><line x1="${pos[e.a][0]}" y1="${pos[e.a][1]}" x2="${pos[e.b][0]}" y2="${pos[e.b][1]}" stroke="transparent" stroke-width="12"><title>${esc(lab[e.a].label)} - ${esc(lab[e.b].label)}: ${e.w.toFixed(2)}</title></line></g>`).join("");
-  const nodes = order.map((id) => { const [x, y] = pos[id], c = PALETTE[compOf[id] % PALETTE.length], st = STATUS[lab[id].status]?.[1] || "#94a3b8";
-    return `<g class="node" data-id="${id}" transform="translate(${x},${y})"><circle r="17" fill="${c}"/><circle r="21" fill="none" stroke="${st}" stroke-width="3"/><text y="38" text-anchor="middle" font-size="11" fill="#334155">${esc(lab[id].label.replace(/ v1$/, ""))}</text><title>${esc(lab[id].label)} - ${esc(STATUS[lab[id].status]?.[0] || "")}</title></g>`; }).join("");
-  $("#graph").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Similarity graph">${edges}${nodes}</svg><div class="legend"><span style="--c:#4338ca">Fill = component</span><span style="--c:#16a34a">Ring = test outcome</span></div>`;
+  const nodes = order.map((id) => { const [x, y] = pos[id], c = PALETTE[compOf[id] % PALETTE.length], st = STATUS[lab[id].status]?.[1] || "#5d6b82";
+    return `<g class="node" data-id="${id}" transform="translate(${x},${y})"><circle r="17" fill="${c}" fill-opacity=".9"/><circle r="21" fill="none" stroke="${st}" stroke-width="3"/><text y="38" text-anchor="middle" font-size="11" fill="#b6c2d8">${esc(lab[id].label.replace(/ v1$/, ""))}</text><title>${esc(lab[id].label)} - ${esc(STATUS[lab[id].status]?.[0] || "")}</title></g>`; }).join("");
+  $("#graph").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Similarity graph">${edges}${nodes}</svg><div class="legend"><span style="--c:#4d8dff">Fill = component</span><span style="--c:#3ddc97">Ring = test outcome</span></div>`;
   $("#graph").querySelectorAll(".node").forEach((g) => (g.onclick = () => showSubmission(+g.dataset.id)));
   $("#graph").querySelectorAll(".edge").forEach((g) => (g.onclick = () => { const p = a.pairs.find((p) => p.a === +g.dataset.a && p.b === +g.dataset.b); showPair(+g.dataset.a, +g.dataset.b, p ? p.z : null); }));
 }
@@ -306,7 +306,7 @@ async function lab(el) {
   await ({ transform: labTransform, plant: labPlant, compare: labCompare, pipeline: labPipeline, scale: labScale }[state.lab])(body, subs);
 }
 const subOptions = (subs, sel) => subs.map((s) => `<option value="${s.submission_id}" ${s.submission_id === sel ? "selected" : ""}>#${s.submission_id} ${esc(s.student)} v${s.version} (${esc(STATUS[s.overall_status]?.[0] || "")})</option>`).join("");
-function cellStyle(v) { const c = heatColor(v); return `background:${c};color:${v > 0.55 ? "#fff" : "#1e293b"}`; }
+function cellStyle(v) { const c = heatColor(v); return `background:${c};color:${v > 0.78 ? "#03060b" : "#d6e0f2"}`; }
 
 async function labTransform(body, subs) {
   const q = (sel) => body.querySelector(sel);
@@ -403,11 +403,11 @@ function lineChart(rows) {
   const pts = rows.map((r) => [X(r.pairs), Y(r.total_ms)]);
   const ticks = [0, 0.25, 0.5, 0.75, 1];
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Runtime versus pair count" style="width:100%;height:auto">
-    ${ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${Y(my * t)}" y2="${Y(my * t)}" stroke="#e2e6ec"/><text x="${L - 8}" y="${Y(my * t) + 4}" text-anchor="end" font-size="11" fill="#5b6676">${(my * t).toFixed(my < 10 ? 1 : 0)}</text>`).join("")}
-    ${ticks.map((t) => `<text x="${X(mx * t)}" y="${H - B + 18}" text-anchor="middle" font-size="11" fill="#5b6676">${Math.round(mx * t)}</text>`).join("")}
-    <text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle" font-size="12" fill="#334155">pairs N(N-1)/2</text><text transform="translate(14 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle" font-size="12" fill="#334155">total time (ms)</text>
-    <polyline fill="none" stroke="#4338ca" stroke-width="2.5" points="${pts.map((p) => p.join(",")).join(" ")}"/>
-    ${rows.map((r, i) => `<circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="4.5" fill="#4338ca"><title>N=${r.n}: ${r.total_ms} ms for ${r.pairs} pairs</title></circle><text x="${pts[i][0]}" y="${pts[i][1] - 10}" text-anchor="middle" font-size="11" fill="#334155">N=${r.n}</text>`).join("")}</svg>`;
+    ${ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${Y(my * t)}" y2="${Y(my * t)}" stroke="#182131"/><text x="${L - 8}" y="${Y(my * t) + 4}" text-anchor="end" font-size="11" fill="#8793a8">${(my * t).toFixed(my < 10 ? 1 : 0)}</text>`).join("")}
+    ${ticks.map((t) => `<text x="${X(mx * t)}" y="${H - B + 18}" text-anchor="middle" font-size="11" fill="#8793a8">${Math.round(mx * t)}</text>`).join("")}
+    <text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle" font-size="12" fill="#b6c2d8">pairs N(N-1)/2</text><text transform="translate(14 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle" font-size="12" fill="#b6c2d8">total time (ms)</text>
+    <polyline fill="none" stroke="#4d8dff" stroke-width="2.5" points="${pts.map((p) => p.join(",")).join(" ")}"/>
+    ${rows.map((r, i) => `<circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="4.5" fill="#05070b" stroke="#4d8dff" stroke-width="2.2"><title>N=${r.n}: ${r.total_ms} ms for ${r.pairs} pairs</title></circle><text x="${pts[i][0]}" y="${pts[i][1] - 10}" text-anchor="middle" font-size="11" fill="#b6c2d8">N=${r.n}</text>`).join("")}</svg>`;
 }
 
 /* ---------------------------------------------------------------- boot */
