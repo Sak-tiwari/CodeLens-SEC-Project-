@@ -19,7 +19,7 @@ python experiments/run_scalability.py 50,100,200,400,600
 |---|---|
 | Dashboard (beige / ink / blue theme, magnifier logo) | `frontend/` |
 | Similarity matrix (heatmap) and graph | `frontend/app.js` `drawHeat`, `drawGraph`; Similarity view |
-| Pair viewer (side by side, score breakdown, explanation) | `showPair`, `showSscdPair` |
+| Pair viewer (side by side, score breakdown, explanation) | `frontend/pair_viewer.js` (`showPair`, `showSscdPair`) |
 | Statistical analysis (mean, std dev, z-scores, histograms, outliers) | Statistics view; `analysis/statistics/outliers.py` |
 | SSCD evaluation (Experiments 4, 5, 9 on real clones) | `analysis/sscd_eval.py`, `experiments/run_sscd_evaluation.py`, SSCD evaluation view |
 | Scalability (Experiments 8, 9) | `backend/services.py` `scalability`, `experiments/run_scalability.py`, Scalability view |
