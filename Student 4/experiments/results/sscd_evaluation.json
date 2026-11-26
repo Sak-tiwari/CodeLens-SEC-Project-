@@ -1,0 +1,7483 @@
+{
+ "meta": {
+  "positives": 80,
+  "negatives": 160,
+  "seed": 42,
+  "n": 3,
+  "weights": {
+   "raw": 0.1,
+   "cosine": 0.25,
+   "ngram": 0.55,
+   "length": 0.1,
+   "lcs": 0.0
+  },
+  "fragments": 160,
+  "elapsed_ms": 1096.1,
+  "negatives_note": "Sampled comparison / non-clone candidates (two fragments from different clone groups). Not verified ground truth; inspect a subset by hand."
+ },
+ "thresholds": [
+  0.5,
+  0.6,
+  0.7,
+  0.75,
+  0.8,
+  0.85,
+  0.9,
+  0.95
+ ],
+ "measures": [
+  "raw",
+  "normalized",
+  "cosine",
+  "ngram",
+  "length",
+  "lcs",
+  "composite"
+ ],
+ "summary": {
+  "raw": {
+   "auc": 1.0,
+   "mean_pos": 0.7278197827361756,
+   "mean_neg": 0.23078799378382564,
+   "median_pos": 0.7303433912252979,
+   "median_neg": 0.23032656457824108,
+   "best_t": 0.5,
+   "best_f1": 1.0
+  },
+  "normalized": {
+   "auc": 1.0,
+   "mean_pos": 0.7393941227047375,
+   "mean_neg": 0.19714328076775756,
+   "median_pos": 0.7412656521241067,
+   "median_neg": 0.19100698886645023,
+   "best_t": 0.5,
+   "best_f1": 1.0
+  },
+  "cosine": {
+   "auc": 0.913984375,
+   "mean_pos": 0.9862499458287755,
+   "mean_neg": 0.9481768781524805,
+   "median_pos": 0.9890694991403486,
+   "median_neg": 0.9555858332305202,
+   "best_t": 0.95,
+   "best_f1": 0.632
+  },
+  "ngram": {
+   "auc": 1.0,
+   "mean_pos": 0.7647014613136216,
+   "mean_neg": 0.22111992966035596,
+   "median_pos": 0.7619839449541284,
+   "median_neg": 0.2138364779874214,
+   "best_t": 0.6,
+   "best_f1": 1.0
+  },
+  "length": {
+   "auc": 0.674921875,
+   "mean_pos": 0.8378199669994594,
+   "mean_neg": 0.7298729000134346,
+   "median_pos": 0.8423020151456809,
+   "median_neg": 0.7604438237119802,
+   "best_t": 0.7,
+   "best_f1": 0.6023166023166022
+  },
+  "lcs": {
+   "auc": 0.999140625,
+   "mean_pos": 0.7839954680812777,
+   "mean_neg": 0.4485880872803548,
+   "median_pos": 0.7823489846902825,
+   "median_neg": 0.4563938748605618,
+   "best_t": 0.6,
+   "best_f1": 0.9753086419753086
+  },
+  "composite": {
+   "auc": 1.0,
+   "mean_pos": 0.8237122651532492,
+   "mean_neg": 0.45472627023104195,
+   "median_pos": 0.8220741010721084,
+   "median_neg": 0.45140461491844175,
+   "best_t": 0.7,
+   "best_f1": 1.0
+  }
+ },
+ "curves": {
+  "raw": [
+   {
+    "t": 0.5,
+    "tp": 80,
+    "fp": 0,
+    "recall": 1.0,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 1.0
+   },
+   {
+    "t": 0.6,
+    "tp": 77,
+    "fp": 0,
+    "recall": 0.9625,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.980891719745223
+   },
+   {
+    "t": 0.7,
+    "tp": 53,
+    "fp": 0,
+    "recall": 0.6625,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.7969924812030075
+   },
+   {
+    "t": 0.75,
+    "tp": 33,
+    "fp": 0,
+    "recall": 0.4125,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.5840707964601769
+   },
+   {
+    "t": 0.8,
+    "tp": 11,
+    "fp": 0,
+    "recall": 0.1375,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.2417582417582418
+   },
+   {
+    "t": 0.85,
+    "tp": 2,
+    "fp": 0,
+    "recall": 0.025,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.04878048780487806
+   },
+   {
+    "t": 0.9,
+    "tp": 0,
+    "fp": 0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "precision": 0.0,
+    "f1": 0.0
+   },
+   {
+    "t": 0.95,
+    "tp": 0,
+    "fp": 0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "precision": 0.0,
+    "f1": 0.0
+   }
+  ],
+  "normalized": [
+   {
+    "t": 0.5,
+    "tp": 80,
+    "fp": 0,
+    "recall": 1.0,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 1.0
+   },
+   {
+    "t": 0.6,
+    "tp": 78,
+    "fp": 0,
+    "recall": 0.975,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.9873417721518987
+   },
+   {
+    "t": 0.7,
+    "tp": 61,
+    "fp": 0,
+    "recall": 0.7625,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.8652482269503545
+   },
+   {
+    "t": 0.75,
+    "tp": 35,
+    "fp": 0,
+    "recall": 0.4375,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.6086956521739131
+   },
+   {
+    "t": 0.8,
+    "tp": 14,
+    "fp": 0,
+    "recall": 0.175,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.2978723404255319
+   },
+   {
+    "t": 0.85,
+    "tp": 3,
+    "fp": 0,
+    "recall": 0.0375,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.07228915662650602
+   },
+   {
+    "t": 0.9,
+    "tp": 0,
+    "fp": 0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "precision": 0.0,
+    "f1": 0.0
+   },
+   {
+    "t": 0.95,
+    "tp": 0,
+    "fp": 0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "precision": 0.0,
+    "f1": 0.0
+   }
+  ],
+  "cosine": [
+   {
+    "t": 0.5,
+    "tp": 80,
+    "fp": 160,
+    "recall": 1.0,
+    "fpr": 1.0,
+    "precision": 0.3333333333333333,
+    "f1": 0.5
+   },
+   {
+    "t": 0.6,
+    "tp": 80,
+    "fp": 160,
+    "recall": 1.0,
+    "fpr": 1.0,
+    "precision": 0.3333333333333333,
+    "f1": 0.5
+   },
+   {
+    "t": 0.7,
+    "tp": 80,
+    "fp": 160,
+    "recall": 1.0,
+    "fpr": 1.0,
+    "precision": 0.3333333333333333,
+    "f1": 0.5
+   },
+   {
+    "t": 0.75,
+    "tp": 80,
+    "fp": 160,
+    "recall": 1.0,
+    "fpr": 1.0,
+    "precision": 0.3333333333333333,
+    "f1": 0.5
+   },
+   {
+    "t": 0.8,
+    "tp": 80,
+    "fp": 160,
+    "recall": 1.0,
+    "fpr": 1.0,
+    "precision": 0.3333333333333333,
+    "f1": 0.5
+   },
+   {
+    "t": 0.85,
+    "tp": 80,
+    "fp": 158,
+    "recall": 1.0,
+    "fpr": 0.9875,
+    "precision": 0.33613445378151263,
+    "f1": 0.5031446540880503
+   },
+   {
+    "t": 0.9,
+    "tp": 80,
+    "fp": 147,
+    "recall": 1.0,
+    "fpr": 0.91875,
+    "precision": 0.3524229074889868,
+    "f1": 0.5211726384364821
+   },
+   {
+    "t": 0.95,
+    "tp": 79,
+    "fp": 91,
+    "recall": 0.9875,
+    "fpr": 0.56875,
+    "precision": 0.4647058823529412,
+    "f1": 0.632
+   }
+  ],
+  "ngram": [
+   {
+    "t": 0.5,
+    "tp": 80,
+    "fp": 2,
+    "recall": 1.0,
+    "fpr": 0.0125,
+    "precision": 0.975609756097561,
+    "f1": 0.9876543209876543
+   },
+   {
+    "t": 0.6,
+    "tp": 80,
+    "fp": 0,
+    "recall": 1.0,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 1.0
+   },
+   {
+    "t": 0.7,
+    "tp": 66,
+    "fp": 0,
+    "recall": 0.825,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.9041095890410958
+   },
+   {
+    "t": 0.75,
+    "tp": 47,
+    "fp": 0,
+    "recall": 0.5875,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.7401574803149606
+   },
+   {
+    "t": 0.8,
+    "tp": 22,
+    "fp": 0,
+    "recall": 0.275,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.4313725490196079
+   },
+   {
+    "t": 0.85,
+    "tp": 11,
+    "fp": 0,
+    "recall": 0.1375,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.2417582417582418
+   },
+   {
+    "t": 0.9,
+    "tp": 2,
+    "fp": 0,
+    "recall": 0.025,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.04878048780487806
+   },
+   {
+    "t": 0.95,
+    "tp": 1,
+    "fp": 0,
+    "recall": 0.0125,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.02469135802469136
+   }
+  ],
+  "length": [
+   {
+    "t": 0.5,
+    "tp": 80,
+    "fp": 141,
+    "recall": 1.0,
+    "fpr": 0.88125,
+    "precision": 0.36199095022624433,
+    "f1": 0.5315614617940199
+   },
+   {
+    "t": 0.6,
+    "tp": 80,
+    "fp": 119,
+    "recall": 1.0,
+    "fpr": 0.74375,
+    "precision": 0.4020100502512563,
+    "f1": 0.5734767025089607
+   },
+   {
+    "t": 0.7,
+    "tp": 78,
+    "fp": 101,
+    "recall": 0.975,
+    "fpr": 0.63125,
+    "precision": 0.43575418994413406,
+    "f1": 0.6023166023166022
+   },
+   {
+    "t": 0.75,
+    "tp": 67,
+    "fp": 83,
+    "recall": 0.8375,
+    "fpr": 0.51875,
+    "precision": 0.44666666666666666,
+    "f1": 0.5826086956521739
+   },
+   {
+    "t": 0.8,
+    "tp": 53,
+    "fp": 69,
+    "recall": 0.6625,
+    "fpr": 0.43125,
+    "precision": 0.4344262295081967,
+    "f1": 0.5247524752475247
+   },
+   {
+    "t": 0.85,
+    "tp": 38,
+    "fp": 47,
+    "recall": 0.475,
+    "fpr": 0.29375,
+    "precision": 0.4470588235294118,
+    "f1": 0.4606060606060606
+   },
+   {
+    "t": 0.9,
+    "tp": 23,
+    "fp": 30,
+    "recall": 0.2875,
+    "fpr": 0.1875,
+    "precision": 0.4339622641509434,
+    "f1": 0.3458646616541353
+   },
+   {
+    "t": 0.95,
+    "tp": 7,
+    "fp": 10,
+    "recall": 0.0875,
+    "fpr": 0.0625,
+    "precision": 0.4117647058823529,
+    "f1": 0.14432989690721648
+   }
+  ],
+  "lcs": [
+   {
+    "t": 0.5,
+    "tp": 80,
+    "fp": 48,
+    "recall": 1.0,
+    "fpr": 0.3,
+    "precision": 0.625,
+    "f1": 0.7692307692307693
+   },
+   {
+    "t": 0.6,
+    "tp": 79,
+    "fp": 3,
+    "recall": 0.9875,
+    "fpr": 0.01875,
+    "precision": 0.9634146341463414,
+    "f1": 0.9753086419753086
+   },
+   {
+    "t": 0.7,
+    "tp": 75,
+    "fp": 0,
+    "recall": 0.9375,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.967741935483871
+   },
+   {
+    "t": 0.75,
+    "tp": 56,
+    "fp": 0,
+    "recall": 0.7,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.8235294117647058
+   },
+   {
+    "t": 0.8,
+    "tp": 33,
+    "fp": 0,
+    "recall": 0.4125,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.5840707964601769
+   },
+   {
+    "t": 0.85,
+    "tp": 12,
+    "fp": 0,
+    "recall": 0.15,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.2608695652173913
+   },
+   {
+    "t": 0.9,
+    "tp": 1,
+    "fp": 0,
+    "recall": 0.0125,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.02469135802469136
+   },
+   {
+    "t": 0.95,
+    "tp": 0,
+    "fp": 0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "precision": 0.0,
+    "f1": 0.0
+   }
+  ],
+  "composite": [
+   {
+    "t": 0.5,
+    "tp": 80,
+    "fp": 42,
+    "recall": 1.0,
+    "fpr": 0.2625,
+    "precision": 0.6557377049180327,
+    "f1": 0.7920792079207921
+   },
+   {
+    "t": 0.6,
+    "tp": 80,
+    "fp": 3,
+    "recall": 1.0,
+    "fpr": 0.01875,
+    "precision": 0.963855421686747,
+    "f1": 0.9815950920245399
+   },
+   {
+    "t": 0.7,
+    "tp": 80,
+    "fp": 0,
+    "recall": 1.0,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 1.0
+   },
+   {
+    "t": 0.75,
+    "tp": 78,
+    "fp": 0,
+    "recall": 0.975,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.9873417721518987
+   },
+   {
+    "t": 0.8,
+    "tp": 57,
+    "fp": 0,
+    "recall": 0.7125,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.832116788321168
+   },
+   {
+    "t": 0.85,
+    "tp": 18,
+    "fp": 0,
+    "recall": 0.225,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.36734693877551017
+   },
+   {
+    "t": 0.9,
+    "tp": 5,
+    "fp": 0,
+    "recall": 0.0625,
+    "fpr": 0.0,
+    "precision": 1.0,
+    "f1": 0.11764705882352941
+   },
+   {
+    "t": 0.95,
+    "tp": 0,
+    "fp": 0,
+    "recall": 0.0,
+    "fpr": 0.0,
+    "precision": 0.0,
+    "f1": 0.0
+   }
+  ]
+ },
+ "ngram_sizes": [
+  {
+   "n": 2,
+   "auc": 0.9980859375,
+   "mean_pos": 0.7939507690930218,
+   "mean_neg": 0.3739330129578833,
+   "curve": [
+    {
+     "t": 0.5,
+     "tp": 80,
+     "fp": 16,
+     "recall": 1.0,
+     "fpr": 0.1,
+     "precision": 0.8333333333333334,
+     "f1": 0.9090909090909091
+    },
+    {
+     "t": 0.6,
+     "tp": 79,
+     "fp": 4,
+     "recall": 0.9875,
+     "fpr": 0.025,
+     "precision": 0.9518072289156626,
+     "f1": 0.9693251533742331
+    },
+    {
+     "t": 0.7,
+     "tp": 75,
+     "fp": 2,
+     "recall": 0.9375,
+     "fpr": 0.0125,
+     "precision": 0.974025974025974,
+     "f1": 0.9554140127388535
+    },
+    {
+     "t": 0.75,
+     "tp": 62,
+     "fp": 0,
+     "recall": 0.775,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.8732394366197184
+    },
+    {
+     "t": 0.8,
+     "tp": 34,
+     "fp": 0,
+     "recall": 0.425,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.5964912280701754
+    },
+    {
+     "t": 0.85,
+     "tp": 16,
+     "fp": 0,
+     "recall": 0.2,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.33333333333333337
+    },
+    {
+     "t": 0.9,
+     "tp": 8,
+     "fp": 0,
+     "recall": 0.1,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.18181818181818182
+    },
+    {
+     "t": 0.95,
+     "tp": 1,
+     "fp": 0,
+     "recall": 0.0125,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.02469135802469136
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "auc": 1.0,
+   "mean_pos": 0.7647014613136216,
+   "mean_neg": 0.22111992966035596,
+   "curve": [
+    {
+     "t": 0.5,
+     "tp": 80,
+     "fp": 2,
+     "recall": 1.0,
+     "fpr": 0.0125,
+     "precision": 0.975609756097561,
+     "f1": 0.9876543209876543
+    },
+    {
+     "t": 0.6,
+     "tp": 80,
+     "fp": 0,
+     "recall": 1.0,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 1.0
+    },
+    {
+     "t": 0.7,
+     "tp": 66,
+     "fp": 0,
+     "recall": 0.825,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.9041095890410958
+    },
+    {
+     "t": 0.75,
+     "tp": 47,
+     "fp": 0,
+     "recall": 0.5875,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.7401574803149606
+    },
+    {
+     "t": 0.8,
+     "tp": 22,
+     "fp": 0,
+     "recall": 0.275,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.4313725490196079
+    },
+    {
+     "t": 0.85,
+     "tp": 11,
+     "fp": 0,
+     "recall": 0.1375,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.2417582417582418
+    },
+    {
+     "t": 0.9,
+     "tp": 2,
+     "fp": 0,
+     "recall": 0.025,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.04878048780487806
+    },
+    {
+     "t": 0.95,
+     "tp": 1,
+     "fp": 0,
+     "recall": 0.0125,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.02469135802469136
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "auc": 1.0,
+   "mean_pos": 0.7303013553032974,
+   "mean_neg": 0.1306280731131467,
+   "curve": [
+    {
+     "t": 0.5,
+     "tp": 80,
+     "fp": 0,
+     "recall": 1.0,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 1.0
+    },
+    {
+     "t": 0.6,
+     "tp": 79,
+     "fp": 0,
+     "recall": 0.9875,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.9937106918238994
+    },
+    {
+     "t": 0.7,
+     "tp": 54,
+     "fp": 0,
+     "recall": 0.675,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.8059701492537313
+    },
+    {
+     "t": 0.75,
+     "tp": 32,
+     "fp": 0,
+     "recall": 0.4,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.5714285714285715
+    },
+    {
+     "t": 0.8,
+     "tp": 11,
+     "fp": 0,
+     "recall": 0.1375,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.2417582417582418
+    },
+    {
+     "t": 0.85,
+     "tp": 5,
+     "fp": 0,
+     "recall": 0.0625,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.11764705882352941
+    },
+    {
+     "t": 0.9,
+     "tp": 1,
+     "fp": 0,
+     "recall": 0.0125,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.02469135802469136
+    },
+    {
+     "t": 0.95,
+     "tp": 1,
+     "fp": 0,
+     "recall": 0.0125,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.02469135802469136
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "auc": 1.0,
+   "mean_pos": 0.6953232595274209,
+   "mean_neg": 0.07878173584815923,
+   "curve": [
+    {
+     "t": 0.5,
+     "tp": 79,
+     "fp": 0,
+     "recall": 0.9875,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.9937106918238994
+    },
+    {
+     "t": 0.6,
+     "tp": 72,
+     "fp": 0,
+     "recall": 0.9,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.9473684210526316
+    },
+    {
+     "t": 0.7,
+     "tp": 38,
+     "fp": 0,
+     "recall": 0.475,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.6440677966101694
+    },
+    {
+     "t": 0.75,
+     "tp": 18,
+     "fp": 0,
+     "recall": 0.225,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.36734693877551017
+    },
+    {
+     "t": 0.8,
+     "tp": 7,
+     "fp": 0,
+     "recall": 0.0875,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.16091954022988506
+    },
+    {
+     "t": 0.85,
+     "tp": 1,
+     "fp": 0,
+     "recall": 0.0125,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.02469135802469136
+    },
+    {
+     "t": 0.9,
+     "tp": 1,
+     "fp": 0,
+     "recall": 0.0125,
+     "fpr": 0.0,
+     "precision": 1.0,
+     "f1": 0.02469135802469136
+    },
+    {
+     "t": 0.95,
+     "tp": 0,
+     "fp": 0,
+     "recall": 0.0,
+     "fpr": 0.0,
+     "precision": 0.0,
+     "f1": 0.0
+    }
+   ]
+  }
+ ],
+ "granularity": {
+  "function": {
+   "count": 77,
+   "mean_composite": 0.8226079526241977
+  },
+  "block": {
+   "count": 3,
+   "mean_composite": 0.85205628673224
+  }
+ },
+ "filter": [
+  {
+   "t_l": 0.4,
+   "all_pairs": 12720,
+   "candidates": 11602,
+   "reduction": 0.0878930817610063,
+   "clones_retained": 80,
+   "clones_total": 80,
+   "retained_pct": 1.0
+  },
+  {
+   "t_l": 0.5,
+   "all_pairs": 12720,
+   "candidates": 10637,
+   "reduction": 0.1637578616352201,
+   "clones_retained": 80,
+   "clones_total": 80,
+   "retained_pct": 1.0
+  },
+  {
+   "t_l": 0.6,
+   "all_pairs": 12720,
+   "candidates": 9086,
+   "reduction": 0.2856918238993711,
+   "clones_retained": 80,
+   "clones_total": 80,
+   "retained_pct": 1.0
+  },
+  {
+   "t_l": 0.7,
+   "all_pairs": 12720,
+   "candidates": 7008,
+   "reduction": 0.4490566037735849,
+   "clones_retained": 78,
+   "clones_total": 80,
+   "retained_pct": 0.975
+  },
+  {
+   "t_l": 0.8,
+   "all_pairs": 12720,
+   "candidates": 4673,
+   "reduction": 0.632625786163522,
+   "clones_retained": 53,
+   "clones_total": 80,
+   "retained_pct": 0.6625
+  }
+ ],
+ "pairs": [
+  {
+   "kind": "clone",
+   "index": 0,
+   "group": 20,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/20/private/data_tag.c",
+    "start": 332,
+    "end": 365,
+    "tokens": 274
+   },
+   "b": {
+    "file": "dataset_c/20/open_source/common.c",
+    "start": 290,
+    "end": 316,
+    "tokens": 253
+   },
+   "scores": {
+    "raw": 0.7886178861788617,
+    "normalized": 0.8203677510608204,
+    "cosine": 0.992381321168213,
+    "ngram": 0.8922155688622755,
+    "length": 0.9233576642335767,
+    "lcs": 0.8759124087591241,
+    "composite": 0.9100114482075488
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 1,
+   "group": 21,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/21/private/decoder_util.c",
+    "start": 281,
+    "end": 316,
+    "tokens": 233
+   },
+   "b": {
+    "file": "dataset_c/21/open_source/conf.c",
+    "start": 471,
+    "end": 496,
+    "tokens": 182
+   },
+   "scores": {
+    "raw": 0.6721854304635762,
+    "normalized": 0.7157142857142857,
+    "cosine": 0.9854771730990861,
+    "ngram": 0.7769230769230769,
+    "length": 0.7811158798283262,
+    "lcs": 0.7811158798283262,
+    "composite": 0.8190071166116542
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 2,
+   "group": 22,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/22/private/digitech_xc0324.c",
+    "start": 233,
+    "end": 258,
+    "tokens": 188
+   },
+   "b": {
+    "file": "dataset_c/22/open_source/crf.c",
+    "start": 116,
+    "end": 132,
+    "tokens": 137
+   },
+   "scores": {
+    "raw": 0.7653276955602537,
+    "normalized": 0.792156862745098,
+    "cosine": 0.976214338819734,
+    "ngram": 0.7475728155339806,
+    "length": 0.7287234042553191,
+    "lcs": 0.7287234042553191,
+    "composite": 0.8046237432301802
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 3,
+   "group": 23,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/23/private/directv.c",
+    "start": 399,
+    "end": 423,
+    "tokens": 124
+   },
+   "b": {
+    "file": "dataset_c/23/open_source/crf_context.c",
+    "start": 237,
+    "end": 256,
+    "tokens": 102
+   },
+   "scores": {
+    "raw": 0.6411290322580645,
+    "normalized": 0.6303972366148531,
+    "cosine": 0.9913815934944415,
+    "ngram": 0.7,
+    "length": 0.8225806451612904,
+    "lcs": 0.717741935483871,
+    "composite": 0.7792163661155459
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 4,
+   "group": 24,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/24/private/dsc.c",
+    "start": 286,
+    "end": 320,
+    "tokens": 177
+   },
+   "b": {
+    "file": "dataset_c/24/open_source/crf_trainer.c",
+    "start": 120,
+    "end": 145,
+    "tokens": 126
+   },
+   "scores": {
+    "raw": 0.7264150943396226,
+    "normalized": 0.7658730158730158,
+    "cosine": 0.9745068464162072,
+    "ngram": 0.6818181818181818,
+    "length": 0.711864406779661,
+    "lcs": 0.6949152542372882,
+    "composite": 0.7624546617159802
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 5,
+   "group": 25,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/25/private/ecodhome.c",
+    "start": 206,
+    "end": 229,
+    "tokens": 153
+   },
+   "b": {
+    "file": "dataset_c/25/open_source/crf_trainer_averaged_perceptron.c",
+    "start": 157,
+    "end": 175,
+    "tokens": 131
+   },
+   "scores": {
+    "raw": 0.8049645390070922,
+    "normalized": 0.8454258675078864,
+    "cosine": 0.9945175565851713,
+    "ngram": 0.7111111111111111,
+    "length": 0.8562091503267973,
+    "lcs": 0.8366013071895425,
+    "composite": 0.8058578691907929
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 6,
+   "group": 26,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/26/private/efergy_optical.c",
+    "start": 156,
+    "end": 171,
+    "tokens": 136
+   },
+   "b": {
+    "file": "dataset_c/26/open_source/datatypes.c",
+    "start": 230,
+    "end": 240,
+    "tokens": 114
+   },
+   "scores": {
+    "raw": 0.7252475247524752,
+    "normalized": 0.7537537537537538,
+    "cosine": 0.987492366535759,
+    "ngram": 0.7634408602150538,
+    "length": 0.8382352941176471,
+    "lcs": 0.8382352941176471,
+    "composite": 0.8231138466392316
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 7,
+   "group": 27,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/27/private/elv.c",
+    "start": 222,
+    "end": 250,
+    "tokens": 179
+   },
+   "b": {
+    "file": "dataset_c/27/open_source/dedupe.c",
+    "start": 231,
+    "end": 254,
+    "tokens": 157
+   },
+   "scores": {
+    "raw": 0.7977653631284916,
+    "normalized": 0.8219895287958116,
+    "cosine": 0.9962419250084238,
+    "ngram": 0.7758620689655172,
+    "length": 0.8770949720670391,
+    "lcs": 0.8491620111731844,
+    "composite": 0.8432706527026935
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 8,
+   "group": 28,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/28/private/emontx.c",
+    "start": 166,
+    "end": 197,
+    "tokens": 169
+   },
+   "b": {
+    "file": "dataset_c/28/open_source/dfa.c",
+    "start": 183,
+    "end": 206,
+    "tokens": 125
+   },
+   "scores": {
+    "raw": 0.7007194244604317,
+    "normalized": 0.7004048582995952,
+    "cosine": 0.971910943113223,
+    "ngram": 0.7727272727272727,
+    "length": 0.7396449704142012,
+    "lcs": 0.7218934911242604,
+    "composite": 0.8120141752657691
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 9,
+   "group": 29,
+   "granularity": "block",
+   "a": {
+    "file": "dataset_c/29/private/ert_idm.c",
+    "start": 712,
+    "end": 735,
+    "tokens": 215
+   },
+   "b": {
+    "file": "dataset_c/29/open_source/dnspr.c",
+    "start": 156,
+    "end": 175,
+    "tokens": 198
+   },
+   "scores": {
+    "raw": 0.7590361445783133,
+    "normalized": 0.7944535073409462,
+    "cosine": 0.9966968368953347,
+    "ngram": 0.8548387096774194,
+    "length": 0.9209302325581395,
+    "lcs": 0.8604651162790697,
+    "composite": 0.8873321372600597
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 10,
+   "group": 30,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/30/private/fileformat.c",
+    "start": 351,
+    "end": 383,
+    "tokens": 165
+   },
+   "b": {
+    "file": "dataset_c/30/open_source/double_metaphone.c",
+    "start": 30,
+    "end": 53,
+    "tokens": 114
+   },
+   "scores": {
+    "raw": 0.6797066014669927,
+    "normalized": 0.7175843694493783,
+    "cosine": 0.9685226405279541,
+    "ngram": 0.7415730337078652,
+    "length": 0.6909090909090909,
+    "lcs": 0.6909090909090909,
+    "composite": 0.7870573979089228
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 11,
+   "group": 31,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/31/private/fineoffset.c",
+    "start": 1091,
+    "end": 1116,
+    "tokens": 133
+   },
+   "b": {
+    "file": "dataset_c/31/open_source/ecs.c",
+    "start": 39,
+    "end": 67,
+    "tokens": 111
+   },
+   "scores": {
+    "raw": 0.5133614627285513,
+    "normalized": 0.7093023255813953,
+    "cosine": 0.994103632368511,
+    "ngram": 0.7625,
+    "length": 0.8345864661654135,
+    "lcs": 0.8045112781954887,
+    "composite": 0.8026957009815242
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 12,
+   "group": 32,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/32/private/fineoffset_wh1050.c",
+    "start": 59,
+    "end": 91,
+    "tokens": 253
+   },
+   "b": {
+    "file": "dataset_c/32/open_source/expand.c",
+    "start": 417,
+    "end": 441,
+    "tokens": 202
+   },
+   "scores": {
+    "raw": 0.7444005270092227,
+    "normalized": 0.7893203883495146,
+    "cosine": 0.9868739030890975,
+    "ngram": 0.7288135593220338,
+    "length": 0.7984189723320159,
+    "lcs": 0.7470355731225297,
+    "composite": 0.8018478833335169
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 13,
+   "group": 33,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/33/private/fineoffset_wh1080.c",
+    "start": 124,
+    "end": 151,
+    "tokens": 163
+   },
+   "b": {
+    "file": "dataset_c/33/open_source/features.c",
+    "start": 29,
+    "end": 52,
+    "tokens": 140
+   },
+   "scores": {
+    "raw": 0.8058124174372523,
+    "normalized": 0.8047337278106509,
+    "cosine": 0.9948678716167325,
+    "ngram": 0.7849462365591398,
+    "length": 0.8588957055214724,
+    "lcs": 0.8404907975460123,
+    "composite": 0.8469082103075825
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 14,
+   "group": 34,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/34/private/ge_coloreffects.c",
+    "start": 32,
+    "end": 54,
+    "tokens": 147
+   },
+   "b": {
+    "file": "dataset_c/34/open_source/file_utils.c",
+    "start": 130,
+    "end": 149,
+    "tokens": 134
+   },
+   "scores": {
+    "raw": 0.7811023622047244,
+    "normalized": 0.7908496732026143,
+    "cosine": 0.9950750984245462,
+    "ngram": 0.7567567567567568,
+    "length": 0.9115646258503401,
+    "lcs": 0.8503401360544217,
+    "composite": 0.8342516896278593
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 15,
+   "group": 35,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/35/private/gt_tmbbq05.c",
+    "start": 141,
+    "end": 168,
+    "tokens": 121
+   },
+   "b": {
+    "file": "dataset_c/35/open_source/filter.c",
+    "start": 95,
+    "end": 120,
+    "tokens": 117
+   },
+   "scores": {
+    "raw": 0.7086092715231789,
+    "normalized": 0.7241379310344828,
+    "cosine": 0.9923789457424385,
+    "ngram": 0.7865168539325843,
+    "length": 0.9669421487603306,
+    "lcs": 0.8512396694214877,
+    "composite": 0.8482341481268819
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 16,
+   "group": 36,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/36/private/gt_wt_02.c",
+    "start": 108,
+    "end": 120,
+    "tokens": 83
+   },
+   "b": {
+    "file": "dataset_c/36/open_source/float_utils.c",
+    "start": 21,
+    "end": 29,
+    "tokens": 61
+   },
+   "scores": {
+    "raw": 0.6646341463414633,
+    "normalized": 0.6693548387096775,
+    "cosine": 0.979972194955019,
+    "ngram": 0.6774193548387096,
+    "length": 0.7349397590361446,
+    "lcs": 0.7349397590361446,
+    "composite": 0.7575310844378059
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 17,
+   "group": 37,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/37/private/gt_wt_03.c",
+    "start": 90,
+    "end": 115,
+    "tokens": 257
+   },
+   "b": {
+    "file": "dataset_c/37/open_source/ftp.c",
+    "start": 74,
+    "end": 96,
+    "tokens": 244
+   },
+   "scores": {
+    "raw": 0.7843373493975904,
+    "normalized": 0.7953216374269005,
+    "cosine": 0.9970019054888755,
+    "ngram": 0.8950276243093923,
+    "length": 0.9494163424124513,
+    "lcs": 0.8949416342412452,
+    "composite": 0.9148910389233889
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 18,
+   "group": 38,
+   "granularity": "block",
+   "a": {
+    "file": "dataset_c/38/private/hideki.c",
+    "start": 241,
+    "end": 264,
+    "tokens": 311
+   },
+   "b": {
+    "file": "dataset_c/38/open_source/ftppr.c",
+    "start": 125,
+    "end": 149,
+    "tokens": 335
+   },
+   "scores": {
+    "raw": 0.6975845410628019,
+    "normalized": 0.732183908045977,
+    "cosine": 0.9997038779571773,
+    "ngram": 0.9038461538461539,
+    "length": 0.9283582089552239,
+    "lcs": 0.8477611940298507,
+    "composite": 0.9096356291064815
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 19,
+   "group": 39,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/39/private/holman_ws5029.c",
+    "start": 213,
+    "end": 246,
+    "tokens": 188
+   },
+   "b": {
+    "file": "dataset_c/39/open_source/ftrl.c",
+    "start": 6,
+    "end": 32,
+    "tokens": 143
+   },
+   "scores": {
+    "raw": 0.7447023208879919,
+    "normalized": 0.7659033078880407,
+    "cosine": 0.9810946377084913,
+    "ngram": 0.6582278481012658,
+    "length": 0.7606382978723404,
+    "lcs": 0.7553191489361702,
+    "composite": 0.7578330377588522
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 20,
+   "group": 40,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/40/private/honeywell_cm921.c",
+    "start": 53,
+    "end": 73,
+    "tokens": 194
+   },
+   "b": {
+    "file": "dataset_c/40/open_source/gazetteer_data.c",
+    "start": 48,
+    "end": 64,
+    "tokens": 179
+   },
+   "scores": {
+    "raw": 0.8009630818619583,
+    "normalized": 0.825,
+    "cosine": 0.9955198524738891,
+    "ngram": 0.8873239436619719,
+    "length": 0.9226804123711341,
+    "lcs": 0.8865979381443299,
+    "composite": 0.909272481555866
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 21,
+   "group": 41,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/41/private/honeywell_wdb.c",
+    "start": 122,
+    "end": 160,
+    "tokens": 197
+   },
+   "b": {
+    "file": "dataset_c/41/open_source/gen.c",
+    "start": 465,
+    "end": 496,
+    "tokens": 150
+   },
+   "scores": {
+    "raw": 0.6433734939759036,
+    "normalized": 0.6949458483754513,
+    "cosine": 0.9772432091378791,
+    "ngram": 0.7669902912621359,
+    "length": 0.7614213197969543,
+    "lcs": 0.7411167512690355,
+    "composite": 0.8066349438559304
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 22,
+   "group": 42,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/42/private/ikea_sparsnas.c",
+    "start": 303,
+    "end": 331,
+    "tokens": 233
+   },
+   "b": {
+    "file": "dataset_c/42/open_source/geodb.c",
+    "start": 200,
+    "end": 223,
+    "tokens": 211
+   },
+   "scores": {
+    "raw": 0.8723554301833568,
+    "normalized": 0.8714703018500487,
+    "cosine": 0.9974889735333996,
+    "ngram": 0.8165137614678899,
+    "length": 0.9055793991416309,
+    "lcs": 0.9055793991416309,
+    "composite": 0.8762482951231881
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 23,
+   "group": 43,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/43/private/infactory.c",
+    "start": 119,
+    "end": 152,
+    "tokens": 196
+   },
+   "b": {
+    "file": "dataset_c/43/open_source/geodb_builder.c",
+    "start": 408,
+    "end": 433,
+    "tokens": 151
+   },
+   "scores": {
+    "raw": 0.7227138643067846,
+    "normalized": 0.7278731836195509,
+    "cosine": 0.9828415844987872,
+    "ngram": 0.7352941176470589,
+    "length": 0.7704081632653061,
+    "lcs": 0.75,
+    "composite": 0.7994343635877883
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 24,
+   "group": 44,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/44/private/insteon.c",
+    "start": 486,
+    "end": 509,
+    "tokens": 173
+   },
+   "b": {
+    "file": "dataset_c/44/open_source/geonames.c",
+    "start": 462,
+    "end": 486,
+    "tokens": 203
+   },
+   "scores": {
+    "raw": 0.8,
+    "normalized": 0.7868020304568528,
+    "cosine": 0.995848190739505,
+    "ngram": 0.7681159420289855,
+    "length": 0.8522167487684729,
+    "lcs": 0.8029556650246306,
+    "composite": 0.8366474906776655
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 25,
+   "group": 45,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/45/private/interlogix.c",
+    "start": 216,
+    "end": 240,
+    "tokens": 134
+   },
+   "b": {
+    "file": "dataset_c/45/open_source/geo_disambiguation.c",
+    "start": 111,
+    "end": 130,
+    "tokens": 112
+   },
+   "scores": {
+    "raw": 0.7586206896551724,
+    "normalized": 0.7956081081081081,
+    "cosine": 0.9913714476732682,
+    "ngram": 0.7078651685393258,
+    "length": 0.835820895522388,
+    "lcs": 0.7835820895522388,
+    "composite": 0.7966128631327023
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 26,
+   "group": 46,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/46/private/lacrosse.c",
+    "start": 197,
+    "end": 230,
+    "tokens": 193
+   },
+   "b": {
+    "file": "dataset_c/46/open_source/graph.c",
+    "start": 92,
+    "end": 123,
+    "tokens": 187
+   },
+   "scores": {
+    "raw": 0.7775175644028103,
+    "normalized": 0.7583025830258303,
+    "cosine": 0.9973906839881617,
+    "ngram": 0.7796610169491526,
+    "length": 0.9689119170984456,
+    "lcs": 0.8860103626943006,
+    "composite": 0.8528041784692
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 27,
+   "group": 47,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/47/private/lacrossews.c",
+    "start": 216,
+    "end": 248,
+    "tokens": 207
+   },
+   "b": {
+    "file": "dataset_c/47/open_source/graph_builder.c",
+    "start": 39,
+    "end": 65,
+    "tokens": 161
+   },
+   "scores": {
+    "raw": 0.7164898746383799,
+    "normalized": 0.7018813314037626,
+    "cosine": 0.9827222257848216,
+    "ngram": 0.7563025210084033,
+    "length": 0.7777777777777778,
+    "lcs": 0.7536231884057971,
+    "composite": 0.8110737082424431
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 28,
+   "group": 48,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/48/private/lacrosse_breezepro.c",
+    "start": 164,
+    "end": 188,
+    "tokens": 121
+   },
+   "b": {
+    "file": "dataset_c/48/open_source/jaccard.c",
+    "start": 3,
+    "end": 26,
+    "tokens": 106
+   },
+   "scores": {
+    "raw": 0.560064935064935,
+    "normalized": 0.7114427860696517,
+    "cosine": 0.9891088109137797,
+    "ngram": 0.7204301075268817,
+    "length": 0.8760330578512396,
+    "lcs": 0.8099173553719008,
+    "composite": 0.7871235611598475
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 29,
+   "group": 49,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/49/private/lacrosse_r1.c",
+    "start": 135,
+    "end": 154,
+    "tokens": 143
+   },
+   "b": {
+    "file": "dataset_c/49/open_source/language_classifier.c",
+    "start": 245,
+    "end": 268,
+    "tokens": 191
+   },
+   "scores": {
+    "raw": 0.7170626349892009,
+    "normalized": 0.7050938337801609,
+    "cosine": 0.9988458565804953,
+    "ngram": 0.9523809523809523,
+    "length": 0.7486910994764397,
+    "lcs": 0.7486910994764397,
+    "composite": 0.9200963614012116
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 30,
+   "group": 50,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/50/private/lacrosse_th3.c",
+    "start": 67,
+    "end": 109,
+    "tokens": 219
+   },
+   "b": {
+    "file": "dataset_c/50/open_source/language_classifier_cli.c",
+    "start": 10,
+    "end": 49,
+    "tokens": 200
+   },
+   "scores": {
+    "raw": 0.6406388642413487,
+    "normalized": 0.6554913294797688,
+    "cosine": 0.9702773803627415,
+    "ngram": 0.7692307692307693,
+    "length": 0.91324200913242,
+    "lcs": 0.7671232876712328,
+    "composite": 0.8210343555049854
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 31,
+   "group": 51,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/51/private/lacrosse_tx141x.c",
+    "start": 314,
+    "end": 348,
+    "tokens": 175
+   },
+   "b": {
+    "file": "dataset_c/51/open_source/language_classifier_io.c",
+    "start": 73,
+    "end": 98,
+    "tokens": 124
+   },
+   "scores": {
+    "raw": 0.6983957219251338,
+    "normalized": 0.7439613526570048,
+    "cosine": 0.9690716792116095,
+    "ngram": 0.7549019607843137,
+    "length": 0.7085714285714285,
+    "lcs": 0.7085714285714285,
+    "composite": 0.7981607132839311
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 32,
+   "group": 52,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/52/private/lacrosse_tx35.c",
+    "start": 182,
+    "end": 212,
+    "tokens": 160
+   },
+   "b": {
+    "file": "dataset_c/52/open_source/language_classifier_test.c",
+    "start": 67,
+    "end": 89,
+    "tokens": 117
+   },
+   "scores": {
+    "raw": 0.7008547008547008,
+    "normalized": 0.7170731707317073,
+    "cosine": 0.961121457735574,
+    "ngram": 0.6666666666666666,
+    "length": 0.73125,
+    "lcs": 0.6875,
+    "composite": 0.7501575011860303
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 33,
+   "group": 53,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/53/private/lacrosse_wr1.c",
+    "start": 140,
+    "end": 178,
+    "tokens": 184
+   },
+   "b": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.746996996996997,
+    "normalized": 0.7878228782287823,
+    "cosine": 0.9811175031462733,
+    "ngram": 0.6153846153846154,
+    "length": 0.8586956521739131,
+    "lcs": 0.75,
+    "composite": 0.7443101791651978
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 34,
+   "group": 54,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/54/private/lacrosse_ws7000.c",
+    "start": 221,
+    "end": 248,
+    "tokens": 232
+   },
+   "b": {
+    "file": "dataset_c/54/open_source/language_features.c",
+    "start": 135,
+    "end": 153,
+    "tokens": 181
+   },
+   "scores": {
+    "raw": 0.7952029520295203,
+    "normalized": 0.8140350877192982,
+    "cosine": 0.9842423705318124,
+    "ngram": 0.8110236220472441,
+    "length": 0.7801724137931034,
+    "lcs": 0.7801724137931034,
+    "composite": 0.8496611213411998
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 35,
+   "group": 55,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/55/private/lightwave_rf.c",
+    "start": 142,
+    "end": 164,
+    "tokens": 119
+   },
+   "b": {
+    "file": "dataset_c/55/open_source/libpostal.c",
+    "start": 230,
+    "end": 252,
+    "tokens": 114
+   },
+   "scores": {
+    "raw": 0.7758318739054291,
+    "normalized": 0.7595907928388747,
+    "cosine": 0.9858262864741438,
+    "ngram": 0.7285714285714285,
+    "length": 0.957983193277311,
+    "lcs": 0.8319327731092437,
+    "composite": 0.8205523640510958
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 36,
+   "group": 56,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/56/private/maverick_et73x.c",
+    "start": 106,
+    "end": 144,
+    "tokens": 211
+   },
+   "b": {
+    "file": "dataset_c/56/open_source/logistic_regression.c",
+    "start": 43,
+    "end": 75,
+    "tokens": 189
+   },
+   "scores": {
+    "raw": 0.7648936170212766,
+    "normalized": 0.7612156295224313,
+    "cosine": 0.9785625668299044,
+    "ngram": 0.7542372881355932,
+    "length": 0.8957345971563981,
+    "lcs": 0.7962085308056872,
+    "composite": 0.8255339715998199
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 37,
+   "group": 57,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/57/private/missil_ml0757.c",
+    "start": 134,
+    "end": 179,
+    "tokens": 280
+   },
+   "b": {
+    "file": "dataset_c/57/open_source/logistic_regression_trainer.c",
+    "start": 125,
+    "end": 161,
+    "tokens": 234
+   },
+   "scores": {
+    "raw": 0.8156956004756243,
+    "normalized": 0.8148698884758364,
+    "cosine": 0.9910112670197105,
+    "ngram": 0.7614678899082569,
+    "length": 0.8357142857142857,
+    "lcs": 0.8178571428571428,
+    "composite": 0.8317011448234599
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 38,
+   "group": 58,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/58/private/m_bus.c",
+    "start": 1180,
+    "end": 1234,
+    "tokens": 210
+   },
+   "b": {
+    "file": "dataset_c/58/open_source/main.c",
+    "start": 138,
+    "end": 195,
+    "tokens": 196
+   },
+   "scores": {
+    "raw": 0.6145320197044335,
+    "normalized": 0.6293222683264177,
+    "cosine": 0.9772569988918439,
+    "ngram": 0.7122302158273381,
+    "length": 0.9333333333333333,
+    "lcs": 0.7523809523809524,
+    "composite": 0.7908274037317737
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 39,
+   "group": 59,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/59/private/new_template.c",
+    "start": 265,
+    "end": 291,
+    "tokens": 135
+   },
+   "b": {
+    "file": "dataset_c/59/open_source/minibatch.c",
+    "start": 29,
+    "end": 50,
+    "tokens": 113
+   },
+   "scores": {
+    "raw": 0.6686567164179105,
+    "normalized": 0.680089485458613,
+    "cosine": 0.9917965854704427,
+    "ngram": 0.7311827956989247,
+    "length": 0.837037037037037,
+    "lcs": 0.7481481481481481,
+    "composite": 0.8006690593475141
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 40,
+   "group": 60,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/60/private/nexus.c",
+    "start": 106,
+    "end": 138,
+    "tokens": 129
+   },
+   "b": {
+    "file": "dataset_c/60/open_source/misc.c",
+    "start": 114,
+    "end": 136,
+    "tokens": 78
+   },
+   "scores": {
+    "raw": 0.6720867208672087,
+    "normalized": 0.6541666666666667,
+    "cosine": 0.9415817054379707,
+    "ngram": 0.6391752577319587,
+    "length": 0.6046511627906976,
+    "lcs": 0.5658914728682171,
+    "composite": 0.7146156064778607
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 41,
+   "group": 61,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/61/private/norgo.c",
+    "start": 217,
+    "end": 255,
+    "tokens": 186
+   },
+   "b": {
+    "file": "dataset_c/61/open_source/msgpack_utils.c",
+    "start": 67,
+    "end": 99,
+    "tokens": 151
+   },
+   "scores": {
+    "raw": 0.7780373831775701,
+    "normalized": 0.7487603305785124,
+    "cosine": 0.9750884139392759,
+    "ngram": 0.6952380952380952,
+    "length": 0.8118279569892473,
+    "lcs": 0.7688172043010753,
+    "composite": 0.785139589882453
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 42,
+   "group": 62,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/62/private/oil_standard.c",
+    "start": 129,
+    "end": 166,
+    "tokens": 211
+   },
+   "b": {
+    "file": "dataset_c/62/open_source/mycrypt.c",
+    "start": 34,
+    "end": 61,
+    "tokens": 159
+   },
+   "scores": {
+    "raw": 0.7305801376597837,
+    "normalized": 0.7101449275362319,
+    "cosine": 0.9803223268588916,
+    "ngram": 0.8625954198473282,
+    "length": 0.7535545023696683,
+    "lcs": 0.7535545023696683,
+    "composite": 0.8679215266336986
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 43,
+   "group": 63,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/63/private/optparse.c",
+    "start": 42,
+    "end": 77,
+    "tokens": 196
+   },
+   "b": {
+    "file": "dataset_c/63/open_source/near_dupe.c",
+    "start": 220,
+    "end": 248,
+    "tokens": 165
+   },
+   "scores": {
+    "raw": 0.8028045574057844,
+    "normalized": 0.8243398392652124,
+    "cosine": 0.9739013584643581,
+    "ngram": 0.8083333333333333,
+    "length": 0.8418367346938775,
+    "lcs": 0.7704081632653061,
+    "composite": 0.8525228021593891
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 44,
+   "group": 64,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/64/private/oregon_scientific.c",
+    "start": 839,
+    "end": 947,
+    "tokens": 577
+   },
+   "b": {
+    "file": "dataset_c/64/open_source/near_dupe_test.c",
+    "start": 7,
+    "end": 131,
+    "tokens": 711
+   },
+   "scores": {
+    "raw": 0.660064585575888,
+    "normalized": 0.6437013548573076,
+    "cosine": 0.9923703677459196,
+    "ngram": 0.7972972972972973,
+    "length": 0.8115330520393812,
+    "lcs": 0.729957805907173,
+    "composite": 0.8337658692115204
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 45,
+   "group": 65,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/65/private/oregon_scientific_sl109h.c",
+    "start": 112,
+    "end": 168,
+    "tokens": 255
+   },
+   "b": {
+    "file": "dataset_c/65/open_source/nfa.c",
+    "start": 460,
+    "end": 506,
+    "tokens": 204
+   },
+   "scores": {
+    "raw": 0.7301066447908122,
+    "normalized": 0.7418952618453865,
+    "cosine": 0.9892252347831617,
+    "ngram": 0.7446808510638298,
+    "length": 0.8,
+    "lcs": 0.8,
+    "composite": 0.809891441259978
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 46,
+   "group": 66,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/66/private/output_influx.c",
+    "start": 91,
+    "end": 168,
+    "tokens": 365
+   },
+   "b": {
+    "file": "dataset_c/66/open_source/ngrams.c",
+    "start": 4,
+    "end": 71,
+    "tokens": 313
+   },
+   "scores": {
+    "raw": 0.8155435317265125,
+    "normalized": 0.8153973509933775,
+    "cosine": 0.9952116500702866,
+    "ngram": 0.8545454545454545,
+    "length": 0.8575342465753425,
+    "lcs": 0.8383561643835616,
+    "composite": 0.8861106903477571
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 47,
+   "group": 67,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/67/private/output_mqtt.c",
+    "start": 39,
+    "end": 68,
+    "tokens": 155
+   },
+   "b": {
+    "file": "dataset_c/67/open_source/normalize.c",
+    "start": 117,
+    "end": 141,
+    "tokens": 133
+   },
+   "scores": {
+    "raw": 0.8472622478386167,
+    "normalized": 0.8641975308641976,
+    "cosine": 0.9949083563951511,
+    "ngram": 0.7692307692307693,
+    "length": 0.8580645161290322,
+    "lcs": 0.8580645161290322,
+    "composite": 0.8423366885724758
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 48,
+   "group": 68,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/68/private/philips_aj3650.c",
+    "start": 152,
+    "end": 198,
+    "tokens": 214
+   },
+   "b": {
+    "file": "dataset_c/68/open_source/ntlm.c",
+    "start": 90,
+    "end": 126,
+    "tokens": 162
+   },
+   "scores": {
+    "raw": 0.7495395948434622,
+    "normalized": 0.7533512064343164,
+    "cosine": 0.9862221962809491,
+    "ngram": 0.8090909090909091,
+    "length": 0.7570093457943925,
+    "lcs": 0.7429906542056075,
+    "composite": 0.8422104431340227
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 49,
+   "group": 69,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/69/private/pulse_analyzer.c",
+    "start": 68,
+    "end": 103,
+    "tokens": 221
+   },
+   "b": {
+    "file": "dataset_c/69/open_source/numex.c",
+    "start": 1140,
+    "end": 1170,
+    "tokens": 199
+   },
+   "scores": {
+    "raw": 0.7560777957860616,
+    "normalized": 0.7433628318584071,
+    "cosine": 0.9974817904665951,
+    "ngram": 0.7603305785123967,
+    "length": 0.9004524886877828,
+    "lcs": 0.8461538461538461,
+    "composite": 0.8332052942458514
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 50,
+   "group": 70,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/70/private/pulse_demod.c",
+    "start": 56,
+    "end": 88,
+    "tokens": 140
+   },
+   "b": {
+    "file": "dataset_c/70/open_source/numex_data.c",
+    "start": 2,
+    "end": 28,
+    "tokens": 118
+   },
+   "scores": {
+    "raw": 0.7580071174377224,
+    "normalized": 0.731066460587326,
+    "cosine": 0.9916654075731327,
+    "ngram": 0.7142857142857143,
+    "length": 0.8428571428571429,
+    "lcs": 0.8428571428571429,
+    "composite": 0.8008599207799126
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 51,
+   "group": 71,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/71/private/pulse_detect.c",
+    "start": 40,
+    "end": 73,
+    "tokens": 149
+   },
+   "b": {
+    "file": "dataset_c/71/open_source/numex_table_builder.c",
+    "start": 11,
+    "end": 38,
+    "tokens": 127
+   },
+   "scores": {
+    "raw": 0.5694227769110765,
+    "normalized": 0.5735930735930737,
+    "cosine": 0.9940820995280746,
+    "ngram": 0.6867469879518072,
+    "length": 0.8523489932885906,
+    "lcs": 0.7114093959731543,
+    "composite": 0.7684085452754793
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 52,
+   "group": 72,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/72/private/pulse_detect_fsk.c",
+    "start": 168,
+    "end": 207,
+    "tokens": 207
+   },
+   "b": {
+    "file": "dataset_c/72/open_source/options.c",
+    "start": 287,
+    "end": 316,
+    "tokens": 155
+   },
+   "scores": {
+    "raw": 0.7013333333333334,
+    "normalized": 0.6897856242118537,
+    "cosine": 0.9819577821240829,
+    "ngram": 0.8211382113821138,
+    "length": 0.748792270531401,
+    "lcs": 0.7053140096618358,
+    "composite": 0.8421280221776568
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 53,
+   "group": 73,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/73/private/radiohead_ask.c",
+    "start": 257,
+    "end": 300,
+    "tokens": 209
+   },
+   "b": {
+    "file": "dataset_c/73/open_source/place.c",
+    "start": 20,
+    "end": 63,
+    "tokens": 221
+   },
+   "scores": {
+    "raw": 0.6908945686900958,
+    "normalized": 0.6875,
+    "cosine": 0.9805264655296773,
+    "ngram": 0.7355371900826446,
+    "length": 0.9457013574660633,
+    "lcs": 0.7918552036199095,
+    "composite": 0.8133366635434899
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 54,
+   "group": 74,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "b": {
+    "file": "dataset_c/74/open_source/plugins.c",
+    "start": 27,
+    "end": 57,
+    "tokens": 173
+   },
+   "scores": {
+    "raw": 0.7984862819299905,
+    "normalized": 0.7771084337349398,
+    "cosine": 0.9939943951168274,
+    "ngram": 0.6585365853658537,
+    "length": 0.9942528735632183,
+    "lcs": 0.896551724137931,
+    "composite": 0.7899676362797473
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 55,
+   "group": 75,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/75/private/rtl_433.c",
+    "start": 94,
+    "end": 148,
+    "tokens": 640
+   },
+   "b": {
+    "file": "dataset_c/75/open_source/pop3p.c",
+    "start": 13,
+    "end": 60,
+    "tokens": 699
+   },
+   "scores": {
+    "raw": 0.61492673992674,
+    "normalized": 0.6228070175438596,
+    "cosine": 0.996059256205155,
+    "ngram": 0.8805309734513275,
+    "length": 0.9155937052932761,
+    "lcs": 0.7410586552217453,
+    "composite": 0.8863588939715206
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 56,
+   "group": 76,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/76/private/rubicson_48659.c",
+    "start": 152,
+    "end": 189,
+    "tokens": 238
+   },
+   "b": {
+    "file": "dataset_c/76/open_source/proxy.c",
+    "start": 158,
+    "end": 185,
+    "tokens": 187
+   },
+   "scores": {
+    "raw": 0.680672268907563,
+    "normalized": 0.6924564796905223,
+    "cosine": 0.9782344283800474,
+    "ngram": 0.8623188405797102,
+    "length": 0.7857142857142857,
+    "lcs": 0.7857142857142857,
+    "composite": 0.8654726248760374
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 57,
+   "group": 77,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/77/private/r_api.c",
+    "start": 102,
+    "end": 128,
+    "tokens": 228
+   },
+   "b": {
+    "file": "dataset_c/77/open_source/proxymain.c",
+    "start": 919,
+    "end": 945,
+    "tokens": 262
+   },
+   "scores": {
+    "raw": 0.6514619883040935,
+    "normalized": 0.6829268292682926,
+    "cosine": 0.9929500543302981,
+    "ngram": 0.8931297709923665,
+    "length": 0.8702290076335878,
+    "lcs": 0.7862595419847328,
+    "composite": 0.8916279872221442
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 58,
+   "group": 78,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/78/private/r_util.c",
+    "start": 26,
+    "end": 55,
+    "tokens": 176
+   },
+   "b": {
+    "file": "dataset_c/78/open_source/regex.c",
+    "start": 46,
+    "end": 65,
+    "tokens": 125
+   },
+   "scores": {
+    "raw": 0.6939546599496222,
+    "normalized": 0.7282051282051283,
+    "cosine": 0.9675326227211523,
+    "ngram": 0.8181818181818182,
+    "length": 0.7102272727272727,
+    "lcs": 0.7102272727272727,
+    "composite": 0.8323013489479776
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 59,
+   "group": 79,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/79/private/s3318p.c",
+    "start": 118,
+    "end": 135,
+    "tokens": 104
+   },
+   "b": {
+    "file": "dataset_c/79/open_source/regularization.c",
+    "start": 5,
+    "end": 17,
+    "tokens": 82
+   },
+   "scores": {
+    "raw": 0.7535101404056163,
+    "normalized": 0.6876790830945558,
+    "cosine": 0.9843988615175902,
+    "ngram": 0.7272727272727273,
+    "length": 0.7884615384615384,
+    "lcs": 0.7596153846153846,
+    "composite": 0.800296883266113
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 60,
+   "group": 80,
+   "granularity": "block",
+   "a": {
+    "file": "dataset_c/80/private/schraeder.c",
+    "start": 35,
+    "end": 60,
+    "tokens": 95
+   },
+   "b": {
+    "file": "dataset_c/80/open_source/scanflags.c",
+    "start": 39,
+    "end": 57,
+    "tokens": 67
+   },
+   "scores": {
+    "raw": 0.6835443037974683,
+    "normalized": 0.6646525679758308,
+    "cosine": 0.9669956763581179,
+    "ngram": 0.6883116883116883,
+    "length": 0.7052631578947368,
+    "lcs": 0.7052631578947368,
+    "composite": 0.7592010938301786
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 61,
+   "group": 81,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/81/private/scmplus.c",
+    "start": 29,
+    "end": 103,
+    "tokens": 282
+   },
+   "b": {
+    "file": "dataset_c/81/open_source/shuffle.c",
+    "start": 34,
+    "end": 104,
+    "tokens": 268
+   },
+   "scores": {
+    "raw": 0.7253199268738574,
+    "normalized": 0.7115531752104055,
+    "cosine": 0.987128128293895,
+    "ngram": 0.8031496062992126,
+    "length": 0.950354609929078,
+    "lcs": 0.7836879432624113,
+    "composite": 0.8560817692183342
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 62,
+   "group": 82,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/82/private/sdr.c",
+    "start": 107,
+    "end": 151,
+    "tokens": 338
+   },
+   "b": {
+    "file": "dataset_c/82/open_source/soft_tfidf.c",
+    "start": 24,
+    "end": 62,
+    "tokens": 323
+   },
+   "scores": {
+    "raw": 0.717208814270724,
+    "normalized": 0.7406360424028269,
+    "cosine": 0.9922846836911582,
+    "ngram": 0.7724550898203593,
+    "length": 0.9556213017751479,
+    "lcs": 0.8076923076923077,
+    "composite": 0.8402044819285744
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 63,
+   "group": 83,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/83/private/secplus_v1.c",
+    "start": 51,
+    "end": 81,
+    "tokens": 213
+   },
+   "b": {
+    "file": "dataset_c/83/open_source/sparse_matrix.c",
+    "start": 132,
+    "end": 153,
+    "tokens": 162
+   },
+   "scores": {
+    "raw": 0.7048780487804878,
+    "normalized": 0.7225130890052356,
+    "cosine": 0.9844264826000124,
+    "ngram": 0.8018018018018018,
+    "length": 0.7605633802816901,
+    "lcs": 0.7605633802816901,
+    "composite": 0.833641754547212
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 64,
+   "group": 84,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/84/private/secplus_v2.c",
+    "start": 72,
+    "end": 101,
+    "tokens": 150
+   },
+   "b": {
+    "file": "dataset_c/84/open_source/sparse_matrix_utils.c",
+    "start": 65,
+    "end": 89,
+    "tokens": 128
+   },
+   "scores": {
+    "raw": 0.7362637362637363,
+    "normalized": 0.7650485436893204,
+    "cosine": 0.9956806486339819,
+    "ngram": 0.7422680412371134,
+    "length": 0.8533333333333334,
+    "lcs": 0.8066666666666666,
+    "composite": 0.8161272917986149
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 65,
+   "group": 85,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/85/private/simplisafe.c",
+    "start": 49,
+    "end": 77,
+    "tokens": 174
+   },
+   "b": {
+    "file": "dataset_c/85/open_source/stochastic_gradient_descent.c",
+    "start": 49,
+    "end": 73,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.6896197327852004,
+    "normalized": 0.7049645390070922,
+    "cosine": 0.9961772206126808,
+    "ngram": 0.7647058823529411,
+    "length": 0.9080459770114943,
+    "lcs": 0.7931034482758621,
+    "composite": 0.8293991114269573
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 66,
+   "group": 86,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/86/private/somfy.c",
+    "start": 186,
+    "end": 222,
+    "tokens": 190
+   },
+   "b": {
+    "file": "dataset_c/86/open_source/string_similarity.c",
+    "start": 529,
+    "end": 559,
+    "tokens": 159
+   },
+   "scores": {
+    "raw": 0.6479438314944834,
+    "normalized": 0.6730769230769231,
+    "cosine": 0.9781571732921338,
+    "ngram": 0.6774193548387096,
+    "length": 0.8368421052631579,
+    "lcs": 0.7315789473684211,
+    "composite": 0.7655985321600879
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 67,
+   "group": 87,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/87/private/term_ctl.c",
+    "start": 90,
+    "end": 123,
+    "tokens": 182
+   },
+   "b": {
+    "file": "dataset_c/87/open_source/string_utils.c",
+    "start": 19,
+    "end": 42,
+    "tokens": 131
+   },
+   "scores": {
+    "raw": 0.6912325285895806,
+    "normalized": 0.6924564796905223,
+    "cosine": 0.9676950143369856,
+    "ngram": 0.7927927927927928,
+    "length": 0.7197802197802198,
+    "lcs": 0.7197802197802198,
+    "composite": 0.8190610644572625
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 68,
+   "group": 88,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/88/private/tfa_drop_30.3233.c",
+    "start": 191,
+    "end": 238,
+    "tokens": 228
+   },
+   "b": {
+    "file": "dataset_c/88/open_source/sym.c",
+    "start": 73,
+    "end": 109,
+    "tokens": 177
+   },
+   "scores": {
+    "raw": 0.7445805843543827,
+    "normalized": 0.7466986794717887,
+    "cosine": 0.9861595451595451,
+    "ngram": 0.7111111111111111,
+    "length": 0.7763157894736842,
+    "lcs": 0.7587719298245614,
+    "composite": 0.7897406347838041
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 69,
+   "group": 89,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/89/private/thermopro_tp12.c",
+    "start": 49,
+    "end": 98,
+    "tokens": 241
+   },
+   "b": {
+    "file": "dataset_c/89/open_source/tables.c",
+    "start": 461,
+    "end": 500,
+    "tokens": 191
+   },
+   "scores": {
+    "raw": 0.6939843068875327,
+    "normalized": 0.7021028037383177,
+    "cosine": 0.9878068337280485,
+    "ngram": 0.7868852459016393,
+    "length": 0.7925311203319502,
+    "lcs": 0.7344398340248963,
+    "composite": 0.828390136399862
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 70,
+   "group": 90,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/90/private/tpms_abarth124.c",
+    "start": 113,
+    "end": 147,
+    "tokens": 159
+   },
+   "b": {
+    "file": "dataset_c/90/open_source/tblcmp.c",
+    "start": 638,
+    "end": 668,
+    "tokens": 134
+   },
+   "scores": {
+    "raw": 0.7847309136420526,
+    "normalized": 0.7555110220440882,
+    "cosine": 0.9962585395330817,
+    "ngram": 0.6923076923076923,
+    "length": 0.8427672955974843,
+    "lcs": 0.8113207547169812,
+    "composite": 0.7925836865764548
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 71,
+   "group": 91,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/91/private/tpms_elantra2012.c",
+    "start": 138,
+    "end": 164,
+    "tokens": 173
+   },
+   "b": {
+    "file": "dataset_c/91/open_source/tokens.c",
+    "start": 43,
+    "end": 64,
+    "tokens": 150
+   },
+   "scores": {
+    "raw": 0.7865030674846626,
+    "normalized": 0.8070175438596492,
+    "cosine": 0.9959190711751618,
+    "ngram": 0.8108108108108109,
+    "length": 0.8670520231213873,
+    "lcs": 0.8265895953757225,
+    "composite": 0.8602812228003415
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 72,
+   "group": 92,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/92/private/tpms_pmv107j.c",
+    "start": 121,
+    "end": 166,
+    "tokens": 287
+   },
+   "b": {
+    "file": "dataset_c/92/open_source/transliterate.c",
+    "start": 443,
+    "end": 480,
+    "tokens": 249
+   },
+   "scores": {
+    "raw": 0.8248337028824834,
+    "normalized": 0.8267326732673268,
+    "cosine": 0.9909537673634691,
+    "ngram": 0.7419354838709677,
+    "length": 0.867595818815331,
+    "lcs": 0.8222996515679443,
+    "composite": 0.825045910139681
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 73,
+   "group": 93,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/93/private/ttx201.c",
+    "start": 213,
+    "end": 258,
+    "tokens": 227
+   },
+   "b": {
+    "file": "dataset_c/93/open_source/transliteration_scripts_data.c",
+    "start": 120,
+    "end": 160,
+    "tokens": 206
+   },
+   "scores": {
+    "raw": 0.8680057388809183,
+    "normalized": 0.8677379480840544,
+    "cosine": 0.998083337439399,
+    "ngram": 0.8333333333333334,
+    "length": 0.9074889867841409,
+    "lcs": 0.8810572687224669,
+    "composite": 0.8854036402596891
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 74,
+   "group": 94,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/94/private/util.c",
+    "start": 347,
+    "end": 404,
+    "tokens": 250
+   },
+   "b": {
+    "file": "dataset_c/94/open_source/transliteration_table_builder.c",
+    "start": 130,
+    "end": 196,
+    "tokens": 299
+   },
+   "scores": {
+    "raw": 0.6166489925768823,
+    "normalized": 0.5723076923076923,
+    "cosine": 0.9838239557296098,
+    "ngram": 0.7414965986394558,
+    "length": 0.8361204013377926,
+    "lcs": 0.68561872909699,
+    "composite": 0.7990560575755707
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 75,
+   "group": 95,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/95/private/vaillant_vrt340f.c",
+    "start": 64,
+    "end": 91,
+    "tokens": 180
+   },
+   "b": {
+    "file": "dataset_c/95/open_source/trie.c",
+    "start": 138,
+    "end": 161,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.782608695652174,
+    "normalized": 0.7818181818181819,
+    "cosine": 0.9959593242085851,
+    "ngram": 0.8157894736842105,
+    "length": 0.8777777777777778,
+    "lcs": 0.8333333333333334,
+    "composite": 0.8637126889214573
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 76,
+   "group": 96,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/96/private/visonic_powercode.c",
+    "start": 113,
+    "end": 140,
+    "tokens": 166
+   },
+   "b": {
+    "file": "dataset_c/96/open_source/trie_search.c",
+    "start": 809,
+    "end": 835,
+    "tokens": 168
+   },
+   "scores": {
+    "raw": 0.6849615806805708,
+    "normalized": 0.706921944035346,
+    "cosine": 0.9940749428580412,
+    "ngram": 0.6868686868686869,
+    "length": 0.9880952380952381,
+    "lcs": 0.8571428571428571,
+    "composite": 0.793602195369869
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 77,
+   "group": 97,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/97/private/write_sigrok.c",
+    "start": 30,
+    "end": 65,
+    "tokens": 173
+   },
+   "b": {
+    "file": "dataset_c/97/open_source/trie_utils.c",
+    "start": 53,
+    "end": 82,
+    "tokens": 140
+   },
+   "scores": {
+    "raw": 0.7600487210718636,
+    "normalized": 0.7524752475247525,
+    "cosine": 0.9750057035226022,
+    "ngram": 0.6781609195402298,
+    "length": 0.8092485549132948,
+    "lcs": 0.7514450867052023,
+    "composite": 0.7736696592262928
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 78,
+   "group": 98,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/98/private/ws2032.c",
+    "start": 36,
+    "end": 96,
+    "tokens": 269
+   },
+   "b": {
+    "file": "dataset_c/98/open_source/unicode_scripts.c",
+    "start": 20,
+    "end": 76,
+    "tokens": 243
+   },
+   "scores": {
+    "raw": 0.7666666666666666,
+    "normalized": 0.7339544513457557,
+    "cosine": 0.9890301873669176,
+    "ngram": 0.7744360902255639,
+    "length": 0.9033457249070632,
+    "lcs": 0.7806691449814126,
+    "composite": 0.8401986356231625
+   }
+  },
+  {
+   "kind": "clone",
+   "index": 79,
+   "group": 99,
+   "granularity": "function",
+   "a": {
+    "file": "dataset_c/99/private/x10_sec.c",
+    "start": 61,
+    "end": 95,
+    "tokens": 180
+   },
+   "b": {
+    "file": "dataset_c/99/open_source/yylex.c",
+    "start": 215,
+    "end": 245,
+    "tokens": 164
+   },
+   "scores": {
+    "raw": 0.7647058823529411,
+    "normalized": 0.7697841726618705,
+    "cosine": 0.995580116917529,
+    "ngram": 0.753968253968254,
+    "length": 0.9111111111111111,
+    "lcs": 0.8333333333333334,
+    "composite": 0.8311592682583273
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 0,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/34/private/ge_coloreffects.c",
+    "start": 32,
+    "end": 54,
+    "tokens": 147
+   },
+   "b": {
+    "file": "dataset_c/23/private/directv.c",
+    "start": 399,
+    "end": 423,
+    "tokens": 124
+   },
+   "scores": {
+    "raw": 0.35080645161290325,
+    "normalized": 0.30051813471502586,
+    "cosine": 0.9624708475270496,
+    "ngram": 0.22727272727272727,
+    "length": 0.8435374149659864,
+    "lcs": 0.5510204081632653,
+    "composite": 0.48505209853965137
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 1,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/55/private/lightwave_rf.c",
+    "start": 142,
+    "end": 164,
+    "tokens": 119
+   },
+   "b": {
+    "file": "dataset_c/51/private/lacrosse_tx141x.c",
+    "start": 314,
+    "end": 348,
+    "tokens": 175
+   },
+   "scores": {
+    "raw": 0.40748663101604277,
+    "normalized": 0.3462157809983897,
+    "cosine": 0.986012951645865,
+    "ngram": 0.5412844036697247,
+    "length": 0.68,
+    "lcs": 0.5542857142857143,
+    "composite": 0.6529583230314191
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 2,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/48/open_source/jaccard.c",
+    "start": 3,
+    "end": 26,
+    "tokens": 106
+   },
+   "b": {
+    "file": "dataset_c/37/open_source/ftp.c",
+    "start": 74,
+    "end": 96,
+    "tokens": 244
+   },
+   "scores": {
+    "raw": 0.1758389261744966,
+    "normalized": 0.17891373801916932,
+    "cosine": 0.9522582683178448,
+    "ngram": 0.16826923076923078,
+    "length": 0.4344262295081967,
+    "lcs": 0.29098360655737704,
+    "composite": 0.39163915957080747
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 3,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/33/private/fineoffset_wh1080.c",
+    "start": 124,
+    "end": 151,
+    "tokens": 163
+   },
+   "b": {
+    "file": "dataset_c/89/open_source/tables.c",
+    "start": 461,
+    "end": 500,
+    "tokens": 191
+   },
+   "scores": {
+    "raw": 0.17018909899888768,
+    "normalized": 0.1919770773638968,
+    "cosine": 0.9742102571150408,
+    "ngram": 0.2138364779874214,
+    "length": 0.8534031413612565,
+    "lcs": 0.5235602094240838,
+    "composite": 0.4635218512078564
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 4,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/31/private/fineoffset.c",
+    "start": 1091,
+    "end": 1116,
+    "tokens": 133
+   },
+   "b": {
+    "file": "dataset_c/95/open_source/trie.c",
+    "start": 138,
+    "end": 161,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.1991643454038997,
+    "normalized": 0.16262975778546718,
+    "cosine": 0.9168371102641212,
+    "ngram": 0.12337662337662338,
+    "length": 0.8417721518987342,
+    "lcs": 0.4430379746835443,
+    "composite": 0.4011600701534366
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 5,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "b": {
+    "file": "dataset_c/24/private/dsc.c",
+    "start": 286,
+    "end": 320,
+    "tokens": 177
+   },
+   "scores": {
+    "raw": 0.25566037735849056,
+    "normalized": 0.2060240963855422,
+    "cosine": 0.9575601114532715,
+    "ngram": 0.5,
+    "length": 0.9830508474576272,
+    "lcs": 0.5988700564971752,
+    "composite": 0.6382611503449296
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 6,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/23/open_source/crf_context.c",
+    "start": 237,
+    "end": 256,
+    "tokens": 102
+   },
+   "b": {
+    "file": "dataset_c/31/open_source/ecs.c",
+    "start": 39,
+    "end": 67,
+    "tokens": 111
+   },
+   "scores": {
+    "raw": 0.15893108298171588,
+    "normalized": 0.16901408450704225,
+    "cosine": 0.912441088873195,
+    "ngram": 0.09375,
+    "length": 0.918918918918919,
+    "lcs": 0.4954954954954955,
+    "composite": 0.3874577724083622
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 7,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/47/open_source/graph_builder.c",
+    "start": 39,
+    "end": 65,
+    "tokens": 161
+   },
+   "b": {
+    "file": "dataset_c/49/open_source/language_classifier.c",
+    "start": 245,
+    "end": 268,
+    "tokens": 191
+   },
+   "scores": {
+    "raw": 0.21706263498920086,
+    "normalized": 0.18766756032171583,
+    "cosine": 0.9487266579423699,
+    "ngram": 0.19548872180451127,
+    "length": 0.8429319371727748,
+    "lcs": 0.49214659685863876,
+    "composite": 0.4506999186942713
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 8,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/84/open_source/sparse_matrix_utils.c",
+    "start": 65,
+    "end": 89,
+    "tokens": 128
+   },
+   "b": {
+    "file": "dataset_c/97/private/write_sigrok.c",
+    "start": 30,
+    "end": 65,
+    "tokens": 173
+   },
+   "scores": {
+    "raw": 0.30450669914738127,
+    "normalized": 0.23267326732673266,
+    "cosine": 0.9695363872843402,
+    "ngram": 0.2727272727272727,
+    "length": 0.7398843930635838,
+    "lcs": 0.49710982658959535,
+    "composite": 0.4968232060421816
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 9,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/23/private/directv.c",
+    "start": 399,
+    "end": 423,
+    "tokens": 124
+   },
+   "b": {
+    "file": "dataset_c/91/open_source/tokens.c",
+    "start": 43,
+    "end": 64,
+    "tokens": 150
+   },
+   "scores": {
+    "raw": 0.196236559139785,
+    "normalized": 0.14680483592400695,
+    "cosine": 0.9843711153773833,
+    "ngram": 0.1889763779527559,
+    "length": 0.8266666666666667,
+    "lcs": 0.5533333333333333,
+    "composite": 0.4523201092990068
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 10,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/45/private/interlogix.c",
+    "start": 216,
+    "end": 240,
+    "tokens": 134
+   },
+   "b": {
+    "file": "dataset_c/89/open_source/tables.c",
+    "start": 461,
+    "end": 500,
+    "tokens": 191
+   },
+   "scores": {
+    "raw": 0.1624026696329255,
+    "normalized": 0.1547277936962751,
+    "cosine": 0.9464280893817753,
+    "ngram": 0.15625,
+    "length": 0.7015706806282722,
+    "lcs": 0.4083769633507853,
+    "composite": 0.4089418573715636
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 11,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/73/open_source/place.c",
+    "start": 20,
+    "end": 63,
+    "tokens": 221
+   },
+   "b": {
+    "file": "dataset_c/48/private/lacrosse_breezepro.c",
+    "start": 164,
+    "end": 188,
+    "tokens": 121
+   },
+   "scores": {
+    "raw": 0.27316293929712465,
+    "normalized": 0.21698113207547165,
+    "cosine": 0.9878371202384139,
+    "ngram": 0.3191489361702128,
+    "length": 0.5475113122171946,
+    "lcs": 0.38461538461538464,
+    "composite": 0.5045586201046525
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 12,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/77/private/r_api.c",
+    "start": 102,
+    "end": 128,
+    "tokens": 228
+   },
+   "b": {
+    "file": "dataset_c/95/private/vaillant_vrt340f.c",
+    "start": 64,
+    "end": 91,
+    "tokens": 180
+   },
+   "scores": {
+    "raw": 0.1376811594202898,
+    "normalized": 0.13173652694610782,
+    "cosine": 0.9400848684113035,
+    "ngram": 0.24102564102564103,
+    "length": 0.7894736842105263,
+    "lcs": 0.45614035087719296,
+    "composite": 0.46030080403001006
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 13,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/55/open_source/libpostal.c",
+    "start": 230,
+    "end": 252,
+    "tokens": 114
+   },
+   "b": {
+    "file": "dataset_c/20/open_source/common.c",
+    "start": 290,
+    "end": 316,
+    "tokens": 253
+   },
+   "scores": {
+    "raw": 0.1841397849462365,
+    "normalized": 0.2059748427672956,
+    "cosine": 0.9455969109565188,
+    "ngram": 0.1092896174863388,
+    "length": 0.4505928853754941,
+    "lcs": 0.3359683794466403,
+    "composite": 0.35998178438878914
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 14,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/40/private/honeywell_cm921.c",
+    "start": 53,
+    "end": 73,
+    "tokens": 194
+   },
+   "b": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "scores": {
+    "raw": 0.25733207190160834,
+    "normalized": 0.24457831325301205,
+    "cosine": 0.8804723763214166,
+    "ngram": 0.2011173184357542,
+    "length": 0.8969072164948454,
+    "lcs": 0.4690721649484536,
+    "composite": 0.44615654805966437
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 15,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/63/open_source/near_dupe.c",
+    "start": 220,
+    "end": 248,
+    "tokens": 165
+   },
+   "b": {
+    "file": "dataset_c/55/open_source/libpostal.c",
+    "start": 230,
+    "end": 252,
+    "tokens": 114
+   },
+   "scores": {
+    "raw": 0.24702380952380953,
+    "normalized": 0.17462311557788945,
+    "cosine": 0.933260553141906,
+    "ngram": 0.1984732824427481,
+    "length": 0.6909090909090909,
+    "lcs": 0.45454545454545453,
+    "composite": 0.43626873367227803
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 16,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/39/open_source/ftrl.c",
+    "start": 6,
+    "end": 32,
+    "tokens": 143
+   },
+   "b": {
+    "file": "dataset_c/47/open_source/graph_builder.c",
+    "start": 39,
+    "end": 65,
+    "tokens": 161
+   },
+   "scores": {
+    "raw": 0.23957091775923722,
+    "normalized": 0.2239263803680982,
+    "cosine": 0.9790807171001505,
+    "ngram": 0.2689075630252101,
+    "length": 0.8881987577639752,
+    "lcs": 0.577639751552795,
+    "composite": 0.5054463064912244
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 17,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/63/private/optparse.c",
+    "start": 42,
+    "end": 77,
+    "tokens": 196
+   },
+   "b": {
+    "file": "dataset_c/33/private/fineoffset_wh1080.c",
+    "start": 124,
+    "end": 151,
+    "tokens": 163
+   },
+   "scores": {
+    "raw": 0.3242769500438212,
+    "normalized": 0.2273249138920781,
+    "cosine": 0.9616688821464647,
+    "ngram": 0.3576158940397351,
+    "length": 0.8316326530612245,
+    "lcs": 0.5357142857142857,
+    "composite": 0.5526969225689751
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 18,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/31/open_source/ecs.c",
+    "start": 39,
+    "end": 67,
+    "tokens": 111
+   },
+   "b": {
+    "file": "dataset_c/68/open_source/ntlm.c",
+    "start": 90,
+    "end": 126,
+    "tokens": 162
+   },
+   "scores": {
+    "raw": 0.20308788598574823,
+    "normalized": 0.17918088737201365,
+    "cosine": 0.9575216033556897,
+    "ngram": 0.10948905109489052,
+    "length": 0.6851851851851852,
+    "lcs": 0.41358024691358025,
+    "composite": 0.3884266860582056
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 19,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/32/private/fineoffset_wh1050.c",
+    "start": 59,
+    "end": 91,
+    "tokens": 253
+   },
+   "b": {
+    "file": "dataset_c/65/open_source/nfa.c",
+    "start": 460,
+    "end": 506,
+    "tokens": 204
+   },
+   "scores": {
+    "raw": 0.19038208168642956,
+    "normalized": 0.21359223300970875,
+    "cosine": 0.9315100050640536,
+    "ngram": 0.18354430379746836,
+    "length": 0.8063241106719368,
+    "lcs": 0.4505928853754941,
+    "composite": 0.4334974875904576
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 20,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/64/private/oregon_scientific.c",
+    "start": 839,
+    "end": 947,
+    "tokens": 577
+   },
+   "b": {
+    "file": "dataset_c/97/private/write_sigrok.c",
+    "start": 30,
+    "end": 65,
+    "tokens": 173
+   },
+   "scores": {
+    "raw": 0.16452582672861438,
+    "normalized": 0.14741474147414746,
+    "cosine": 0.9865516596558714,
+    "ngram": 0.2891566265060241,
+    "length": 0.29982668977469673,
+    "lcs": 0.24263431542461006,
+    "composite": 0.45210931114261216
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 21,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "b": {
+    "file": "dataset_c/25/open_source/crf_trainer_averaged_perceptron.c",
+    "start": 157,
+    "end": 175,
+    "tokens": 131
+   },
+   "scores": {
+    "raw": 0.25867507886435326,
+    "normalized": 0.21518987341772156,
+    "cosine": 0.9866053470271415,
+    "ngram": 0.23770491803278687,
+    "length": 0.8291139240506329,
+    "lcs": 0.5379746835443038,
+    "composite": 0.48616794196631685
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 22,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/78/open_source/regex.c",
+    "start": 46,
+    "end": 65,
+    "tokens": 125
+   },
+   "b": {
+    "file": "dataset_c/88/open_source/sym.c",
+    "start": 73,
+    "end": 109,
+    "tokens": 177
+   },
+   "scores": {
+    "raw": 0.2438162544169611,
+    "normalized": 0.24148148148148152,
+    "cosine": 0.9406718797420988,
+    "ngram": 0.2483221476510067,
+    "length": 0.7062146892655368,
+    "lcs": 0.4406779661016949,
+    "composite": 0.4667482455118282
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 23,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/35/open_source/filter.c",
+    "start": 95,
+    "end": 120,
+    "tokens": 117
+   },
+   "b": {
+    "file": "dataset_c/68/private/philips_aj3650.c",
+    "start": 152,
+    "end": 198,
+    "tokens": 214
+   },
+   "scores": {
+    "raw": 0.1933701657458563,
+    "normalized": 0.1957104557640751,
+    "cosine": 0.9516687105295212,
+    "ngram": 0.16666666666666666,
+    "length": 0.5467289719626168,
+    "lcs": 0.35046728971962615,
+    "composite": 0.4035937580698943
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 24,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/30/private/fileformat.c",
+    "start": 351,
+    "end": 383,
+    "tokens": 165
+   },
+   "b": {
+    "file": "dataset_c/90/open_source/tblcmp.c",
+    "start": 638,
+    "end": 668,
+    "tokens": 134
+   },
+   "scores": {
+    "raw": 0.176039119804401,
+    "normalized": 0.17051509769094142,
+    "cosine": 0.9460907114697583,
+    "ngram": 0.10738255033557047,
+    "length": 0.8121212121212121,
+    "lcs": 0.4666666666666667,
+    "composite": 0.39439911374456466
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 25,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/57/open_source/logistic_regression_trainer.c",
+    "start": 125,
+    "end": 161,
+    "tokens": 234
+   },
+   "b": {
+    "file": "dataset_c/99/private/x10_sec.c",
+    "start": 61,
+    "end": 95,
+    "tokens": 180
+   },
+   "scores": {
+    "raw": 0.26008064516129037,
+    "normalized": 0.18842975206611567,
+    "cosine": 0.9636105604434124,
+    "ngram": 0.20118343195266272,
+    "length": 0.7692307692307693,
+    "lcs": 0.4700854700854701,
+    "composite": 0.4544846691240236
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 26,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/66/private/output_influx.c",
+    "start": 91,
+    "end": 168,
+    "tokens": 365
+   },
+   "b": {
+    "file": "dataset_c/93/open_source/transliteration_scripts_data.c",
+    "start": 120,
+    "end": 160,
+    "tokens": 206
+   },
+   "scores": {
+    "raw": 0.338908017707821,
+    "normalized": 0.2533112582781457,
+    "cosine": 0.9815721429502379,
+    "ngram": 0.31313131313131315,
+    "length": 0.5643835616438356,
+    "lcs": 0.4054794520547945,
+    "composite": 0.5079444158949473
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 27,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/44/open_source/geonames.c",
+    "start": 462,
+    "end": 486,
+    "tokens": 203
+   },
+   "b": {
+    "file": "dataset_c/28/open_source/dfa.c",
+    "start": 183,
+    "end": 206,
+    "tokens": 125
+   },
+   "scores": {
+    "raw": 0.21354166666666663,
+    "normalized": 0.20812182741116747,
+    "cosine": 0.9432211033867064,
+    "ngram": 0.33695652173913043,
+    "length": 0.6157635467980296,
+    "lcs": 0.4236453201970443,
+    "composite": 0.504061884149668
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 28,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/25/open_source/crf_trainer_averaged_perceptron.c",
+    "start": 157,
+    "end": 175,
+    "tokens": 131
+   },
+   "b": {
+    "file": "dataset_c/49/private/lacrosse_r1.c",
+    "start": 135,
+    "end": 154,
+    "tokens": 143
+   },
+   "scores": {
+    "raw": 0.26433566433566436,
+    "normalized": 0.20833333333333337,
+    "cosine": 0.9675612050485928,
+    "ngram": 0.21904761904761905,
+    "length": 0.916083916083916,
+    "lcs": 0.5734265734265734,
+    "composite": 0.48040844978029673
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 29,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/57/private/missil_ml0757.c",
+    "start": 134,
+    "end": 179,
+    "tokens": 280
+   },
+   "b": {
+    "file": "dataset_c/30/private/fileformat.c",
+    "start": 351,
+    "end": 383,
+    "tokens": 165
+   },
+   "scores": {
+    "raw": 0.297859690844233,
+    "normalized": 0.24460966542750928,
+    "cosine": 0.9708815770954998,
+    "ngram": 0.35172413793103446,
+    "length": 0.5892857142857143,
+    "lcs": 0.44642857142857145,
+    "composite": 0.5248832106489386
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 30,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/49/open_source/language_classifier.c",
+    "start": 245,
+    "end": 268,
+    "tokens": 191
+   },
+   "b": {
+    "file": "dataset_c/32/open_source/expand.c",
+    "start": 417,
+    "end": 441,
+    "tokens": 202
+   },
+   "scores": {
+    "raw": 0.2514147130153598,
+    "normalized": 0.19862227324913895,
+    "cosine": 0.9292724937983037,
+    "ngram": 0.16923076923076924,
+    "length": 0.9455445544554455,
+    "lcs": 0.5198019801980198,
+    "composite": 0.4450909732735795
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 31,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/68/open_source/ntlm.c",
+    "start": 90,
+    "end": 126,
+    "tokens": 162
+   },
+   "b": {
+    "file": "dataset_c/55/open_source/libpostal.c",
+    "start": 230,
+    "end": 252,
+    "tokens": 114
+   },
+   "scores": {
+    "raw": 0.27434679334916867,
+    "normalized": 0.19965870307167233,
+    "cosine": 0.9403372590051483,
+    "ngram": 0.14634146341463414,
+    "length": 0.7037037037037037,
+    "lcs": 0.4382716049382716,
+    "composite": 0.4133771693346231
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 32,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/78/private/r_util.c",
+    "start": 26,
+    "end": 55,
+    "tokens": 176
+   },
+   "b": {
+    "file": "dataset_c/66/open_source/ngrams.c",
+    "start": 4,
+    "end": 71,
+    "tokens": 313
+   },
+   "scores": {
+    "raw": 0.2023476802683063,
+    "normalized": 0.19942748091603058,
+    "cosine": 0.9551364760968674,
+    "ngram": 0.1523809523809524,
+    "length": 0.5623003194888179,
+    "lcs": 0.3706070287539936,
+    "composite": 0.39905844280945313
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 33,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/40/open_source/gazetteer_data.c",
+    "start": 48,
+    "end": 64,
+    "tokens": 179
+   },
+   "b": {
+    "file": "dataset_c/67/private/output_mqtt.c",
+    "start": 39,
+    "end": 68,
+    "tokens": 155
+   },
+   "scores": {
+    "raw": 0.1767531219980788,
+    "normalized": 0.16913580246913584,
+    "cosine": 0.8818732327929849,
+    "ngram": 0.13186813186813187,
+    "length": 0.8659217877094972,
+    "lcs": 0.4022346368715084,
+    "composite": 0.39726327169647635
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 34,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/65/private/oregon_scientific_sl109h.c",
+    "start": 112,
+    "end": 168,
+    "tokens": 255
+   },
+   "b": {
+    "file": "dataset_c/46/open_source/graph.c",
+    "start": 92,
+    "end": 123,
+    "tokens": 187
+   },
+   "scores": {
+    "raw": 0.23379819524200163,
+    "normalized": 0.18578553615960103,
+    "cosine": 0.9485347358460905,
+    "ngram": 0.15757575757575756,
+    "length": 0.7333333333333333,
+    "lcs": 0.45098039215686275,
+    "composite": 0.4205135034857228
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 35,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/54/private/lacrosse_ws7000.c",
+    "start": 221,
+    "end": 248,
+    "tokens": 232
+   },
+   "b": {
+    "file": "dataset_c/29/private/ert_idm.c",
+    "start": 712,
+    "end": 735,
+    "tokens": 215
+   },
+   "scores": {
+    "raw": 0.26291512915129156,
+    "normalized": 0.23274853801169593,
+    "cosine": 0.978198575240516,
+    "ngram": 0.25757575757575757,
+    "length": 0.9267241379310345,
+    "lcs": 0.5086206896551724,
+    "composite": 0.5051802371850282
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 36,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/97/open_source/trie_utils.c",
+    "start": 53,
+    "end": 82,
+    "tokens": 140
+   },
+   "b": {
+    "file": "dataset_c/41/open_source/gen.c",
+    "start": 465,
+    "end": 496,
+    "tokens": 150
+   },
+   "scores": {
+    "raw": 0.17256637168141598,
+    "normalized": 0.16465863453815266,
+    "cosine": 0.977252396645419,
+    "ngram": 0.1968503937007874,
+    "length": 0.9333333333333333,
+    "lcs": 0.54,
+    "composite": 0.46317078619826274
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 37,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/88/private/tfa_drop_30.3233.c",
+    "start": 191,
+    "end": 238,
+    "tokens": 228
+   },
+   "b": {
+    "file": "dataset_c/51/private/lacrosse_tx141x.c",
+    "start": 314,
+    "end": 348,
+    "tokens": 175
+   },
+   "scores": {
+    "raw": 0.23185673892554193,
+    "normalized": 0.26890756302521013,
+    "cosine": 0.9855257369768783,
+    "ngram": 0.29310344827586204,
+    "length": 0.7675438596491229,
+    "lcs": 0.49122807017543857,
+    "composite": 0.5075283906534103
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 38,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/40/open_source/gazetteer_data.c",
+    "start": 48,
+    "end": 64,
+    "tokens": 179
+   },
+   "b": {
+    "file": "dataset_c/79/private/s3318p.c",
+    "start": 118,
+    "end": 135,
+    "tokens": 104
+   },
+   "scores": {
+    "raw": 0.16224648985959433,
+    "normalized": 0.1476510067114094,
+    "cosine": 0.8905518367880404,
+    "ngram": 0.09278350515463918,
+    "length": 0.5810055865921788,
+    "lcs": 0.3407821229050279,
+    "composite": 0.34799409467723896
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 39,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/68/open_source/ntlm.c",
+    "start": 90,
+    "end": 126,
+    "tokens": 162
+   },
+   "b": {
+    "file": "dataset_c/54/open_source/language_features.c",
+    "start": 135,
+    "end": 153,
+    "tokens": 181
+   },
+   "scores": {
+    "raw": 0.21229698375870065,
+    "normalized": 0.20114942528735635,
+    "cosine": 0.9764863431319154,
+    "ngram": 0.26143790849673204,
+    "length": 0.8950276243093923,
+    "lcs": 0.5524861878453039,
+    "composite": 0.4986448962629908
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 40,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/91/private/tpms_elantra2012.c",
+    "start": 138,
+    "end": 164,
+    "tokens": 173
+   },
+   "b": {
+    "file": "dataset_c/48/private/lacrosse_breezepro.c",
+    "start": 164,
+    "end": 188,
+    "tokens": 121
+   },
+   "scores": {
+    "raw": 0.3693251533742331,
+    "normalized": 0.31259968102073366,
+    "cosine": 0.9749476309923599,
+    "ngram": 0.3,
+    "length": 0.6994219653179191,
+    "lcs": 0.45664739884393063,
+    "composite": 0.5156116196173052
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 41,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/61/open_source/msgpack_utils.c",
+    "start": 67,
+    "end": 99,
+    "tokens": 151
+   },
+   "b": {
+    "file": "dataset_c/27/private/elv.c",
+    "start": 222,
+    "end": 250,
+    "tokens": 179
+   },
+   "scores": {
+    "raw": 0.32625698324022345,
+    "normalized": 0.19720767888307156,
+    "cosine": 0.9806806423064877,
+    "ngram": 0.35664335664335667,
+    "length": 0.8435754189944135,
+    "lcs": 0.4972067039106145,
+    "composite": 0.5583072469539319
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 42,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/49/private/lacrosse_r1.c",
+    "start": 135,
+    "end": 154,
+    "tokens": 143
+   },
+   "b": {
+    "file": "dataset_c/24/private/dsc.c",
+    "start": 286,
+    "end": 320,
+    "tokens": 177
+   },
+   "scores": {
+    "raw": 0.24433962264150944,
+    "normalized": 0.20238095238095233,
+    "cosine": 0.8972080049444277,
+    "ngram": 0.21008403361344538,
+    "length": 0.807909604519774,
+    "lcs": 0.4689265536723164,
+    "composite": 0.44507314243963025
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 43,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/60/private/nexus.c",
+    "start": 106,
+    "end": 138,
+    "tokens": 129
+   },
+   "b": {
+    "file": "dataset_c/71/private/pulse_detect.c",
+    "start": 40,
+    "end": 73,
+    "tokens": 149
+   },
+   "scores": {
+    "raw": 0.30081300813008127,
+    "normalized": 0.2520833333333333,
+    "cosine": 0.9339100967509976,
+    "ngram": 0.3,
+    "length": 0.8657718120805369,
+    "lcs": 0.5436241610738255,
+    "composite": 0.5151360062088112
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 44,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/54/private/lacrosse_ws7000.c",
+    "start": 221,
+    "end": 248,
+    "tokens": 232
+   },
+   "b": {
+    "file": "dataset_c/28/private/emontx.c",
+    "start": 166,
+    "end": 197,
+    "tokens": 169
+   },
+   "scores": {
+    "raw": 0.33671586715867163,
+    "normalized": 0.3111111111111111,
+    "cosine": 0.9583906512795044,
+    "ngram": 0.2694610778443114,
+    "length": 0.728448275862069,
+    "lcs": 0.5086206896551724,
+    "composite": 0.4943176699363215
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 45,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/47/private/lacrossews.c",
+    "start": 216,
+    "end": 248,
+    "tokens": 207
+   },
+   "b": {
+    "file": "dataset_c/92/open_source/transliterate.c",
+    "start": 443,
+    "end": 480,
+    "tokens": 249
+   },
+   "scores": {
+    "raw": 0.2620607504466944,
+    "normalized": 0.18717759764185704,
+    "cosine": 0.9444364033959671,
+    "ngram": 0.2777777777777778,
+    "length": 0.8313253012048193,
+    "lcs": 0.4939759036144578,
+    "composite": 0.49822548379192094
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 46,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/60/private/nexus.c",
+    "start": 106,
+    "end": 138,
+    "tokens": 129
+   },
+   "b": {
+    "file": "dataset_c/47/private/lacrossews.c",
+    "start": 216,
+    "end": 248,
+    "tokens": 207
+   },
+   "scores": {
+    "raw": 0.32979749276759884,
+    "normalized": 0.33863965267727936,
+    "cosine": 0.9613203488906797,
+    "ngram": 0.23030303030303031,
+    "length": 0.6231884057971014,
+    "lcs": 0.48792270531400966,
+    "composite": 0.4622953437458066
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 47,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/83/open_source/sparse_matrix.c",
+    "start": 132,
+    "end": 153,
+    "tokens": 162
+   },
+   "b": {
+    "file": "dataset_c/70/open_source/numex_data.c",
+    "start": 2,
+    "end": 28,
+    "tokens": 118
+   },
+   "scores": {
+    "raw": 0.2558139534883721,
+    "normalized": 0.19823008849557522,
+    "cosine": 0.9060606745389328,
+    "ngram": 0.11904761904761904,
+    "length": 0.7283950617283951,
+    "lcs": 0.4012345679012346,
+    "composite": 0.39041226063260037
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 48,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/78/open_source/regex.c",
+    "start": 46,
+    "end": 65,
+    "tokens": 125
+   },
+   "b": {
+    "file": "dataset_c/38/private/hideki.c",
+    "start": 241,
+    "end": 264,
+    "tokens": 311
+   },
+   "scores": {
+    "raw": 0.17497456765005082,
+    "normalized": 0.16953316953316955,
+    "cosine": 0.8225450190127045,
+    "ngram": 0.12422360248447205,
+    "length": 0.40192926045016075,
+    "lcs": 0.26366559485530544,
+    "composite": 0.3316496189296569
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 49,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "b": {
+    "file": "dataset_c/37/open_source/ftp.c",
+    "start": 74,
+    "end": 96,
+    "tokens": 244
+   },
+   "scores": {
+    "raw": 0.18217665615141954,
+    "normalized": 0.1791626095423564,
+    "cosine": 0.9405066667362361,
+    "ngram": 0.1895734597156398,
+    "length": 0.6475409836065574,
+    "lcs": 0.4098360655737705,
+    "composite": 0.42236383350345863
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 50,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/51/open_source/language_classifier_io.c",
+    "start": 73,
+    "end": 98,
+    "tokens": 124
+   },
+   "b": {
+    "file": "dataset_c/91/open_source/tokens.c",
+    "start": 43,
+    "end": 64,
+    "tokens": 150
+   },
+   "scores": {
+    "raw": 0.2660028449502134,
+    "normalized": 0.22977941176470584,
+    "cosine": 0.9864862910902543,
+    "ngram": 0.3153846153846154,
+    "length": 0.8266666666666667,
+    "lcs": 0.5066666666666667,
+    "composite": 0.5293500623957901
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 51,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/88/open_source/sym.c",
+    "start": 73,
+    "end": 109,
+    "tokens": 177
+   },
+   "b": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.21293375394321767,
+    "normalized": 0.21908471275559882,
+    "cosine": 0.9828737002399359,
+    "ngram": 0.19745222929936307,
+    "length": 0.8926553672316384,
+    "lcs": 0.519774011299435,
+    "composite": 0.4648760632921193
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 52,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/94/open_source/transliteration_table_builder.c",
+    "start": 130,
+    "end": 196,
+    "tokens": 299
+   },
+   "b": {
+    "file": "dataset_c/74/open_source/plugins.c",
+    "start": 27,
+    "end": 57,
+    "tokens": 173
+   },
+   "scores": {
+    "raw": 0.25609756097560976,
+    "normalized": 0.20769230769230773,
+    "cosine": 0.9538600645469392,
+    "ngram": 0.22929936305732485,
+    "length": 0.5785953177257525,
+    "lcs": 0.411371237458194,
+    "composite": 0.44804895368839964
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 53,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/94/open_source/transliteration_table_builder.c",
+    "start": 130,
+    "end": 196,
+    "tokens": 299
+   },
+   "b": {
+    "file": "dataset_c/71/private/pulse_detect.c",
+    "start": 40,
+    "end": 73,
+    "tokens": 149
+   },
+   "scores": {
+    "raw": 0.16914103923647927,
+    "normalized": 0.15846153846153843,
+    "cosine": 0.9781549289582749,
+    "ngram": 0.2411764705882353,
+    "length": 0.4983277591973244,
+    "lcs": 0.3745819397993311,
+    "composite": 0.4439326709064786
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 54,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/66/private/output_influx.c",
+    "start": 91,
+    "end": 168,
+    "tokens": 365
+   },
+   "b": {
+    "file": "dataset_c/48/private/lacrosse_breezepro.c",
+    "start": 164,
+    "end": 188,
+    "tokens": 121
+   },
+   "scores": {
+    "raw": 0.19822921790457448,
+    "normalized": 0.19701986754966883,
+    "cosine": 0.9829842886235302,
+    "ngram": 0.2653061224489796,
+    "length": 0.3315068493150685,
+    "lcs": 0.273972602739726,
+    "composite": 0.44463804622478564
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 55,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/37/open_source/ftp.c",
+    "start": 74,
+    "end": 96,
+    "tokens": 244
+   },
+   "b": {
+    "file": "dataset_c/85/private/simplisafe.c",
+    "start": 49,
+    "end": 77,
+    "tokens": 174
+   },
+   "scores": {
+    "raw": 0.1675231243576567,
+    "normalized": 0.13191489361702124,
+    "cosine": 0.9077348555400434,
+    "ngram": 0.1559633027522936,
+    "length": 0.7131147540983607,
+    "lcs": 0.3975409836065574,
+    "composite": 0.40077731824437407
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 56,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/83/private/secplus_v1.c",
+    "start": 51,
+    "end": 81,
+    "tokens": 213
+   },
+   "b": {
+    "file": "dataset_c/31/open_source/ecs.c",
+    "start": 39,
+    "end": 67,
+    "tokens": 111
+   },
+   "scores": {
+    "raw": 0.1682926829268293,
+    "normalized": 0.1465968586387435,
+    "cosine": 0.9711288549465433,
+    "ngram": 0.1780821917808219,
+    "length": 0.5211267605633803,
+    "lcs": 0.38967136150234744,
+    "composite": 0.40966936356510886
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 57,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/26/private/efergy_optical.c",
+    "start": 156,
+    "end": 171,
+    "tokens": 136
+   },
+   "b": {
+    "file": "dataset_c/34/private/ge_coloreffects.c",
+    "start": 32,
+    "end": 54,
+    "tokens": 147
+   },
+   "scores": {
+    "raw": 0.30708661417322836,
+    "normalized": 0.30501089324618735,
+    "cosine": 0.9474729104649839,
+    "ngram": 0.2138364779874214,
+    "length": 0.9251700680272109,
+    "lcs": 0.54421768707483,
+    "composite": 0.47770395872937166
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 58,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/39/open_source/ftrl.c",
+    "start": 6,
+    "end": 32,
+    "tokens": 143
+   },
+   "b": {
+    "file": "dataset_c/40/private/honeywell_cm921.c",
+    "start": 53,
+    "end": 73,
+    "tokens": 194
+   },
+   "scores": {
+    "raw": 0.2119700748129676,
+    "normalized": 0.1855828220858896,
+    "cosine": 0.8607713890100984,
+    "ngram": 0.07142857142857142,
+    "length": 0.7371134020618557,
+    "lcs": 0.38144329896907214,
+    "composite": 0.34938690922572124
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 59,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "b": {
+    "file": "dataset_c/96/private/visonic_powercode.c",
+    "start": 113,
+    "end": 140,
+    "tokens": 166
+   },
+   "scores": {
+    "raw": 0.22327341532639544,
+    "normalized": 0.17831325301204815,
+    "cosine": 0.9615345744046072,
+    "ngram": 0.2903225806451613,
+    "length": 0.9540229885057471,
+    "lcs": 0.5517241379310345,
+    "composite": 0.5177907033392047
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 60,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/28/private/emontx.c",
+    "start": 166,
+    "end": 197,
+    "tokens": 169
+   },
+   "b": {
+    "file": "dataset_c/69/private/pulse_analyzer.c",
+    "start": 68,
+    "end": 103,
+    "tokens": 221
+   },
+   "scores": {
+    "raw": 0.2633711507293355,
+    "normalized": 0.2511061946902655,
+    "cosine": 0.9321531418349395,
+    "ngram": 0.2,
+    "length": 0.7647058823529411,
+    "lcs": 0.43891402714932126,
+    "composite": 0.4458459887669625
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 61,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/68/open_source/ntlm.c",
+    "start": 90,
+    "end": 126,
+    "tokens": 162
+   },
+   "b": {
+    "file": "dataset_c/96/private/visonic_powercode.c",
+    "start": 113,
+    "end": 140,
+    "tokens": 166
+   },
+   "scores": {
+    "raw": 0.2528216704288939,
+    "normalized": 0.16770186335403725,
+    "cosine": 0.9801983293467001,
+    "ngram": 0.20833333333333334,
+    "length": 0.9759036144578314,
+    "lcs": 0.5481927710843374,
+    "composite": 0.4825054441586809
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 62,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/79/open_source/regularization.c",
+    "start": 5,
+    "end": 17,
+    "tokens": 82
+   },
+   "b": {
+    "file": "dataset_c/87/open_source/string_utils.c",
+    "start": 19,
+    "end": 42,
+    "tokens": 131
+   },
+   "scores": {
+    "raw": 0.25,
+    "normalized": 0.1955307262569832,
+    "cosine": 0.893323846942997,
+    "ngram": 0.053691275167785234,
+    "length": 0.6259541984732825,
+    "lcs": 0.35877862595419846,
+    "composite": 0.3404565829253594
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 63,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/52/private/lacrosse_tx35.c",
+    "start": 182,
+    "end": 212,
+    "tokens": 160
+   },
+   "b": {
+    "file": "dataset_c/90/open_source/tblcmp.c",
+    "start": 638,
+    "end": 668,
+    "tokens": 134
+   },
+   "scores": {
+    "raw": 0.16849816849816845,
+    "normalized": 0.1495934959349593,
+    "cosine": 0.9114671327633962,
+    "ngram": 0.14492753623188406,
+    "length": 0.8375,
+    "lcs": 0.46875,
+    "composite": 0.4081767449682021
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 64,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/21/private/decoder_util.c",
+    "start": 281,
+    "end": 316,
+    "tokens": 233
+   },
+   "b": {
+    "file": "dataset_c/34/open_source/file_utils.c",
+    "start": 130,
+    "end": 149,
+    "tokens": 134
+   },
+   "scores": {
+    "raw": 0.22958057395143483,
+    "normalized": 0.18142857142857138,
+    "cosine": 0.9582768004249138,
+    "ngram": 0.1711229946524064,
+    "length": 0.575107296137339,
+    "lcs": 0.38197424892703863,
+    "composite": 0.4141556341739294
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 65,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/88/open_source/sym.c",
+    "start": 73,
+    "end": 109,
+    "tokens": 177
+   },
+   "b": {
+    "file": "dataset_c/54/private/lacrosse_ws7000.c",
+    "start": 221,
+    "end": 248,
+    "tokens": 232
+   },
+   "scores": {
+    "raw": 0.20110701107011075,
+    "normalized": 0.19532163742690056,
+    "cosine": 0.9758055993068737,
+    "ngram": 0.19072164948453607,
+    "length": 0.7629310344827587,
+    "lcs": 0.4267241379310345,
+    "composite": 0.44525211159850026
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 66,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/63/open_source/near_dupe.c",
+    "start": 220,
+    "end": 248,
+    "tokens": 165
+   },
+   "b": {
+    "file": "dataset_c/34/private/ge_coloreffects.c",
+    "start": 32,
+    "end": 54,
+    "tokens": 147
+   },
+   "scores": {
+    "raw": 0.2837301587301587,
+    "normalized": 0.20854271356783916,
+    "cosine": 0.9901916586986578,
+    "ngram": 0.26993865030674846,
+    "length": 0.8909090909090909,
+    "lcs": 0.5818181818181818,
+    "composite": 0.5134780973073011
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 67,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/57/open_source/logistic_regression_trainer.c",
+    "start": 125,
+    "end": 161,
+    "tokens": 234
+   },
+   "b": {
+    "file": "dataset_c/75/open_source/pop3p.c",
+    "start": 13,
+    "end": 60,
+    "tokens": 699
+   },
+   "scores": {
+    "raw": 0.17353479853479858,
+    "normalized": 0.16460268317853455,
+    "cosine": 0.9110248385230666,
+    "ngram": 0.15810276679841898,
+    "length": 0.33476394849785407,
+    "lcs": 0.2718168812589413,
+    "composite": 0.36554260607316236
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 68,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/40/private/honeywell_cm921.c",
+    "start": 53,
+    "end": 73,
+    "tokens": 194
+   },
+   "b": {
+    "file": "dataset_c/78/private/r_util.c",
+    "start": 26,
+    "end": 55,
+    "tokens": 176
+   },
+   "scores": {
+    "raw": 0.24055415617128462,
+    "normalized": 0.18632478632478633,
+    "cosine": 0.9579449215353291,
+    "ngram": 0.2193877551020408,
+    "length": 0.9072164948453608,
+    "lcs": 0.5154639175257731,
+    "composite": 0.4749265607916193
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 69,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/20/private/data_tag.c",
+    "start": 332,
+    "end": 365,
+    "tokens": 274
+   },
+   "b": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.20268138801261826,
+    "normalized": 0.195715676728335,
+    "cosine": 0.9583234306025201,
+    "ngram": 0.15348837209302327,
+    "length": 0.5766423357664233,
+    "lcs": 0.3978102189781022,
+    "composite": 0.401931834679697
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 70,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/84/private/secplus_v2.c",
+    "start": 72,
+    "end": 101,
+    "tokens": 150
+   },
+   "b": {
+    "file": "dataset_c/42/open_source/geodb.c",
+    "start": 200,
+    "end": 223,
+    "tokens": 211
+   },
+   "scores": {
+    "raw": 0.2579642579642579,
+    "normalized": 0.2052910052910053,
+    "cosine": 0.9500542842859814,
+    "ngram": 0.2907801418439716,
+    "length": 0.7109004739336493,
+    "lcs": 0.44549763033175355,
+    "composite": 0.4943291222754705
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 71,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/84/open_source/sparse_matrix_utils.c",
+    "start": 65,
+    "end": 89,
+    "tokens": 128
+   },
+   "b": {
+    "file": "dataset_c/33/open_source/features.c",
+    "start": 29,
+    "end": 52,
+    "tokens": 140
+   },
+   "scores": {
+    "raw": 0.3003194888178914,
+    "normalized": 0.22401847575057732,
+    "cosine": 0.9700079278690724,
+    "ngram": 0.25,
+    "length": 0.9142857142857143,
+    "lcs": 0.5857142857142857,
+    "composite": 0.5014625022776287
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 72,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/58/private/m_bus.c",
+    "start": 1180,
+    "end": 1234,
+    "tokens": 210
+   },
+   "b": {
+    "file": "dataset_c/84/open_source/sparse_matrix_utils.c",
+    "start": 65,
+    "end": 89,
+    "tokens": 128
+   },
+   "scores": {
+    "raw": 0.21329437545653762,
+    "normalized": 0.18118948824343017,
+    "cosine": 0.9193824579079416,
+    "ngram": 0.16666666666666666,
+    "length": 0.6095238095238096,
+    "lcs": 0.3904761904761905,
+    "composite": 0.40379409964168683
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 73,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/97/open_source/trie_utils.c",
+    "start": 53,
+    "end": 82,
+    "tokens": 140
+   },
+   "b": {
+    "file": "dataset_c/45/private/interlogix.c",
+    "start": 216,
+    "end": 240,
+    "tokens": 134
+   },
+   "scores": {
+    "raw": 0.24137931034482762,
+    "normalized": 0.21790540540540537,
+    "cosine": 0.9781259357311637,
+    "ngram": 0.26229508196721313,
+    "length": 0.9571428571428572,
+    "lcs": 0.55,
+    "composite": 0.5086459957635266
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 74,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/39/open_source/ftrl.c",
+    "start": 6,
+    "end": 32,
+    "tokens": 143
+   },
+   "b": {
+    "file": "dataset_c/67/open_source/normalize.c",
+    "start": 117,
+    "end": 141,
+    "tokens": 133
+   },
+   "scores": {
+    "raw": 0.2604395604395604,
+    "normalized": 0.20879120879120883,
+    "cosine": 0.9599548311464179,
+    "ngram": 0.26373626373626374,
+    "length": 0.9300699300699301,
+    "lcs": 0.5524475524475524,
+    "composite": 0.5040946018924986
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 75,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/40/open_source/gazetteer_data.c",
+    "start": 48,
+    "end": 64,
+    "tokens": 179
+   },
+   "b": {
+    "file": "dataset_c/89/private/thermopro_tp12.c",
+    "start": 49,
+    "end": 98,
+    "tokens": 241
+   },
+   "scores": {
+    "raw": 0.16564952048823012,
+    "normalized": 0.15537383177570097,
+    "cosine": 0.8904818904966685,
+    "ngram": 0.16037735849056603,
+    "length": 0.7427385892116183,
+    "lcs": 0.36929460580912865,
+    "composite": 0.4016668307639633
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 76,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/87/open_source/string_utils.c",
+    "start": 19,
+    "end": 42,
+    "tokens": 131
+   },
+   "b": {
+    "file": "dataset_c/20/private/data_tag.c",
+    "start": 332,
+    "end": 365,
+    "tokens": 274
+   },
+   "scores": {
+    "raw": 0.22183507549361203,
+    "normalized": 0.20226308345120225,
+    "cosine": 0.9688832398510401,
+    "ngram": 0.14414414414414414,
+    "length": 0.4781021897810219,
+    "lcs": 0.32116788321167883,
+    "composite": 0.3914938157695027
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 77,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/96/open_source/trie_search.c",
+    "start": 809,
+    "end": 835,
+    "tokens": 168
+   },
+   "b": {
+    "file": "dataset_c/61/private/norgo.c",
+    "start": 217,
+    "end": 255,
+    "tokens": 186
+   },
+   "scores": {
+    "raw": 0.2678375411635565,
+    "normalized": 0.19293078055964652,
+    "cosine": 0.9518001807515103,
+    "ngram": 0.2642857142857143,
+    "length": 0.9032258064516129,
+    "lcs": 0.5376344086021505,
+    "composite": 0.5004135228065374
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 78,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/82/open_source/soft_tfidf.c",
+    "start": 24,
+    "end": 62,
+    "tokens": 323
+   },
+   "b": {
+    "file": "dataset_c/22/private/digitech_xc0324.c",
+    "start": 233,
+    "end": 258,
+    "tokens": 188
+   },
+   "scores": {
+    "raw": 0.23475935828877004,
+    "normalized": 0.2126892573900505,
+    "cosine": 0.9573991453300963,
+    "ngram": 0.2474747474747475,
+    "length": 0.5820433436532507,
+    "lcs": 0.38080495356037153,
+    "composite": 0.4571411676378373
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 79,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/34/private/ge_coloreffects.c",
+    "start": 32,
+    "end": 54,
+    "tokens": 147
+   },
+   "b": {
+    "file": "dataset_c/66/private/output_influx.c",
+    "start": 91,
+    "end": 168,
+    "tokens": 365
+   },
+   "scores": {
+    "raw": 0.2129857353664535,
+    "normalized": 0.2185430463576159,
+    "cosine": 0.9822552417813908,
+    "ngram": 0.3316582914572864,
+    "length": 0.40273972602739727,
+    "lcs": 0.31232876712328766,
+    "composite": 0.48954841688624035
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 80,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/59/private/new_template.c",
+    "start": 265,
+    "end": 291,
+    "tokens": 135
+   },
+   "b": {
+    "file": "dataset_c/50/open_source/language_classifier_cli.c",
+    "start": 10,
+    "end": 49,
+    "tokens": 200
+   },
+   "scores": {
+    "raw": 0.25361010830324915,
+    "normalized": 0.19537572254335256,
+    "cosine": 0.9608075800046597,
+    "ngram": 0.24342105263157895,
+    "length": 0.675,
+    "lcs": 0.43,
+    "composite": 0.4669444847788583
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 81,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/27/private/elv.c",
+    "start": 222,
+    "end": 250,
+    "tokens": 179
+   },
+   "b": {
+    "file": "dataset_c/50/open_source/language_classifier_cli.c",
+    "start": 10,
+    "end": 49,
+    "tokens": 200
+   },
+   "scores": {
+    "raw": 0.2581227436823105,
+    "normalized": 0.20462427745664735,
+    "cosine": 0.9714361068077417,
+    "ngram": 0.3503184713375796,
+    "length": 0.895,
+    "lcs": 0.535,
+    "composite": 0.5508464603058353
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 82,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/92/open_source/transliterate.c",
+    "start": 443,
+    "end": 480,
+    "tokens": 249
+   },
+   "b": {
+    "file": "dataset_c/30/private/fileformat.c",
+    "start": 351,
+    "end": 383,
+    "tokens": 165
+   },
+   "scores": {
+    "raw": 0.2620607504466944,
+    "normalized": 0.18938835666912301,
+    "cosine": 0.91071864932207,
+    "ngram": 0.2619047619047619,
+    "length": 0.6626506024096386,
+    "lcs": 0.40160642570281124,
+    "composite": 0.4641984166637699
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 83,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/30/open_source/double_metaphone.c",
+    "start": 30,
+    "end": 53,
+    "tokens": 114
+   },
+   "b": {
+    "file": "dataset_c/82/private/sdr.c",
+    "start": 107,
+    "end": 151,
+    "tokens": 338
+   },
+   "scores": {
+    "raw": 0.19622245540398742,
+    "normalized": 0.16537102473498233,
+    "cosine": 0.9558628627122198,
+    "ngram": 0.20670391061452514,
+    "length": 0.33727810650887574,
+    "lcs": 0.2692307692307692,
+    "composite": 0.40600292270733007
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 84,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/28/open_source/dfa.c",
+    "start": 183,
+    "end": 206,
+    "tokens": 125
+   },
+   "b": {
+    "file": "dataset_c/88/private/tfa_drop_30.3233.c",
+    "start": 191,
+    "end": 238,
+    "tokens": 228
+   },
+   "scores": {
+    "raw": 0.1950989632422243,
+    "normalized": 0.17647058823529416,
+    "cosine": 0.9591976708316385,
+    "ngram": 0.23270440251572327,
+    "length": 0.5482456140350878,
+    "lcs": 0.35964912280701755,
+    "composite": 0.4421212968192887
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 85,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/36/private/gt_wt_02.c",
+    "start": 108,
+    "end": 120,
+    "tokens": 83
+   },
+   "b": {
+    "file": "dataset_c/80/open_source/scanflags.c",
+    "start": 39,
+    "end": 57,
+    "tokens": 67
+   },
+   "scores": {
+    "raw": 0.17682926829268297,
+    "normalized": 0.1411290322580645,
+    "cosine": 0.9162365268277485,
+    "ngram": 0.11428571428571428,
+    "length": 0.8072289156626506,
+    "lcs": 0.4457831325301205,
+    "composite": 0.39032209295961334
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 86,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/90/private/tpms_abarth124.c",
+    "start": 113,
+    "end": 147,
+    "tokens": 159
+   },
+   "b": {
+    "file": "dataset_c/41/private/honeywell_wdb.c",
+    "start": 122,
+    "end": 160,
+    "tokens": 197
+   },
+   "scores": {
+    "raw": 0.19638554216867465,
+    "normalized": 0.2111913357400722,
+    "cosine": 0.9617449865115492,
+    "ngram": 0.2857142857142857,
+    "length": 0.8071065989847716,
+    "lcs": 0.47715736040609136,
+    "composite": 0.49792831788608904
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 87,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "b": {
+    "file": "dataset_c/87/open_source/string_utils.c",
+    "start": 19,
+    "end": 42,
+    "tokens": 131
+   },
+   "scores": {
+    "raw": 0.2334384858044164,
+    "normalized": 0.17234664070107109,
+    "cosine": 0.9298266537305321,
+    "ngram": 0.1390728476821192,
+    "length": 0.8291139240506329,
+    "lcs": 0.47468354430379744,
+    "composite": 0.4152019706433035
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 88,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/97/open_source/trie_utils.c",
+    "start": 53,
+    "end": 82,
+    "tokens": 140
+   },
+   "b": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "scores": {
+    "raw": 0.2705771050141911,
+    "normalized": 0.21445783132530116,
+    "cosine": 0.9566685172405942,
+    "ngram": 0.23076923076923078,
+    "length": 0.8045977011494253,
+    "lcs": 0.5172413793103449,
+    "composite": 0.4736076868495871
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 89,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/47/private/lacrossews.c",
+    "start": 216,
+    "end": 248,
+    "tokens": 207
+   },
+   "b": {
+    "file": "dataset_c/89/private/thermopro_tp12.c",
+    "start": 49,
+    "end": 98,
+    "tokens": 241
+   },
+   "scores": {
+    "raw": 0.21883173496076724,
+    "normalized": 0.17523364485981308,
+    "cosine": 0.9845064010050381,
+    "ngram": 0.3588235294117647,
+    "length": 0.8589211618257261,
+    "lcs": 0.5643153526970954,
+    "composite": 0.5512548311063795
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 90,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/45/open_source/geo_disambiguation.c",
+    "start": 111,
+    "end": 130,
+    "tokens": 112
+   },
+   "b": {
+    "file": "dataset_c/59/open_source/minibatch.c",
+    "start": 29,
+    "end": 50,
+    "tokens": 113
+   },
+   "scores": {
+    "raw": 0.24883359253499227,
+    "normalized": 0.20588235294117652,
+    "cosine": 0.9847396190488624,
+    "ngram": 0.2727272727272727,
+    "length": 0.9911504424778761,
+    "lcs": 0.6017699115044248,
+    "composite": 0.5201833082635025
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 91,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/71/private/pulse_detect.c",
+    "start": 40,
+    "end": 73,
+    "tokens": 149
+   },
+   "b": {
+    "file": "dataset_c/67/open_source/normalize.c",
+    "start": 117,
+    "end": 141,
+    "tokens": 133
+   },
+   "scores": {
+    "raw": 0.24285714285714288,
+    "normalized": 0.22115384615384615,
+    "cosine": 0.9704625161840654,
+    "ngram": 0.2636363636363636,
+    "length": 0.8926174496644296,
+    "lcs": 0.5973154362416108,
+    "composite": 0.5011630882981737
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 92,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/76/private/rubicson_48659.c",
+    "start": 152,
+    "end": 189,
+    "tokens": 238
+   },
+   "b": {
+    "file": "dataset_c/86/private/somfy.c",
+    "start": 186,
+    "end": 222,
+    "tokens": 190
+   },
+   "scores": {
+    "raw": 0.3340020060180542,
+    "normalized": 0.28846153846153844,
+    "cosine": 0.9043776114729644,
+    "ngram": 0.19607843137254902,
+    "length": 0.7983193277310925,
+    "lcs": 0.49159663865546216,
+    "composite": 0.4471696734980577
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 93,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/77/open_source/proxymain.c",
+    "start": 919,
+    "end": 945,
+    "tokens": 262
+   },
+   "b": {
+    "file": "dataset_c/35/private/gt_tmbbq05.c",
+    "start": 141,
+    "end": 168,
+    "tokens": 121
+   },
+   "scores": {
+    "raw": 0.19883040935672514,
+    "normalized": 0.18563685636856364,
+    "cosine": 0.9661845773617623,
+    "ngram": 0.22023809523809523,
+    "length": 0.4618320610687023,
+    "lcs": 0.33587786259541985,
+    "composite": 0.4287433437639357
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 94,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/51/open_source/language_classifier_io.c",
+    "start": 73,
+    "end": 98,
+    "tokens": 124
+   },
+   "b": {
+    "file": "dataset_c/48/open_source/jaccard.c",
+    "start": 3,
+    "end": 26,
+    "tokens": 106
+   },
+   "scores": {
+    "raw": 0.2725880551301685,
+    "normalized": 0.2597402597402597,
+    "cosine": 0.9771441383975727,
+    "ngram": 0.2916666666666667,
+    "length": 0.8548387096774194,
+    "lcs": 0.5241935483870968,
+    "composite": 0.5174453777468186
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 95,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/28/private/emontx.c",
+    "start": 166,
+    "end": 197,
+    "tokens": 169
+   },
+   "b": {
+    "file": "dataset_c/63/private/optparse.c",
+    "start": 42,
+    "end": 77,
+    "tokens": 196
+   },
+   "scores": {
+    "raw": 0.31025416301489916,
+    "normalized": 0.3099885189437428,
+    "cosine": 0.9791263920709657,
+    "ngram": 0.27741935483870966,
+    "length": 0.8622448979591837,
+    "lcs": 0.5612244897959183,
+    "composite": 0.5146121492764401
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 96,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/22/open_source/crf.c",
+    "start": 116,
+    "end": 132,
+    "tokens": 137
+   },
+   "b": {
+    "file": "dataset_c/95/private/vaillant_vrt340f.c",
+    "start": 64,
+    "end": 91,
+    "tokens": 180
+   },
+   "scores": {
+    "raw": 0.22584541062801933,
+    "normalized": 0.1984848484848485,
+    "cosine": 0.9590005740440348,
+    "ngram": 0.2972972972972973,
+    "length": 0.7611111111111111,
+    "lcs": 0.4722222222222222,
+    "composite": 0.5019593091984353
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 97,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/90/open_source/tblcmp.c",
+    "start": 638,
+    "end": 668,
+    "tokens": 134
+   },
+   "b": {
+    "file": "dataset_c/49/private/lacrosse_r1.c",
+    "start": 135,
+    "end": 154,
+    "tokens": 143
+   },
+   "scores": {
+    "raw": 0.11782032400589104,
+    "normalized": 0.1711026615969582,
+    "cosine": 0.8745366843646856,
+    "ngram": 0.06201550387596899,
+    "length": 0.9370629370629371,
+    "lcs": 0.4405594405594406,
+    "composite": 0.3582310243298371
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 98,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/95/private/vaillant_vrt340f.c",
+    "start": 64,
+    "end": 91,
+    "tokens": 180
+   },
+   "b": {
+    "file": "dataset_c/48/private/lacrosse_breezepro.c",
+    "start": 164,
+    "end": 188,
+    "tokens": 121
+   },
+   "scores": {
+    "raw": 0.3345410628019324,
+    "normalized": 0.30454545454545456,
+    "cosine": 0.9737403015427837,
+    "ngram": 0.2389937106918239,
+    "length": 0.6722222222222223,
+    "lcs": 0.4722222222222222,
+    "composite": 0.4755579447686145
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 99,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/20/open_source/common.c",
+    "start": 290,
+    "end": 316,
+    "tokens": 253
+   },
+   "b": {
+    "file": "dataset_c/29/private/ert_idm.c",
+    "start": 712,
+    "end": 735,
+    "tokens": 215
+   },
+   "scores": {
+    "raw": 0.13119143239625164,
+    "normalized": 0.1352201257861635,
+    "cosine": 0.9620732893414496,
+    "ngram": 0.1810344827586207,
+    "length": 0.849802371541502,
+    "lcs": 0.43478260869565216,
+    "composite": 0.43818666824637914
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 100,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/27/open_source/dedupe.c",
+    "start": 231,
+    "end": 254,
+    "tokens": 157
+   },
+   "b": {
+    "file": "dataset_c/49/private/lacrosse_r1.c",
+    "start": 135,
+    "end": 154,
+    "tokens": 143
+   },
+   "scores": {
+    "raw": 0.2473821989528796,
+    "normalized": 0.1577946768060836,
+    "cosine": 0.9377040186242477,
+    "ngram": 0.16541353383458646,
+    "length": 0.910828025477707,
+    "lcs": 0.49044585987261147,
+    "composite": 0.4412244707081432
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 101,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/28/open_source/dfa.c",
+    "start": 183,
+    "end": 206,
+    "tokens": 125
+   },
+   "b": {
+    "file": "dataset_c/24/private/dsc.c",
+    "start": 286,
+    "end": 320,
+    "tokens": 177
+   },
+   "scores": {
+    "raw": 0.19056603773584901,
+    "normalized": 0.1865079365079365,
+    "cosine": 0.969425273774545,
+    "ngram": 0.14925373134328357,
+    "length": 0.7062146892655368,
+    "lcs": 0.4350282485875706,
+    "composite": 0.41412394338258085
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 102,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/62/private/oil_standard.c",
+    "start": 129,
+    "end": 166,
+    "tokens": 211
+   },
+   "b": {
+    "file": "dataset_c/29/private/ert_idm.c",
+    "start": 712,
+    "end": 735,
+    "tokens": 215
+   },
+   "scores": {
+    "raw": 0.19174041297935107,
+    "normalized": 0.1507246376811594,
+    "cosine": 0.9446656147727954,
+    "ngram": 0.22926829268292684,
+    "length": 0.9813953488372092,
+    "lcs": 0.48372093023255813,
+    "composite": 0.47957754085046467
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 103,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/85/open_source/stochastic_gradient_descent.c",
+    "start": 49,
+    "end": 73,
+    "tokens": 158
+   },
+   "b": {
+    "file": "dataset_c/50/private/lacrosse_th3.c",
+    "start": 67,
+    "end": 109,
+    "tokens": 219
+   },
+   "scores": {
+    "raw": 0.24578527062999111,
+    "normalized": 0.17647058823529416,
+    "cosine": 0.9002058433139785,
+    "ngram": 0.23741007194244604,
+    "length": 0.7214611872146118,
+    "lcs": 0.4200913242009132,
+    "composite": 0.45235164618130025
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 104,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/55/open_source/libpostal.c",
+    "start": 230,
+    "end": 252,
+    "tokens": 114
+   },
+   "b": {
+    "file": "dataset_c/82/private/sdr.c",
+    "start": 107,
+    "end": 151,
+    "tokens": 338
+   },
+   "scores": {
+    "raw": 0.1752360965372508,
+    "normalized": 0.13780918727915192,
+    "cosine": 0.9121030166428212,
+    "ngram": 0.14857142857142858,
+    "length": 0.33727810650887574,
+    "lcs": 0.2455621301775148,
+    "composite": 0.3609914601796037
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 105,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/36/open_source/float_utils.c",
+    "start": 21,
+    "end": 29,
+    "tokens": 61
+   },
+   "b": {
+    "file": "dataset_c/93/private/ttx201.c",
+    "start": 213,
+    "end": 258,
+    "tokens": 227
+   },
+   "scores": {
+    "raw": 0.10832137733142033,
+    "normalized": 0.11372064276885041,
+    "cosine": 0.9576088210306561,
+    "ngram": 0.09154929577464789,
+    "length": 0.2687224669603524,
+    "lcs": 0.20704845814977973,
+    "composite": 0.3274587023628976
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 106,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/93/open_source/transliteration_scripts_data.c",
+    "start": 120,
+    "end": 160,
+    "tokens": 206
+   },
+   "b": {
+    "file": "dataset_c/80/open_source/scanflags.c",
+    "start": 39,
+    "end": 57,
+    "tokens": 67
+   },
+   "scores": {
+    "raw": 0.14330218068535827,
+    "normalized": 0.13598901098901095,
+    "cosine": 0.9365420144025063,
+    "ngram": 0.13333333333333333,
+    "length": 0.32524271844660196,
+    "lcs": 0.21844660194174756,
+    "composite": 0.35432332684715595
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 107,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/51/private/lacrosse_tx141x.c",
+    "start": 314,
+    "end": 348,
+    "tokens": 175
+   },
+   "b": {
+    "file": "dataset_c/80/open_source/scanflags.c",
+    "start": 39,
+    "end": 57,
+    "tokens": 67
+   },
+   "scores": {
+    "raw": 0.1871657754010695,
+    "normalized": 0.1529790660225443,
+    "cosine": 0.9438638138969369,
+    "ngram": 0.17424242424242425,
+    "length": 0.38285714285714284,
+    "lcs": 0.29714285714285715,
+    "composite": 0.3888015786333888
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 108,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/72/private/pulse_detect_fsk.c",
+    "start": 168,
+    "end": 207,
+    "tokens": 207
+   },
+   "b": {
+    "file": "dataset_c/44/private/insteon.c",
+    "start": 486,
+    "end": 509,
+    "tokens": 173
+   },
+   "scores": {
+    "raw": 0.24355555555555553,
+    "normalized": 0.16519546027742749,
+    "cosine": 0.9467644935037927,
+    "ngram": 0.3356643356643357,
+    "length": 0.8357487922705314,
+    "lcs": 0.46859903381642515,
+    "composite": 0.5292369427739415
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 109,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/32/private/fineoffset_wh1050.c",
+    "start": 59,
+    "end": 91,
+    "tokens": 253
+   },
+   "b": {
+    "file": "dataset_c/75/private/rtl_433.c",
+    "start": 94,
+    "end": 148,
+    "tokens": 640
+   },
+   "scores": {
+    "raw": 0.19476744186046513,
+    "normalized": 0.18110676355505873,
+    "cosine": 0.9112214114111974,
+    "ngram": 0.20802919708029197,
+    "length": 0.3953125,
+    "lcs": 0.278125,
+    "composite": 0.40122940543300645
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 110,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/65/private/oregon_scientific_sl109h.c",
+    "start": 112,
+    "end": 168,
+    "tokens": 255
+   },
+   "b": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "scores": {
+    "raw": 0.2518457752255947,
+    "normalized": 0.17590361445783131,
+    "cosine": 0.9302189325537361,
+    "ngram": 0.3046875,
+    "length": 0.6823529411764706,
+    "lcs": 0.4235294117647059,
+    "composite": 0.49355272977864056
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 111,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/72/open_source/options.c",
+    "start": 287,
+    "end": 316,
+    "tokens": 155
+   },
+   "b": {
+    "file": "dataset_c/79/open_source/regularization.c",
+    "start": 5,
+    "end": 17,
+    "tokens": 82
+   },
+   "scores": {
+    "raw": 0.27582292849035184,
+    "normalized": 0.20063191153238547,
+    "cosine": 0.9508924792326338,
+    "ngram": 0.1643835616438356,
+    "length": 0.5290322580645161,
+    "lcs": 0.3419354838709677,
+    "composite": 0.4086195973677549
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 112,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/26/open_source/datatypes.c",
+    "start": 230,
+    "end": 240,
+    "tokens": 114
+   },
+   "b": {
+    "file": "dataset_c/32/open_source/expand.c",
+    "start": 417,
+    "end": 441,
+    "tokens": 202
+   },
+   "scores": {
+    "raw": 0.12045270816491516,
+    "normalized": 0.1377726750861079,
+    "cosine": 0.8581752310078975,
+    "ngram": 0.10204081632653061,
+    "length": 0.5643564356435643,
+    "lcs": 0.33663366336633666,
+    "composite": 0.33914717111241416
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 113,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/27/open_source/dedupe.c",
+    "start": 231,
+    "end": 254,
+    "tokens": 157
+   },
+   "b": {
+    "file": "dataset_c/71/open_source/numex_table_builder.c",
+    "start": 11,
+    "end": 38,
+    "tokens": 127
+   },
+   "scores": {
+    "raw": 0.2094240837696335,
+    "normalized": 0.2057026476578412,
+    "cosine": 0.9825176141660908,
+    "ngram": 0.2786885245901639,
+    "length": 0.8089171974522293,
+    "lcs": 0.535031847133758,
+    "composite": 0.5007422201882992
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 114,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/63/private/optparse.c",
+    "start": 42,
+    "end": 77,
+    "tokens": 196
+   },
+   "b": {
+    "file": "dataset_c/33/open_source/features.c",
+    "start": 29,
+    "end": 52,
+    "tokens": 140
+   },
+   "scores": {
+    "raw": 0.259421560035057,
+    "normalized": 0.18369690011481055,
+    "cosine": 0.9339567582446953,
+    "ngram": 0.2585034013605442,
+    "length": 0.7142857142857143,
+    "lcs": 0.44387755102040816,
+    "composite": 0.4730367877415503
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 115,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/51/open_source/language_classifier_io.c",
+    "start": 73,
+    "end": 98,
+    "tokens": 124
+   },
+   "b": {
+    "file": "dataset_c/44/open_source/geonames.c",
+    "start": 462,
+    "end": 486,
+    "tokens": 203
+   },
+   "scores": {
+    "raw": 0.25416666666666665,
+    "normalized": 0.20939086294416243,
+    "cosine": 0.9692862868047177,
+    "ngram": 0.35714285714285715,
+    "length": 0.6108374384236454,
+    "lcs": 0.4630541871921182,
+    "composite": 0.5252505536387821
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 116,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/44/private/insteon.c",
+    "start": 486,
+    "end": 509,
+    "tokens": 173
+   },
+   "b": {
+    "file": "dataset_c/88/open_source/sym.c",
+    "start": 73,
+    "end": 109,
+    "tokens": 177
+   },
+   "scores": {
+    "raw": 0.13780918727915192,
+    "normalized": 0.13517441860465118,
+    "cosine": 0.9591074046494638,
+    "ngram": 0.16778523489932887,
+    "length": 0.9774011299435028,
+    "lcs": 0.4971751412429379,
+    "composite": 0.4435797620792623
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 117,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/77/private/r_api.c",
+    "start": 102,
+    "end": 128,
+    "tokens": 228
+   },
+   "b": {
+    "file": "dataset_c/37/open_source/ftp.c",
+    "start": 74,
+    "end": 96,
+    "tokens": 244
+   },
+   "scores": {
+    "raw": 0.16891064871481032,
+    "normalized": 0.15568862275449102,
+    "cosine": 0.9288802021466003,
+    "ngram": 0.22131147540983606,
+    "length": 0.9344262295081968,
+    "lcs": 0.4344262295081967,
+    "composite": 0.46427504983436063
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 118,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "b": {
+    "file": "dataset_c/43/private/infactory.c",
+    "start": 119,
+    "end": 152,
+    "tokens": 196
+   },
+   "scores": {
+    "raw": 0.29706717123935666,
+    "normalized": 0.24457831325301205,
+    "cosine": 0.9717970999874608,
+    "ngram": 0.45,
+    "length": 0.8877551020408163,
+    "lcs": 0.576530612244898,
+    "composite": 0.6089315023248825
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 119,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/55/open_source/libpostal.c",
+    "start": 230,
+    "end": 252,
+    "tokens": 114
+   },
+   "b": {
+    "file": "dataset_c/79/private/s3318p.c",
+    "start": 118,
+    "end": 135,
+    "tokens": 104
+   },
+   "scores": {
+    "raw": 0.2589703588143526,
+    "normalized": 0.11944444444444446,
+    "cosine": 0.8966097387505029,
+    "ngram": 0.1623931623931624,
+    "length": 0.9122807017543859,
+    "lcs": 0.49122807017543857,
+    "composite": 0.4305937800607389
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 120,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/51/open_source/language_classifier_io.c",
+    "start": 73,
+    "end": 98,
+    "tokens": 124
+   },
+   "b": {
+    "file": "dataset_c/29/open_source/dnspr.c",
+    "start": 156,
+    "end": 175,
+    "tokens": 198
+   },
+   "scores": {
+    "raw": 0.10719754977029095,
+    "normalized": 0.14076782449725778,
+    "cosine": 0.9680877425800827,
+    "ngram": 0.15432098765432098,
+    "length": 0.6262626262626263,
+    "lcs": 0.3838383838383838,
+    "composite": 0.40024449645818894
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 121,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/76/open_source/proxy.c",
+    "start": 158,
+    "end": 185,
+    "tokens": 187
+   },
+   "b": {
+    "file": "dataset_c/90/private/tpms_abarth124.c",
+    "start": 113,
+    "end": 147,
+    "tokens": 159
+   },
+   "scores": {
+    "raw": 0.1889862327909887,
+    "normalized": 0.15430861723446898,
+    "cosine": 0.8447433854425966,
+    "ngram": 0.10050251256281408,
+    "length": 0.8502673796791443,
+    "lcs": 0.40106951871657753,
+    "composite": 0.37038758951721024
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 122,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/32/open_source/expand.c",
+    "start": 417,
+    "end": 441,
+    "tokens": 202
+   },
+   "b": {
+    "file": "dataset_c/26/private/efergy_optical.c",
+    "start": 156,
+    "end": 171,
+    "tokens": 136
+   },
+   "scores": {
+    "raw": 0.15359741309620045,
+    "normalized": 0.15614236509758894,
+    "cosine": 0.8786748747313975,
+    "ngram": 0.09090909090909091,
+    "length": 0.6732673267326733,
+    "lcs": 0.3564356435643564,
+    "composite": 0.3523551926657367
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 123,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/89/private/thermopro_tp12.c",
+    "start": 49,
+    "end": 98,
+    "tokens": 241
+   },
+   "b": {
+    "file": "dataset_c/21/open_source/conf.c",
+    "start": 471,
+    "end": 496,
+    "tokens": 182
+   },
+   "scores": {
+    "raw": 0.1857018308631212,
+    "normalized": 0.17172897196261683,
+    "cosine": 0.9828729701741887,
+    "ngram": 0.1989247311827957,
+    "length": 0.7551867219917012,
+    "lcs": 0.4605809128630705,
+    "composite": 0.44921569997956706
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 124,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/31/open_source/ecs.c",
+    "start": 39,
+    "end": 67,
+    "tokens": 111
+   },
+   "b": {
+    "file": "dataset_c/50/private/lacrosse_th3.c",
+    "start": 67,
+    "end": 109,
+    "tokens": 219
+   },
+   "scores": {
+    "raw": 0.1898846495119787,
+    "normalized": 0.12605042016806722,
+    "cosine": 0.9558911462084875,
+    "ngram": 0.14189189189189189,
+    "length": 0.5068493150684932,
+    "lcs": 0.3378995433789954,
+    "composite": 0.3866867235507096
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 125,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/41/private/honeywell_wdb.c",
+    "start": 122,
+    "end": 160,
+    "tokens": 197
+   },
+   "b": {
+    "file": "dataset_c/72/private/pulse_detect_fsk.c",
+    "start": 168,
+    "end": 207,
+    "tokens": 207
+   },
+   "scores": {
+    "raw": 0.3137777777777778,
+    "normalized": 0.28121059268600257,
+    "cosine": 0.9815609504621787,
+    "ngram": 0.2774566473988439,
+    "length": 0.9516908212560387,
+    "lcs": 0.5845410628019324,
+    "composite": 0.5245382535882905
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 126,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/82/private/sdr.c",
+    "start": 107,
+    "end": 151,
+    "tokens": 338
+   },
+   "b": {
+    "file": "dataset_c/81/open_source/shuffle.c",
+    "start": 34,
+    "end": 104,
+    "tokens": 268
+   },
+   "scores": {
+    "raw": 0.23263254113345522,
+    "normalized": 0.16466431095406364,
+    "cosine": 0.9447421315024941,
+    "ngram": 0.2623762376237624,
+    "length": 0.7928994082840237,
+    "lcs": 0.44970414201183434,
+    "composite": 0.4830456585104408
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 127,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/47/private/lacrossews.c",
+    "start": 216,
+    "end": 248,
+    "tokens": 207
+   },
+   "b": {
+    "file": "dataset_c/71/private/pulse_detect.c",
+    "start": 40,
+    "end": 73,
+    "tokens": 149
+   },
+   "scores": {
+    "raw": 0.29508196721311475,
+    "normalized": 0.26628075253256156,
+    "cosine": 0.9557838655351204,
+    "ngram": 0.3150684931506849,
+    "length": 0.7198067632850241,
+    "lcs": 0.4975845410628019,
+    "composite": 0.5137225106664707
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 128,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/27/open_source/dedupe.c",
+    "start": 231,
+    "end": 254,
+    "tokens": 157
+   },
+   "b": {
+    "file": "dataset_c/41/private/honeywell_wdb.c",
+    "start": 122,
+    "end": 160,
+    "tokens": 197
+   },
+   "scores": {
+    "raw": 0.21445783132530116,
+    "normalized": 0.13718411552346566,
+    "cosine": 0.9536598207814865,
+    "ngram": 0.19753086419753085,
+    "length": 0.7969543147208121,
+    "lcs": 0.4873096446700508,
+    "composite": 0.448198145108625
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 129,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/68/open_source/ntlm.c",
+    "start": 90,
+    "end": 126,
+    "tokens": 162
+   },
+   "b": {
+    "file": "dataset_c/20/private/data_tag.c",
+    "start": 332,
+    "end": 365,
+    "tokens": 274
+   },
+   "scores": {
+    "raw": 0.1591173054587689,
+    "normalized": 0.17821782178217827,
+    "cosine": 0.9473375735245946,
+    "ngram": 0.15454545454545454,
+    "length": 0.5912408759124088,
+    "lcs": 0.41605839416058393,
+    "composite": 0.39687021151826646
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 130,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/69/open_source/numex.c",
+    "start": 1140,
+    "end": 1170,
+    "tokens": 199
+   },
+   "b": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.2373817034700315,
+    "normalized": 0.2132424537487828,
+    "cosine": 0.9698729132884985,
+    "ngram": 0.2185430463576159,
+    "length": 0.7939698492462312,
+    "lcs": 0.49748743718592964,
+    "composite": 0.4658020590904396
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 131,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/78/private/r_util.c",
+    "start": 26,
+    "end": 55,
+    "tokens": 176
+   },
+   "b": {
+    "file": "dataset_c/56/open_source/logistic_regression.c",
+    "start": 43,
+    "end": 75,
+    "tokens": 189
+   },
+   "scores": {
+    "raw": 0.19976635514018692,
+    "normalized": 0.13500784929356358,
+    "cosine": 0.9517754637176761,
+    "ngram": 0.17365269461077845,
+    "length": 0.9312169312169312,
+    "lcs": 0.48677248677248675,
+    "composite": 0.446551176601059
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 132,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/74/private/rfraw.c",
+    "start": 39,
+    "end": 71,
+    "tokens": 174
+   },
+   "b": {
+    "file": "dataset_c/91/private/tpms_elantra2012.c",
+    "start": 138,
+    "end": 164,
+    "tokens": 173
+   },
+   "scores": {
+    "raw": 0.32166508987701037,
+    "normalized": 0.2903614457831325,
+    "cosine": 0.987566470299019,
+    "ngram": 0.4015151515151515,
+    "length": 0.9942528735632183,
+    "lcs": 0.6206896551724138,
+    "composite": 0.5993167472521109
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 133,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/82/private/sdr.c",
+    "start": 107,
+    "end": 151,
+    "tokens": 338
+   },
+   "b": {
+    "file": "dataset_c/39/open_source/ftrl.c",
+    "start": 6,
+    "end": 32,
+    "tokens": 143
+   },
+   "scores": {
+    "raw": 0.21143756558237148,
+    "normalized": 0.19929328621908127,
+    "cosine": 0.9618858726523627,
+    "ngram": 0.15254237288135594,
+    "length": 0.4230769230769231,
+    "lcs": 0.31952662721893493,
+    "composite": 0.3878212221137659
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 134,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/44/private/insteon.c",
+    "start": 486,
+    "end": 509,
+    "tokens": 173
+   },
+   "b": {
+    "file": "dataset_c/57/open_source/logistic_regression_trainer.c",
+    "start": 125,
+    "end": 161,
+    "tokens": 234
+   },
+   "scores": {
+    "raw": 0.2446236559139785,
+    "normalized": 0.2148760330578512,
+    "cosine": 0.9460245364069687,
+    "ngram": 0.15037593984962405,
+    "length": 0.7393162393162394,
+    "lcs": 0.44017094017094016,
+    "composite": 0.4176068905420572
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 135,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/47/open_source/graph_builder.c",
+    "start": 39,
+    "end": 65,
+    "tokens": 161
+   },
+   "b": {
+    "file": "dataset_c/27/private/elv.c",
+    "start": 222,
+    "end": 250,
+    "tokens": 179
+   },
+   "scores": {
+    "raw": 0.29720670391061454,
+    "normalized": 0.1605584642233857,
+    "cosine": 0.9748684443063919,
+    "ngram": 0.3018867924528302,
+    "length": 0.8994413407821229,
+    "lcs": 0.5195530726256983,
+    "composite": 0.5294196513949283
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 136,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/94/private/util.c",
+    "start": 347,
+    "end": 404,
+    "tokens": 250
+   },
+   "b": {
+    "file": "dataset_c/89/private/thermopro_tp12.c",
+    "start": 49,
+    "end": 98,
+    "tokens": 241
+   },
+   "scores": {
+    "raw": 0.2595108695652174,
+    "normalized": 0.22022022022022025,
+    "cosine": 0.9828511765491439,
+    "ngram": 0.3370165745856354,
+    "length": 0.964,
+    "lcs": 0.56,
+    "composite": 0.5534229971159073
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 137,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/27/open_source/dedupe.c",
+    "start": 231,
+    "end": 254,
+    "tokens": 157
+   },
+   "b": {
+    "file": "dataset_c/60/private/nexus.c",
+    "start": 106,
+    "end": 138,
+    "tokens": 129
+   },
+   "scores": {
+    "raw": 0.1767015706806283,
+    "normalized": 0.12627291242362526,
+    "cosine": 0.9216026213152679,
+    "ngram": 0.1858974358974359,
+    "length": 0.821656050955414,
+    "lcs": 0.445859872611465,
+    "composite": 0.432480007236011
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 138,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/27/private/elv.c",
+    "start": 222,
+    "end": 250,
+    "tokens": 179
+   },
+   "b": {
+    "file": "dataset_c/26/private/efergy_optical.c",
+    "start": 156,
+    "end": 171,
+    "tokens": 136
+   },
+   "scores": {
+    "raw": 0.25474860335195526,
+    "normalized": 0.2984293193717278,
+    "cosine": 0.9553878009259199,
+    "ngram": 0.22424242424242424,
+    "length": 0.7597765363128491,
+    "lcs": 0.5083798882681564,
+    "composite": 0.4636327975312937
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 139,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/94/open_source/transliteration_table_builder.c",
+    "start": 130,
+    "end": 196,
+    "tokens": 299
+   },
+   "b": {
+    "file": "dataset_c/81/private/scmplus.c",
+    "start": 29,
+    "end": 103,
+    "tokens": 282
+   },
+   "scores": {
+    "raw": 0.2444861567339277,
+    "normalized": 0.12846153846153852,
+    "cosine": 0.9880347214277688,
+    "ngram": 0.3010204081632653,
+    "length": 0.9431438127090301,
+    "lcs": 0.5585284280936454,
+    "composite": 0.531332901791034
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 140,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/84/private/secplus_v2.c",
+    "start": 72,
+    "end": 101,
+    "tokens": 150
+   },
+   "b": {
+    "file": "dataset_c/87/open_source/string_utils.c",
+    "start": 19,
+    "end": 42,
+    "tokens": 131
+   },
+   "scores": {
+    "raw": 0.33241758241758246,
+    "normalized": 0.21165048543689324,
+    "cosine": 0.9159390476978455,
+    "ngram": 0.11728395061728394,
+    "length": 0.8733333333333333,
+    "lcs": 0.46,
+    "composite": 0.4140660263390591
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 141,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/40/private/honeywell_cm921.c",
+    "start": 53,
+    "end": 73,
+    "tokens": 194
+   },
+   "b": {
+    "file": "dataset_c/27/private/elv.c",
+    "start": 222,
+    "end": 250,
+    "tokens": 179
+   },
+   "scores": {
+    "raw": 0.2960893854748603,
+    "normalized": 0.2792321116928447,
+    "cosine": 0.9263112464008458,
+    "ngram": 0.20673076923076922,
+    "length": 0.9226804123711341,
+    "lcs": 0.5051546391752577,
+    "composite": 0.46715671446173396
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 142,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/85/private/simplisafe.c",
+    "start": 49,
+    "end": 77,
+    "tokens": 174
+   },
+   "b": {
+    "file": "dataset_c/30/private/fileformat.c",
+    "start": 351,
+    "end": 383,
+    "tokens": 165
+   },
+   "scores": {
+    "raw": 0.3237410071942446,
+    "normalized": 0.23404255319148937,
+    "cosine": 0.9315392642451212,
+    "ngram": 0.31297709923664124,
+    "length": 0.9482758620689655,
+    "lcs": 0.5344827586206896,
+    "composite": 0.5322239075677541
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 143,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/43/open_source/geodb_builder.c",
+    "start": 408,
+    "end": 433,
+    "tokens": 151
+   },
+   "b": {
+    "file": "dataset_c/28/open_source/dfa.c",
+    "start": 183,
+    "end": 206,
+    "tokens": 125
+   },
+   "scores": {
+    "raw": 0.19499999999999995,
+    "normalized": 0.1895424836601307,
+    "cosine": 0.9378177262896239,
+    "ngram": 0.12121212121212122,
+    "length": 0.8278145695364238,
+    "lcs": 0.46357615894039733,
+    "composite": 0.40340255519271506
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 144,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/96/private/visonic_powercode.c",
+    "start": 113,
+    "end": 140,
+    "tokens": 166
+   },
+   "b": {
+    "file": "dataset_c/28/open_source/dfa.c",
+    "start": 183,
+    "end": 206,
+    "tokens": 125
+   },
+   "scores": {
+    "raw": 0.2020316027088036,
+    "normalized": 0.19875776397515532,
+    "cosine": 0.973107732191378,
+    "ngram": 0.2204724409448819,
+    "length": 0.7530120481927711,
+    "lcs": 0.5180722891566265,
+    "composite": 0.46004114065768703
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 145,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/50/private/lacrosse_th3.c",
+    "start": 67,
+    "end": 109,
+    "tokens": 219
+   },
+   "b": {
+    "file": "dataset_c/71/open_source/numex_table_builder.c",
+    "start": 11,
+    "end": 38,
+    "tokens": 127
+   },
+   "scores": {
+    "raw": 0.18367346938775508,
+    "normalized": 0.17406962785114044,
+    "cosine": 0.9275496118820817,
+    "ngram": 0.23703703703703705,
+    "length": 0.5799086757990868,
+    "lcs": 0.4246575342465753,
+    "composite": 0.438615987859575
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 146,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/35/private/gt_tmbbq05.c",
+    "start": 141,
+    "end": 168,
+    "tokens": 121
+   },
+   "b": {
+    "file": "dataset_c/92/open_source/transliterate.c",
+    "start": 443,
+    "end": 480,
+    "tokens": 249
+   },
+   "scores": {
+    "raw": 0.18284693269803454,
+    "normalized": 0.15401621223286666,
+    "cosine": 0.9139947489494558,
+    "ngram": 0.1366906474820144,
+    "length": 0.4859437751004016,
+    "lcs": 0.321285140562249,
+    "composite": 0.37055761413231547
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 147,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/51/open_source/language_classifier_io.c",
+    "start": 73,
+    "end": 98,
+    "tokens": 124
+   },
+   "b": {
+    "file": "dataset_c/94/private/util.c",
+    "start": 347,
+    "end": 404,
+    "tokens": 250
+   },
+   "scores": {
+    "raw": 0.23505434782608692,
+    "normalized": 0.18518518518518523,
+    "cosine": 0.9313706858864235,
+    "ngram": 0.2,
+    "length": 0.496,
+    "lcs": 0.332,
+    "composite": 0.4159481062542145
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 148,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/96/private/visonic_powercode.c",
+    "start": 113,
+    "end": 140,
+    "tokens": 166
+   },
+   "b": {
+    "file": "dataset_c/25/private/ecodhome.c",
+    "start": 206,
+    "end": 229,
+    "tokens": 153
+   },
+   "scores": {
+    "raw": 0.22911963882618513,
+    "normalized": 0.13975155279503104,
+    "cosine": 0.9806140206160308,
+    "ngram": 0.3464566929133858,
+    "length": 0.9216867469879518,
+    "lcs": 0.5602409638554217,
+    "composite": 0.5507853248377836
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 149,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/99/private/x10_sec.c",
+    "start": 61,
+    "end": 95,
+    "tokens": 180
+   },
+   "b": {
+    "file": "dataset_c/30/private/fileformat.c",
+    "start": 351,
+    "end": 383,
+    "tokens": 165
+   },
+   "scores": {
+    "raw": 0.402200488997555,
+    "normalized": 0.29484902309058614,
+    "cosine": 0.9789605464772991,
+    "ngram": 0.3184713375796178,
+    "length": 0.9166666666666666,
+    "lcs": 0.6,
+    "composite": 0.5517860878545369
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 150,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/73/open_source/place.c",
+    "start": 20,
+    "end": 63,
+    "tokens": 221
+   },
+   "b": {
+    "file": "dataset_c/94/open_source/transliteration_table_builder.c",
+    "start": 130,
+    "end": 196,
+    "tokens": 299
+   },
+   "scores": {
+    "raw": 0.295864262990456,
+    "normalized": 0.21076923076923082,
+    "cosine": 0.9892900554294385,
+    "ngram": 0.3390804597701149,
+    "length": 0.7391304347826086,
+    "lcs": 0.4816053511705686,
+    "composite": 0.5373162365082294
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 151,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/92/private/tpms_pmv107j.c",
+    "start": 121,
+    "end": 166,
+    "tokens": 287
+   },
+   "b": {
+    "file": "dataset_c/86/open_source/string_similarity.c",
+    "start": 529,
+    "end": 559,
+    "tokens": 159
+   },
+   "scores": {
+    "raw": 0.22560975609756095,
+    "normalized": 0.17751060820367748,
+    "cosine": 0.9563031550139461,
+    "ngram": 0.13609467455621302,
+    "length": 0.554006968641115,
+    "lcs": 0.3519163763066202,
+    "composite": 0.3918895322332713
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 152,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/60/private/nexus.c",
+    "start": 106,
+    "end": 138,
+    "tokens": 129
+   },
+   "b": {
+    "file": "dataset_c/53/private/lacrosse_wr1.c",
+    "start": 140,
+    "end": 178,
+    "tokens": 184
+   },
+   "scores": {
+    "raw": 0.3288288288288288,
+    "normalized": 0.2933579335793358,
+    "cosine": 0.9684524285434037,
+    "ngram": 0.2867647058823529,
+    "length": 0.7010869565217391,
+    "lcs": 0.5434782608695652,
+    "composite": 0.5028252739062018
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 153,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/46/private/lacrosse.c",
+    "start": 197,
+    "end": 230,
+    "tokens": 193
+   },
+   "b": {
+    "file": "dataset_c/60/private/nexus.c",
+    "start": 106,
+    "end": 138,
+    "tokens": 129
+   },
+   "scores": {
+    "raw": 0.20491803278688525,
+    "normalized": 0.19003690036900367,
+    "cosine": 0.9425282054176737,
+    "ngram": 0.25625,
+    "length": 0.6683937823834197,
+    "lcs": 0.38860103626943004,
+    "composite": 0.4639007328714489
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 154,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/50/open_source/language_classifier_cli.c",
+    "start": 10,
+    "end": 49,
+    "tokens": 200
+   },
+   "b": {
+    "file": "dataset_c/53/open_source/language_classifier_train.c",
+    "start": 238,
+    "end": 273,
+    "tokens": 158
+   },
+   "scores": {
+    "raw": 0.23107255520504733,
+    "normalized": 0.21032132424537486,
+    "cosine": 0.9552783067497734,
+    "ngram": 0.1870967741935484,
+    "length": 0.79,
+    "lcs": 0.5,
+    "composite": 0.44383005801439973
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 155,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/70/open_source/numex_data.c",
+    "start": 2,
+    "end": 28,
+    "tokens": 118
+   },
+   "b": {
+    "file": "dataset_c/36/open_source/float_utils.c",
+    "start": 21,
+    "end": 29,
+    "tokens": 61
+   },
+   "scores": {
+    "raw": 0.19288645690834472,
+    "normalized": 0.1628318584070797,
+    "cosine": 0.9300054479145657,
+    "ngram": 0.09411764705882353,
+    "length": 0.5169491525423728,
+    "lcs": 0.3389830508474576,
+    "composite": 0.35524962880606614
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 156,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/58/private/m_bus.c",
+    "start": 1180,
+    "end": 1234,
+    "tokens": 210
+   },
+   "b": {
+    "file": "dataset_c/78/open_source/regex.c",
+    "start": 46,
+    "end": 65,
+    "tokens": 125
+   },
+   "scores": {
+    "raw": 0.16435354273192115,
+    "normalized": 0.17980636237897651,
+    "cosine": 0.9438086579826998,
+    "ngram": 0.21212121212121213,
+    "length": 0.5952380952380952,
+    "lcs": 0.38571428571428573,
+    "composite": 0.4285779949593433
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 157,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/60/private/nexus.c",
+    "start": 106,
+    "end": 138,
+    "tokens": 129
+   },
+   "b": {
+    "file": "dataset_c/29/private/ert_idm.c",
+    "start": 712,
+    "end": 735,
+    "tokens": 215
+   },
+   "scores": {
+    "raw": 0.11378848728246316,
+    "normalized": 0.15497553017944532,
+    "cosine": 0.9316228327392372,
+    "ngram": 0.23837209302325582,
+    "length": 0.6,
+    "lcs": 0.37209302325581395,
+    "composite": 0.4353892080758463
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 158,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/21/private/decoder_util.c",
+    "start": 281,
+    "end": 316,
+    "tokens": 233
+   },
+   "b": {
+    "file": "dataset_c/78/open_source/regex.c",
+    "start": 46,
+    "end": 65,
+    "tokens": 125
+   },
+   "scores": {
+    "raw": 0.1854304635761589,
+    "normalized": 0.17428571428571427,
+    "cosine": 0.904237832096365,
+    "ngram": 0.143646408839779,
+    "length": 0.5364806866952789,
+    "lcs": 0.33047210300429186,
+    "composite": 0.37725609791311343
+   }
+  },
+  {
+   "kind": "non-clone",
+   "index": 159,
+   "group": null,
+   "granularity": "sampled",
+   "a": {
+    "file": "dataset_c/99/open_source/yylex.c",
+    "start": 215,
+    "end": 245,
+    "tokens": 164
+   },
+   "b": {
+    "file": "dataset_c/92/private/tpms_pmv107j.c",
+    "start": 121,
+    "end": 166,
+    "tokens": 287
+   },
+   "scores": {
+    "raw": 0.2217294900221729,
+    "normalized": 0.15417256011315417,
+    "cosine": 0.9368540049084505,
+    "ngram": 0.17682926829268292,
+    "length": 0.5714285714285714,
+    "lcs": 0.3588850174216028,
+    "composite": 0.41078540493316273
+   }
+  }
+ ]
+}
